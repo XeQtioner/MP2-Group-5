@@ -12,14 +12,14 @@
 <body>
   <center>
     <div class="container">
-      <nav class="navbar navbar-expand-lg bg-body-none fixed-top">
+      <nav class="navbar navbar-expand-lg bg-body-none fixed-top d-flex">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="/images/MSlogo.png" alt="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="#"><img src="./images/MSlogo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto my-2 my-lg-0">
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
@@ -62,20 +62,22 @@
 
     <div class="hero">
       <center>
-        <video src="/images/hero.mp4" muted loop autoplay></video><br>
+        <video src="./images/hero.mp4" muted loop autoplay></video><br>
+        <img class="visor" src="./images/visor.png" alt="visor">
+        <div class="brandtitle">
+          <img src="./images/MSlogo2.png" alt="logo">
+        </div>
+        <h1>Premium Bike Rental</h1>
       </center>
     </div>
 
 
     <div class="heading1">
       <center>
-        <img class="visor" src="./images/visor.png" alt="visor">
-        <div class="brandtitle">
-          <img src="./images/MSlogo2.png" alt="logo">
-        </div>
-        <h1>Premium Bike Rental</h1>
+
+
         <div class="modelbike">
-          <img src="./images/bmw1.png" alt="modelbike">
+          <img src="./images/bmw2.png" alt="modelbike">
         </div>
       </center>
     </div> 
@@ -85,36 +87,109 @@
 
   <div class="section1">
     <center>
-      <h1>F A Q</h1>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
+      <h1>Frequently Asked Questions</h1><br>
+      <div class="accordion accordion-flush" id="accordionFlush">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Accordion Item #1
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0" aria-expanded="false" aria-controls="flush-collapse0">
+              Are there any specific rental requirements?
             </button>
           </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          <div id="flush-collapse0" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body" style="text-align: justify;">Yes. In order to rent a motor, the following requirements must be met:
+              <br>
+              <br>
+              1. Security Deposit:
+              <br> A security deposit of ₱3,000 is required for daily rentals, ₱5,000 for weekly rentals, and ₱15,000 for monthly rentals.
+              <br>
+              <br>
+              2. Valid Government-issued IDs:
+              <br> Two valid government-issued IDs are required for the rental process. Acceptable forms of identification include UMID (Unified Multi-Purpose ID), SSS (Social Security System) ID, driver's license, passport, and other similar government-issued IDs.
+              <br>
+              <br>
+              3. Surrender of Valid ID:
+              <br> One valid ID will need to be surrendered either upon picking up the motor or when it is delivered to you.
+              <br>
+              <br>
+              Please ensure that you meet these requirements in order to proceed with the motor rental.</div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Accordion Item #2
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+              Will I get a valid OR/CR and rental contract?
             </button>
           </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">Yes. You will receive a valid OR/CR, and a rental contract will be sent to you electronically via email. If you prefer a physical copy, it can be provided upon request.</code> class. This is the first item's accordion body.</div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #3
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+              Is there a mileage restriction or limit?
             </button>
           </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          <div id="flush-collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">Yes, there is a mileage limit of 350 kilometers per day. However, there is also an option available to choose unlimited mileage by paying an additional fee.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+              Is a security deposit required?
+            </button>
+          </h2>
+          <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">Yes, a security deposit is necessary. It will be refunded to you upon the return of the vehicle, provided that there are no damages incurred.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+              Is insurance included in the rental at no extra cost?
+            </button>
+          </h2>
+          <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">Yes, there is complimentary insurance provided by Marcello Insurance Co. as part of the rental package. However, please note that if you make a claim under the insurance, there is a deductible of ₱2,000 before approved payouts are made.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+              Is bike pick-up and delivery service available?
+            </button>
+          </h2>
+          <div id="flush-collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">Certainly! We offer bike pick-up and delivery service to your specified location. There is an additional fee of ₱250 if your location is within a 5-kilometer radius. For locations outside our delivery radius, the charge is ₱250 plus ₱30 per kilometer after the initial 5-kilometer radius.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+              How can I get in touch with you?
+            </button>
+          </h2>
+          <div id="flush-collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body" style="text-align: justify;">Here are the details to reach us: <br>
+              <br>
+              Phone Number: 09481433185
+              <br>
+              Facebook Messenger: www.facebook.com/motosavantph
+              <br>
+              Email: info.customer@motosavant.ph
+              <br>
+              Please feel free to use any of these methods to get in touch with us.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+              Is it possible to extend my rental contract?
+            </button>
+          </h2>
+          <div id="flush-collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body" style="text-align: justify;">Certainly! Just inform the MotoSavant rental staff that you would like to extend the duration of your rental days.</div>
           </div>
         </div>
       </div>
