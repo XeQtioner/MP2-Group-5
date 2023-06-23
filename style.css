@@ -188,9 +188,9 @@ body .icons a:hover {
 
   .brandtitle img {
     position: absolute;
-    left: 5%;
+    left: 0;
     bottom: 60%;
-    width: 90%;
+    width: 100%;
   }
   
   .hero h1 {
