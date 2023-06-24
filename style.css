@@ -23,6 +23,7 @@ body {
   margin-top: 0;
   border-radius: 50px;
   margin-left: 9%;
+  padding-left: 30px;
   box-shadow:  5px 4px 2px rgba(158, 202, 46, 0.7);
 }
 
@@ -192,35 +193,38 @@ body .icons a:hover {
 }
 
 
-/* @media screen and (max-width:1020px) {
+@media screen and (max-width:991px) {
   .icons {
       display: none;
   }
 
   .navbar-brand {
-    display: none;
+    /* display: none; */
+    margin-inline: min(10%);
+    transform: translateX(-10px);
+
   }
 
   .brandtitle img {
-    position: absolute;
+    display: none;
+    /* position: absolute;
     left: 0;
     bottom: 60%;
-    width: 100%;
+    width: 100%; */
   }
-  
-  .hero h1 {
+
+  .heropath h1 {
     position: absolute;
-    left: 5%;
+    text-align: center;
     bottom: 50%;
-    width: 90%;
     color: white;
   }
 
   .modelbike img {
-    width: 100%;
+    width: 50%;
     position: absolute;
-    bottom: 0%;
-    right: 0%;
+    bottom: -25%;
+    right: 25%;
     z-index: 1;
     animation: intro 1.5s;
   }
@@ -233,7 +237,7 @@ body .icons a:hover {
       }
   
       100% {
-          left:20%;
+          left:25%;
       }
   }
 
@@ -257,4 +261,5 @@ body .icons a:hover {
   border-radius: 50px;
   opacity: 0.7;
   z-index: 1; 
-} */
+}
+}
