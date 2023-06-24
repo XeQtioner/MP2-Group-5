@@ -246,7 +246,7 @@ body .icons a:hover {
 .navbar-toggler  {
   position: absolute;
   touch-action: none;
-  scale: 70%;
+  top: 80vh;
   margin: 0;
   background-color: #9eca2e;
   border-radius: 50px;

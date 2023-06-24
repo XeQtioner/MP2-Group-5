@@ -39,8 +39,9 @@ touchmode.addEventListener('touchmove', function(ev){
     
     var touchLocation = ev.targetTouches[0];
 
-    touchmode.style.left = touchLocation.pageX -25 + 'px';
-    touchmode.style.top = touchLocation.pageY -36 + 'px';
+    touchmode.style.left = touchLocation.clientX -25 + 'px';
+    touchmode.style.top = touchLocation.clientY -36 + 'px';
+    // touchmode.style.right = touchLocation.pageX  - 'px';
 
 })
 
