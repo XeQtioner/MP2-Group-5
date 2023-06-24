@@ -37,10 +37,13 @@ body {
 
 .navbar-toggler  {
   position: absolute;
-  transform: translateY(70px);
   scale: 70%;
   margin: 0;
   background-color: #9eca2e;
+  border-radius: 50px;
+  padding: 10px 10px;
+  opacity: 0.7;
+  z-index: 1;
 }
 
 .hero {
@@ -182,9 +185,9 @@ body .icons a:hover {
       display: none;
   }
 
-  .navbar-brand {
+  /* .navbar-brand {
     display: none;
-  }
+  } */
 
   .brandtitle img {
     position: absolute;
@@ -230,21 +233,13 @@ body .icons a:hover {
   .navbar-nav {
     position: absolute;
     padding: 0 10px;
-    top: 50px;
-    right: 0;
+    width: 70%;
+    right: 15%;
     background-color: white;
-    margin-top: 0;
     border-radius: 50px;
     box-shadow:  -5px 4px 2px rgba(158, 202, 46, 0.7);
   }
   
-  .navbar-toggler  {
-    position: absolute;
-    top: -60px;
-    right: 0;
-    scale: 80%;
-    margin: 0;
-    background-color: #9eca2e;
-  }
+
 
 }
