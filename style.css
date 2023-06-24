@@ -6,6 +6,11 @@
 
 body {
   height: 2000px;
+  margin: 0;
+  padding: 0;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar {
@@ -38,7 +43,7 @@ body {
 .navbar-toggler  {
   position: absolute;
   touch-action: none;
-  scale: 70%;
+  scale: 100%;
   margin: 0;
   background-color: #9eca2e;
   border-radius: 50px;
@@ -47,43 +52,46 @@ body {
   z-index: 1;
 }
 
-.hero {
-  width: min(90%, 800px);
-  height: 90vh;
-  margin-inline: auto;
+.herosection  {
   position: relative;
+  width: min(90%, 800px);
+  aspect-ratio: 4/3;
+  margin-inline: auto;
+}
+
+.heropath {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  /* border-bottom-left-radius: 440px;
-  border-bottom-right-radius: 440px; */
+  object-fit: cover;
   clip-path: polygon(0% 0%, 100% 0%, 100% 21%, 98% 26%, 95% 50%, 80% 85%, 55% 100%, 45% 100%, 20% 85%, 5% 50%, 2% 26%, 0% 21%, 0% 100%);
 }
 
-.hero video {
+.heropath video {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
+  object-fit: fill;
   height: 100%;
-  object-fit: cover;
+  top: 0;
+  left: -20%;
   z-index: 0;
-  overflow: hidden;
 }
 
 .visor {
   position: absolute;
-  top: -100px;
+  top: 0px;
   left: 0;
   width: 100%;
-  height: 70%;
-  opacity: 0.9;
+  height: 100%;
+  opacity: 0.6;
   z-index: 0;
 }
 
+
 .modelbike img {
-  width: 24%;
+  width: 30%;
   position: absolute;
   bottom: 0;
-  right: 38%;
+  right: 35%;
   z-index: 1;
   animation: intro 1.5s;
 }
@@ -96,7 +104,7 @@ body {
     }
 
     100% {
-        left:38%;
+        left:35%;
     }
 }
 
@@ -112,11 +120,11 @@ body {
   width: 90%;
 }
 
-.hero h1 {
+.heropath h1 {
   position: absolute;
-  left: 20%;
+  text-align: center;
   bottom: 40%;
-  width: 60%;
+  width: 100%;
   color: white;
 }
 
@@ -130,6 +138,7 @@ body {
   z-index: 2;
   background-color: #9eca2e;
   border-radius: 50px;
+  padding-top: 14px;
 }
 
 .icons li {
@@ -158,8 +167,10 @@ body .icons a:hover {
 }
 
 .section1 {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
   width: min(90%, 800px);
-  height: 90vh;
   margin-inline: auto;
 }
 
@@ -181,14 +192,14 @@ body .icons a:hover {
 }
 
 
-@media screen and (max-width:640px) {
+/* @media screen and (max-width:1020px) {
   .icons {
       display: none;
   }
 
-  /* .navbar-brand {
+  .navbar-brand {
     display: none;
-  } */
+  }
 
   .brandtitle img {
     position: absolute;
@@ -206,10 +217,10 @@ body .icons a:hover {
   }
 
   .modelbike img {
-    width: 60%;
+    width: 100%;
     position: absolute;
-    bottom: 10%;
-    right: 20%;
+    bottom: 0%;
+    right: 0%;
     z-index: 1;
     animation: intro 1.5s;
   }
@@ -226,11 +237,6 @@ body .icons a:hover {
       }
   }
 
-  .hero {
-    height: 70vh;
-    margin-bottom: 100px;
-  }
-
   .navbar-nav {
     position: absolute;
     padding: 0 10px;
@@ -241,7 +247,6 @@ body .icons a:hover {
     box-shadow:  -5px 4px 2px rgba(158, 202, 46, 0.7);
   }
 
-}
 
 .navbar-toggler  {
   position: absolute;
@@ -251,5 +256,5 @@ body .icons a:hover {
   background-color: #9eca2e;
   border-radius: 50px;
   opacity: 0.7;
-  z-index: 1;
-}
+  z-index: 1; 
+} */
