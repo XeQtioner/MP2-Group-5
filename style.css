@@ -59,6 +59,16 @@ body {
   margin-inline: auto;
 }
 
+
+.herosection::after {
+  background-image: url('./images/parallax4.jpg');
+  background-size: contain;
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .05;
+}
+
 .heropath {
   width: 100%;
   height: 100%;
@@ -218,11 +228,7 @@ body .icons a:hover {
     bottom: 35%;
     color: white;
   }
-  
-  .herosection {
-    overflow: hidden;
 
-  }
 
   .heropath {
     overflow: hidden;

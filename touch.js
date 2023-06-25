@@ -27,7 +27,7 @@ touchmode.addEventListener('touchmove', function(ev){
     
     var touchLocation = ev.targetTouches[0];
 
-    touchmode.style.top = touchLocation.clientY -155 + 'px';
+    touchmode.style.top = touchLocation.clientY -185 + 'px';
 
 })
 
