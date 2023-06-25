@@ -98,6 +98,7 @@ body {
 
 
 .modelbike img {
+  display: none;
   width: 30%;
   position: absolute;
   bottom: 0;
@@ -133,9 +134,10 @@ body {
 .heropath h3 {
   position: absolute;
   text-align: center;
-  bottom: 40%;
+  top: 0%;
   width: 100%;
   color: white;
+  z-index: 100;
 }
 
 
@@ -177,8 +179,37 @@ body .icons a:hover {
 }
 
 .section1 {
-  margin-bottom: 100px;
+  margin-top: 50px;
+  position: relative;
 }
+
+.modelbike2 {
+  position: relative;
+}
+
+.modelbike2 img {
+  display: f;
+  width: 20%;
+  position: absolute;
+  bottom: 0;
+  right: 40%;
+  z-index: 1;
+  animation: intro2 1.5s;
+}
+
+@keyframes intro2 {
+  0% {
+      scale: 45%;
+      left: 0; 
+      bottom: 100px;
+  }
+
+  100% {
+      left:40%;
+  }
+}
+
+
 
 .section1 .container {
   display: flex;
@@ -207,6 +238,7 @@ body .icons a:hover {
 }
 
 .section2 {
+  margin-top: 50px;
   display: flexbox;
   align-items: center;
   justify-content: center;
@@ -260,7 +292,7 @@ body .icons a:hover {
     color: white;
   }
 
-  .modelbike img {
+  /* .modelbike img {
     width: 50%;
     position: absolute;
     bottom: -25%;
@@ -268,6 +300,29 @@ body .icons a:hover {
     z-index: 1;
     animation: intro 1.5s;
   }
+  
+  
+  @keyframes intro {
+      0% {
+          scale: 45%;
+          left: -300px; 
+          bottom: 100px;
+      }
+  
+      100% {
+          left:25%;
+      }
+  } */
+
+  .modelbike2 img {
+    width: 50%;
+    position: absolute;
+    bottom: -25%;
+    right: 25%;
+    z-index: 1;
+    animation: intro 1.5s;
+  }
+  
   
   @keyframes intro {
       0% {
@@ -286,10 +341,13 @@ body .icons a:hover {
   }
 
   .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     touch-action: none;
     position: absolute;
     text-align: center;
-    border: solid thin black;
+    border: thin solid rgba(0,0,0,.5);
     width: 100%;
     top: 330%;
     left: 0%;
@@ -300,7 +358,7 @@ body .icons a:hover {
 
   .nav-item  {
     margin: 5px;
-    width: 100%;
+    width: 70%;
     background-color: rgba(158, 202, 46, 0.7);
     border-radius: 50px;
 
@@ -318,8 +376,13 @@ body .icons a:hover {
   z-index: 1; 
   }
 
-  .section1 h5 {
+  h5 {
     font-size: x-small;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: smaller;
     width: 100%;
   }
 
