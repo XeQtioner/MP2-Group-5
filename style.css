@@ -259,13 +259,22 @@ body .icons a:hover {
     touch-action: none;
     position: absolute;
     text-align: center;
-    border: solid black;
+    border: solid thin black;
     width: 100%;
-    top: 570%;
+    top: 330%;
     left: 0%;
     background-color: white;
     border-radius: 50px;
     box-shadow:  -5px 4px 2px rgba(158, 202, 46, 0.7);
+    padding-inline: 10%;
+  }
+
+  .nav-item  {
+    margin: 5px;
+    width: 100%;
+    background-color: rgba(158, 202, 46, 0.7);
+    border-radius: 50px;
+
   }
 
 
