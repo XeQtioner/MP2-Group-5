@@ -307,7 +307,6 @@ body .icons a:hover {
   }
 
 
-
   .navbar-toggler  {
   position: absolute;
   touch-action: none;
@@ -319,9 +318,30 @@ body .icons a:hover {
   z-index: 1; 
   }
 
-  .section1 .container {
-    display: block;
+  .section1 h5 {
+    font-size: x-small;
     width: 100%;
+  }
+
+  .section1 .card {
+      overflow-wrap: break-word;
+      width: 100%;
+      align-items: center;
+      aspect-ratio: 1 / 1;
+      padding: 0;
+  }
+
+  .iconbox  {
+    margin: 0px;
+    width: 80%;
+    clip-path: circle();
+    background-color: #9eca2e;
+    padding: 0;
+    height: 80%;
+  }
+  
+  .section1 img  {
+    height: 50%;
   }
 
 }
