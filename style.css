@@ -130,7 +130,7 @@ body {
   width: 90%;
 }
 
-.heropath h1 {
+.heropath h3 {
   position: absolute;
   text-align: center;
   bottom: 40%;
@@ -177,6 +177,36 @@ body .icons a:hover {
 }
 
 .section1 {
+  margin-bottom: 100px;
+}
+
+.section1 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section1 .card {
+  aspect-ratio: 4/3;
+  width: 20%;
+  border: none;
+}
+
+.iconbox  {
+  margin-top: 20px;
+  display: flex;
+  clip-path: circle();
+  background-color: #9eca2e;
+  height: 150px;
+  justify-content: center;
+}
+
+.section1 img  {
+  align-self: center;
+  height: 55%;
+}
+
+.section2 {
   display: flexbox;
   align-items: center;
   justify-content: center;
@@ -202,6 +232,7 @@ body .icons a:hover {
 }
 
 
+
 @media screen and (max-width:991px) {
   .icons {
       display: none;
@@ -222,7 +253,7 @@ body .icons a:hover {
     width: 100%; */
   }
 
-  .heropath h1 {
+  .heropath h3 {
     position: absolute;
     text-align: center;
     bottom: 35%;
@@ -288,5 +319,9 @@ body .icons a:hover {
   z-index: 1; 
   }
 
+  .section1 .container {
+    display: block;
+    width: 100%;
+  }
 
 }
