@@ -60,14 +60,14 @@ body {
 }
 
 
-.herosection::after {
+/* .herosection::after {
   background-image: url('./images/parallax4.jpg');
   background-size: contain;
   content: '';
   position: absolute;
   inset: 0;
   opacity: .05;
-}
+} */
 
 .heropath {
   width: 100%;
@@ -82,7 +82,7 @@ body {
   object-fit: fill;
   height: 100%;
   top: 0;
-  left: -20%;
+  left: 0;
   z-index: 0;
 }
 
@@ -229,13 +229,6 @@ body .icons a:hover {
     color: white;
   }
 
-
-  .heropath {
-    overflow: hidden;
-
-  }
-
-
   .modelbike img {
     width: 50%;
     position: absolute;
@@ -272,7 +265,6 @@ body .icons a:hover {
     background-color: white;
     border-radius: 50px;
     box-shadow:  -5px 4px 2px rgba(158, 202, 46, 0.7);
-    padding-inline: 10%;
   }
 
   .nav-item  {
