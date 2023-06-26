@@ -209,8 +209,6 @@ body .icons a:hover {
   }
 }
 
-
-
 .section1 .container {
   display: flex;
   align-items: center;
@@ -239,6 +237,25 @@ body .icons a:hover {
 
 .section2 {
   margin-top: 50px;
+}
+
+.section2 .card-title {
+  text-align: left;
+}
+
+.featuredBikecontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section2 .container {
+  width: min(90%, 800px);
+}
+
+.section5 {
+  margin-top: 50px;
   display: flexbox;
   align-items: center;
   justify-content: center;
@@ -246,6 +263,58 @@ body .icons a:hover {
   margin-inline: auto;
 }
 
+.tab {
+  overflow: hidden;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  border-bottom: solid #9eca2e;
+
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: solid #9eca2e;
+}
+
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  width: min(90%, 1000px);
+  text-align: justify;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+.accordion .btn h6 {
+  font-size: 10px;
+}
 
 .accordion button:not(.collapsed) {
   background-color: rgba(158,202,46,0.5);
@@ -376,6 +445,10 @@ body .icons a:hover {
   z-index: 1; 
   }
 
+  p {
+    font-size: smaller;
+  }
+
   h5 {
     font-size: x-small;
     width: 100%;
@@ -407,4 +480,20 @@ body .icons a:hover {
     height: 50%;
   }
 
+  .tab button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    border: none;
+    padding-inline: 5px;
+    transition: 0.3s;
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width:420px) {
+  .featuredBikecontainer {
+    display: block;
+}
 }
