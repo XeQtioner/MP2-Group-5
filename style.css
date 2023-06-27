@@ -146,7 +146,7 @@ body {
 .icons {
   position: fixed;
   bottom: 10%;
-  left: 5%;
+  left: 1%;
   z-index: 2;
   background-color: #9eca2e;
   border-radius: 50px;
@@ -239,6 +239,55 @@ body .icons a:hover {
   margin-top: 50px;
 }
 
+.tab {
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  border-bottom: 5px solid #9eca2e;
+
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 5px solid #9eca2e;
+}
+
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  width: min(90%, 1000px);
+  text-align: justify;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .section2 .card-title {
   text-align: left;
 }
@@ -248,6 +297,7 @@ body .icons a:hover {
   align-items: center;
   justify-content: center;
 }
+
 
 .section2 .container {
   width: min(90%, 800px);
@@ -296,11 +346,11 @@ body .icons a:hover {
     rgba(12, 13, 19) 97%
   );
 }
-h4  {
+/* h4  {
   font-list-style: none;
   text-decoration: none;
   color: white;
-}
+} */
 
 .card:hover .wrapper::before,
 .wrapper::after {
@@ -332,6 +382,17 @@ h4  {
   transform: translate3d(0%, -30%, 100px);
 }
 
+.bikeinfo {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #9eca2e;
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+
 .section5 {
   margin-top: 50px;
   display: flexbox;
@@ -340,55 +401,6 @@ h4  {
   width: min(90%, 800px);
   margin-inline: auto;
 }
-
-.tab {
-  overflow: hidden;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  border-bottom: solid #9eca2e;
-
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  border-bottom: solid #9eca2e;
-}
-
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  width: min(90%, 1000px);
-  text-align: justify;
-  padding: 6px 12px;
-  -webkit-animation: fadeEffect 1s;
-  animation: fadeEffect 1s;
-}
-
-/* Fade in tabs */
-@-webkit-keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 
 .accordion .btn h6 {
   font-size: 10px;
