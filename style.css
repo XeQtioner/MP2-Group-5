@@ -11,11 +11,6 @@
 	--card-height: 300px;
 }
 
-html {
-	scroll-snap-type: y mandatory;
-	scroll-snap-stop: always;
-}
-
 ::-webkit-scrollbar {
     width: 15px;
   }
@@ -71,7 +66,8 @@ body {
 	display: flexbox;
 	align-items: center;
 	justify-content: center;
-	overflow-x: hidden;
+  overflow-x: hidden;
+
 }
 
 .navbar {
@@ -130,7 +126,6 @@ body {
 	width: min(90%, 800px);
 	aspect-ratio: 4/3;
 	margin-inline: auto;
-	scroll-snap-align: start;
 }
 
 .heropath {
@@ -281,13 +276,11 @@ body .icons a:hover {
 }
 
 .section1 {
+  overflow-x: hidden;
 	margin-top: 50px;
 	position: relative;
-	scroll-snap-align: start;
-	height: 100vh;
 	width: 100%;
-	padding-top: 70px;
-	overflow-y: hidden;
+
 }
 
 .section1 .container {
@@ -326,9 +319,7 @@ body .icons a:hover {
 	overflow: hidden;
 	--card-transition-duration: 800ms;
 	--card-transition-easing: ease;
-	scroll-snap-align: start;
-	height: 100vh;
-	padding-top: 20px;
+
 }
 
 .cardList button {
@@ -813,19 +804,15 @@ body .icons a:hover {
 	border: 1px thin black;
 	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 }
-.section3 {
-	scroll-snap-align: start;
+/* .section3 {
 	height: 100vh;
-	padding-top: 70px;
 	overflow: hidden;
 }
 
 .section4 {
-	scroll-snap-align: start;
 	height: 100vh;
-	padding-top: 70px;
 	overflow: hidden;
-}
+} */
 
 .section5 {
 	margin-top: 50px;
@@ -834,9 +821,6 @@ body .icons a:hover {
 	justify-content: center;
 	width: min(90%, 800px);
 	margin-inline: auto;
-	scroll-snap-align: start;
-	height: 100vh;
-	padding-top: 70px;
 }
 
 .accordion .btn h6 {
