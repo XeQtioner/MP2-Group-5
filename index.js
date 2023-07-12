@@ -505,7 +505,7 @@ function refreshOnResize() {
 location.reload();
 }
 
-window.addEventListener('resize', refreshOnResize);
+// window.addEventListener('resize', refreshOnResize);
 
 
 
