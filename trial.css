@@ -3,32 +3,13 @@
 :root {
    --card-width: 200px;
    --card-height: 300px;
-   --card-transition-duration: 800ms;
-   --card-transition-easing: ease;
 }
 
- * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-}
-
-/* body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.787);
-  overflow: hidden;
-} */
-
- .tabcontent {
-   width: min(98%, 900px);
+ .section2 {
+   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
-   overflow: hidden;
 
 }
  .cardList button {
@@ -68,7 +49,7 @@
    height: 100%;
    background: #000;
    z-index: 1;
-   opacity: 0.8;
+   opacity: 0.1;
 }
  .app__bg__image {
    position: absolute;
@@ -111,7 +92,6 @@
    top: 50%;
    transform: translateY(-50%);
    z-index: 100;
-  background-color: #9eca2e;
 }
  .cardList__btn.btn--left {
    left: 0;
@@ -199,7 +179,6 @@
    width: calc(3 * var(--card-width));
    height: var(--card-height);
    pointer-events: none;
-
 }
  .infoList .info__wrapper {
    position: relative;
@@ -230,12 +209,12 @@
    text-shadow: #9eca2e 3px 3px 4px, #9eca2e 3px 3px 2px;
 
 }
- .info .location {
+ .info .tranny {
    font-weight: 600;
    text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 
 }
- .info .location {
+ .info .tranny {
    --mg-left: 40px;
    --text-size-offset: 0.12;
    font-weight: 600;
@@ -243,19 +222,19 @@
    margin-bottom: calc(var(--mg-left) / 2);
    padding-bottom: 0.8rem;
 }
- .info .location::before, .info .location::after {
+ .info .tranny::before, .info .tranny::after {
    content: "";
    position: absolute;
    background: #fff;
    left: 0%;
    transform: translate(calc(-1 * var(--mg-left)), -50%);
 }
- .info .location::before {
+ .info .tranny::before {
    top: 50%;
    width: 20px;
    height: 5px;
 }
- .info .location::after {
+ .info .tranny::after {
    bottom: 0;
    width: 60px;
    height: 2px;
@@ -266,7 +245,7 @@
    padding: 0 5px;
    border-radius: 7px;
    position: absolute;
-   bottom: -75px;
+   bottom: -105px;
    right: 0;
    display: flex;
    flex-direction: column;
@@ -330,7 +309,7 @@
 }
  @media only screen and (min-width: 800px) {
    :root {
-     --card-width: 250px;
+     --card-width:300px;
      --card-height: 400px;
   }
 }
