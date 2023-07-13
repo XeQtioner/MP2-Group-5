@@ -1,82 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-<style>
-.image-container {
-  position: relative;
-  width: 400px;
-  height: 300px;
-  opacity: .5;
-
-}
-
-.image-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: url(#image-clip-path);
-  
-}
-
-.clip-path-svg {
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 0;
-  left: 0;
-  opacity: .5;
-}
-
-
-</style>
-
+  <title>Bike Rental</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="image-container">
-    <img src="/images/helmet2 1.svg" alt="Image">
+  <div class="container mt-4">
+    <h2>Bike Rental</h2>
+
+    <form id="rental-form">
+      <div class="form-group">
+        <label for="bike">Choose a Bike:</label>
+        <select id="bike" name="bike" class="form-control">
+          <option value="mountain">Mountain Bike</option>
+          <option value="road">Road Bike</option>
+          <option value="hybrid">Hybrid Bike</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date-range">Select Date Range:</label>
+        <input type="date" id="start-date" name="start-date" class="form-control">
+        <input type="date" id="end-date" name="end-date" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="location">Pick a Location:</label>
+        <input type="text" id="location" name="location" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Choose Payment Method:</label>
+        <select id="payment" name="payment" class="form-control">
+          <option value="credit">Credit Card</option>
+          <option value="debit">Debit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  
-  <svg class="clip-path-svg">
-    <defs>
-      <clipPath id="image-clip-path" clipPathUnits="objectBoundingBox">
-        <image width="1" height="1" xlink:href="/images/asphalt-highway-road-roadside-top-view-grass-76953638.webp"></image>
-      </clipPath>
-    </defs>
-  </svg>
-  
-
-
-  
-  
-
 
   <script>
-const targetElement = document.getElementById("targetElement");
-const section = document.querySelector(".section");
+    // JavaScript code
+    const rentalForm = document.getElementById("rental-form");
+    rentalForm.addEventListener("submit", function(event) {
+      event.preventDefault();
 
-function toggleVisibility() {
-  const rect = section.getBoundingClientRect();
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (validateForm()) {
+        submitForm();
+      }
+    });
 
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    targetElement.classList.add("visible");
-    targetElement.classList.remove("hidden");
-  } else {
-    targetElement.classList.add("hidden");
-    targetElement.classList.remove("visible");
-  }
-}
+    function validateForm() {
+      const bike = document.getElementById("bike").value;
+      const startDate = document.getElementById("start-date").value;
+      const endDate = document.getElementById("end-date").value;
+      const location = document.getElementById("location").value;
+      const payment = document.getElementById("payment").value;
 
-window.addEventListener("scroll", toggleVisibility);
+      let isValid = true;
 
+      if (bike === "") {
+        displayError("Please choose a bike.");
+        isValid = false;
+      }
 
+      if (startDate === "" || endDate === "") {
+        displayError("Please select a valid date range.");
+        isValid = false;
+      } else if (new Date(startDate) > new Date(endDate)) {
+        displayError("End date should be greater than start date.");
+        isValid = false;
+      }
+
+      if (location === "") {
+        displayError("Please enter a location.");
+        isValid = false;
+      }
+
+      if (payment === "") {
+        displayError("Please choose a payment method.");
+        isValid = false;
+      }
+
+      if (isValid) {
+        clearError();
+      }
+
+      return isValid;
+    }
+
+    function displayError(errorMessage) {
+      const errorDiv = document.getElementById("error-message");
+      errorDiv.innerText = errorMessage;
+      errorDiv.style.display = "block";
+    }
+
+    function clearError() {
+      const errorDiv = document.getElementById("error-message");
+      errorDiv.innerText = "";
+      errorDiv.style.display = "none";
+    }
+
+    function submitForm() {
+      const bike = document.getElementById("bike").value;
+      const startDate = document.getElementById("start-date").value;
+      const endDate = document.getElementById("end-date").value;
+      const location = document.getElementById("location").value;
+      const payment = document.getElementById("payment").value;
+
+      // Do something with the form data
+      console.log("Bike: " + bike);
+      console.log("Start Date: " + startDate);
+      console.log("End Date: " + endDate);
+      console.log("Location: " + location);
+      console.log("Payment: " + payment);
+
+      // You can perform further actions with the form data, such as making an API call or storing it in a database.
+    }
   </script>
 </body>
 </html>

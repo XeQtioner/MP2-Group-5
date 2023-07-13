@@ -319,7 +319,6 @@ body .icons a:hover {
 	overflow: hidden;
 	--card-transition-duration: 800ms;
 	--card-transition-easing: ease;
-
 }
 
 .cardList button {
@@ -706,104 +705,98 @@ body .icons a:hover {
 	text-align: left;
 }
 
-.featuredBikecontainer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-/* .section2 .container {
-  width: min(90%, 800px);
-}
-.wrapper {
-  transition: all 0.5s;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-}
-
-.card:hover .wrapper {
-  transform: perspective(900px) translateY(-5%) rotateX(50deg) translateZ(0);
-  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-}
-
-.wrapper::before,
-.wrapper::after {
-  content: "";
-  opacity: 0;
-  width: 100%;
-  height: 80px;
-  transition: all 0.5s;
-  position: absolute;
-  left: 0;
-}
-.wrapper::before {
-  top: 0;
-  height: 100%;
-  background-image: linear-gradient(
-    to top,
-    transparent 46%,
-    rgba(12, 13, 19, 0.5) 68%,
-    rgba(12, 13, 19) 97%
-  );
-}
-.wrapper::after {
-  bottom: 0;
-  opacity: 1;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 46%,
-    rgba(12, 13, 19, 0.5) 68%,
-    rgba(12, 13, 19) 97%
-  );
-}
-/* h4  {
-  font-list-style: none;
-  text-decoration: none;
-  color: white;
-} */
-
-.card:hover .wrapper::before,
-.wrapper::after {
-	opacity: 1;
-}
-
-.card:hover .wrapper::after {
-	height: 120px;
-}
-
-.title {
-	width: 100%;
-	transition: transform 0.5s;
-}
-.card:hover .title {
-	transform: translate3d(0%, -50px, 100px);
-}
-
-.standee {
-	width: 100%;
-	opacity: 0;
-	transition: all 0.5s;
-	position: absolute;
-	z-index: -1;
-}
-
-.card:hover .standee {
-	opacity: 1;
-	transform: translate3d(0%, -30%, 100px);
-}
-
 .bikeinfo {
-	margin-top: 50px;
+	text-align: left;
+	position: fixed;
+	height: calc(100vh - 80px);
+	width: 15vw;
 	padding: 10px;
+	top: 70px;
+	right: 10px;
 	background-color: #9eca2e;
 	border-radius: 15px;
 	backdrop-filter: blur(10px);
 	border: 1px thin black;
 	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+	animation: enterup 1s;
+	animation-timing-function: ease-in;
 }
+
+@keyframes enterup {
+	0%	{
+		top: 900px;
+	}
+	100%	{
+		top: 70px;
+	}
+}
+
+.bikelist	{
+	padding-top: 20px;
+}
+.bikecontainer {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	position: relative;
+
+}
+.bike-card-container{
+	position: relative;
+	align-self: center;
+	width: 300px;
+	flex-wrap: wrap;
+	flex: none;
+	height: 400px;
+	backdrop-filter: blur(10px);
+}
+
+.bikelogo	{
+	width: 20%;
+	aspect-ratio: 1/1;
+	border: thin solid gray;
+	border-radius: 50%;
+	overflow: hidden;
+	transform: translate(20%, calc(80% - 60px));
+	z-index: 2;
+	object-fit: contain;
+}
+
+.bikelogo img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+ 
+.bike-card	{
+	padding: 0 5px;
+	overflow: hidden;
+	z-index: -1;
+	background-color: rgba(255,255,255,.30);
+	backdrop-filter: blur(15px);
+	height: 400px;
+	transform: translateY(-60px);
+}
+
+.bike-card-img-top	{
+	background-color: rgba(0,0,0,.70);
+	padding: 30px;
+	height: 300px;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.bike-card-body	{
+	height: 200px;
+	line-height: 10px;
+}
+
+.bike-card-link	{
+	position: absolute;
+	bottom: 2px;
+}
+
 /* .section3 {
 	height: 100vh;
 	overflow: hidden;
