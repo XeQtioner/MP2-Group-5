@@ -563,6 +563,8 @@ if (window.innerWidth < 991) {
   })
   
   }
+
+  //backtotop button
   
   window.addEventListener('scroll', function() {
     var backToTopButton = document.getElementById('backToTopButton');
