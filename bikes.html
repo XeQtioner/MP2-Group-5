@@ -21,7 +21,7 @@
 		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home</title>
+		<title>Bikes</title>
 		<link rel="icon" type="image/x-icon" href="./images/faviconhelmet2.png" />
 		<link
 			rel="stylesheet"
@@ -30,7 +30,7 @@
 
 		<style>
 			body {
-				background-image: url(https://c4.wallpaperflare.com/wallpaper/901/922/520/motorbike-way-road-sport-wallpaper-preview.jpg);
+				/* background-image: url(https://c4.wallpaperflare.com/wallpaper/901/922/520/motorbike-way-road-sport-wallpaper-preview.jpg); */
 				background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -151,8 +151,7 @@ Login
 
 		<div class="bikelist">
 			<center>
-				<h3>Available Bikes</h3>
-				<br />
+				<h2>Rental Bikes</h2>
 				<div class="tab">
 					<button
 						class="tablinks"
@@ -176,7 +175,7 @@ Login
 				</div>
 
 				<div id="Cruiser" class="tabcontent">
-					<div class="bikeinfo">
+					<div class="bikeclassinfo">
 						<h3>Cruiser</h3>
 						<p>
 							The cruiser, also called a chopper, is designed for leisurely
@@ -322,7 +321,7 @@ Login
 						</div>
 
 						<div class="bike-card-container">
-							<div class="bikelogo">
+							<!-- <div class="bikelogo">
 								<img
 									id="bikelogo"
 									src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
@@ -347,13 +346,13 @@ Login
 										<a href="#" class="btn btn-dark">See Details</a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
 
 				<div id="OffRoad" class="tabcontent">
-					<div class="bikeinfo">
+					<div class="bikeclassinfo">
 						<h3>Off-Road</h3>
 						<p>
 							Off-road motorcycles are designed for exploring uncharted
@@ -494,7 +493,7 @@ Login
 				</div>
 
 				<div id="Sports" class="tabcontent">
-					<div class="bikeinfo">
+					<div class="bikeclassinfo">
 						<h3>Sports</h3>
 						<p>
 							Sports motorcycles are built for speed and agility, prioritizing
@@ -641,7 +640,7 @@ Login
 				</div>
 
 				<div id="Touring" class="tabcontent">
-					<div class="bikeinfo">
+					<div class="bikeclassinfo">
 						<h3>Touring</h3>
 						<p>
 							Touring motorcycles are larger and built for long-distance travel,
@@ -785,7 +784,7 @@ Login
 				</div>
 
 				<div id="Scooter" class="tabcontent">
-					<div class="bikeinfo">
+					<div class="bikeclassinfo">
 						<h3>Scooters</h3>
 						<p>
 							Scooters may not be considered true motorcycles by some, but they
@@ -928,23 +927,17 @@ Login
 		</div>
 
 		<button id="backToTopButton" onclick="scrollToTop()">
-			<i class="fas fa-arrow-up"></i>
+			<div class="backToTopButton">
+			</div>
 		</button>
-
-		<script
-			type="text/javascript"
-			src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"
-		></script>
+	
+		<script type="text/javascript" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
 		<script src="index.js"></script>
-		<script src="bikes.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-			crossorigin="anonymous"
-		></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+		</script>
+
 	</body>
-</html>
+	
+	</html>

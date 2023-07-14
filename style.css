@@ -528,6 +528,9 @@ body .icons a:hover {
 	font-weight: 600;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 }
+
+
+
 .info .tranny {
 	--mg-left: 40px;
 	--text-size-offset: 0.12;
@@ -705,7 +708,17 @@ body .icons a:hover {
 	text-align: left;
 }
 
-.bikeinfo {
+.bikeinfo	{
+	background-color: rgba(255,255,255,.0);
+	backdrop-filter: blur(15px);
+	padding: 5px;
+	margin-bottom: 15px;
+	color: #fff;
+
+}
+
+
+.bikeclassinfo {
 	text-align: left;
 	position: fixed;
 	height: calc(100vh - 80px);
@@ -732,7 +745,7 @@ body .icons a:hover {
 }
 
 .bikelist	{
-	padding-top: 20px;
+	padding-top: 70px;
 }
 .bikecontainer {
 	display: flex;
@@ -836,151 +849,7 @@ body .icons a:hover {
 	border-radius: 50px;
 }
 
-@media screen and (max-width: 991px) {
-	.icons {
-		display: none;
-	}
 
-	.navbar-brand {
-		/* display: none; */
-		margin-inline: min(10%);
-		transform: translateX(-10px);
-	}
-
-	.brandtitle img {
-		display: none;
-		/* position: absolute;
-    left: 0;
-    bottom: 60%;
-    width: 100%; */
-	}
-
-	.heropath h1 {
-		display: none;
-	}
-
-	.heropath h3 {
-		position: absolute;
-		text-align: center;
-		bottom: 35%;
-		color: white;
-	}
-
-	.modelbike2 img {
-		width: 50%;
-		position: absolute;
-		bottom: -25%;
-		right: 25%;
-		z-index: 1;
-		animation: intro 1.5s;
-	}
-
-	@keyframes intro {
-		0% {
-			scale: 45%;
-			left: -300px;
-			bottom: 100px;
-		}
-
-		100% {
-			left: 25%;
-		}
-	}
-
-	.navbar-toggler-icon {
-		position: relative;
-	}
-
-	.navbar-nav {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		touch-action: none;
-		position: absolute;
-		text-align: center;
-		border: thin solid rgba(0, 0, 0, 0.5);
-		width: 100%;
-		top: 330%;
-		left: 0%;
-		background-color: white;
-		border-radius: 50px;
-		box-shadow: -5px 4px 2px rgba(158, 202, 46, 0.7);
-	}
-
-	.nav-item {
-		margin: 5px;
-		width: 70%;
-		background-color: rgba(158, 202, 46, 0.7);
-		border-radius: 50px;
-	}
-
-	.navbar-toggler {
-		position: absolute;
-		touch-action: none;
-		top: 80vh;
-		margin: 0;
-		background-color: #9eca2e;
-		border-radius: 50px;
-		z-index: 1;
-	}
-
-	p {
-		font-size: smaller;
-	}
-
-	h5 {
-		font-size: x-small;
-		width: 100%;
-	}
-
-	h3 {
-		font-size: smaller;
-		width: 100%;
-	}
-
-	.section1 .card {
-		overflow-wrap: break-word;
-		width: 100%;
-		align-items: center;
-		aspect-ratio: 1 / 1;
-		padding: 0;
-	}
-
-	.iconbox {
-		margin: 0px;
-		width: 80%;
-		clip-path: circle();
-		background-color: #9eca2e;
-		padding: 0;
-		height: 80%;
-	}
-
-	.section1 img {
-		height: 50%;
-	}
-
-	.tab button {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		background-color: inherit;
-		border: none;
-		padding-inline: 5px;
-		transition: 0.3s;
-		font-size: smaller;
-	}
-
-	.accordion,
-	.accordion-button {
-		font-size: 12px;
-	}
-}
-
-@media screen and (max-width: 640px) {
-	.featuredBikecontainer {
-		display: block;
-	}
-}
 
 #backToTopButton {
 	display: none;
@@ -1085,5 +954,188 @@ body .icons a:hover {
 @keyframes fadeIn {
 	0%	{
 		opacity: 0;
+	}
+}
+
+
+
+@media screen and (max-width: 991px) {
+
+	#backToTopButton.show	{
+		opacity: .2;
+		right: 0;
+		bottom: 65px;
+	}	
+
+	.icons {
+		display: none;
+	}
+
+	.navbar-brand {
+		/* display: none; */
+		margin-inline: min(10%);
+		transform: translateX(-10px);
+	}
+
+	.brandtitle img {
+		display: none;
+		/* position: absolute;
+    left: 0;
+    bottom: 60%;
+    width: 100%; */
+	}
+
+	.heropath h1 {
+		display: none;
+	}
+
+	.heropath h3 {
+		position: absolute;
+		text-align: center;
+		bottom: 35%;
+		color: white;
+	}
+
+	.modelbike2 img {
+		width: 50%;
+		position: absolute;
+		bottom: -25%;
+		right: 25%;
+		z-index: 1;
+		animation: intro 1.5s;
+	}
+
+	@keyframes intro {
+		0% {
+			scale: 45%;
+			left: -300px;
+			bottom: 100px;
+		}
+
+		100% {
+			left: 25%;
+		}
+	}
+
+	.navbar	{
+		background-color: rgba(255,255,255,.0);
+		backdrop-filter: blur(15px);
+	
+	}
+
+	.navbar-toggler-icon {
+		position: relative;
+	}
+
+	.navbar-nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		touch-action: none;
+		position: absolute;
+		text-align: center;
+		/* border: thin solid rgba(0, 0, 0, 0.5); */
+		width: 100%;
+		top: 330%;
+		left: 0%;
+		border-left: 20px solid white;
+		border-right: 20px solid white;
+		background-color: rgba(0,0,0,.5);
+		border-radius: 50px;
+		/* box-shadow: -5px 4px 2px rgba(158, 202, 46, 0.7); */
+		
+	}
+
+	.nav-item {
+		margin: 5px;
+		width: 70%;
+		background-color: rgba(158, 202, 46, .9);
+		border-radius: 50px;
+		opacity: 1;
+		color: white;
+	}
+
+	.navbar-toggler {
+		position: absolute;
+		touch-action: none;
+		top: 80vh;
+		margin: 0;
+		background-color: #9eca2e;
+		border-radius: 50px;
+		z-index: 1;
+	}
+
+	p {
+		font-size: smaller;
+	}
+
+	h5 {
+		font-size: x-small;
+		width: 100%;
+	}
+
+	h3 {
+		font-size: smaller;
+		width: 100%;
+	}
+
+	.section1 .card {
+		overflow-wrap: break-word;
+		width: 100%;
+		align-items: center;
+		aspect-ratio: 1 / 1;
+		padding: 0;
+	}
+
+	.iconbox {
+		margin: 0px;
+		width: 80%;
+		clip-path: circle();
+		background-color: #9eca2e;
+		padding: 0;
+		height: 80%;
+	}
+
+	.section1 img {
+		height: 50%;
+	}
+
+	.tab button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: inherit;
+		border: none;
+		padding-inline: 5px;
+		transition: 0.3s;
+		font-size: smaller;
+	}
+
+	.accordion,
+	.accordion-button {
+		font-size: 12px;
+	}
+
+	.bikeclassinfo {
+		display: none;
+		position: relative;;
+		text-align: left;
+		height: 80px;
+		width: 100%;
+		padding: 0px;
+		background-color: #9eca2e;
+		border-radius: 15px;
+		backdrop-filter: blur(10px);
+		border: 1px thin black;
+		box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+		animation: enterup 1s;
+		animation-timing-function: ease-in;
+	}
+
+}
+
+@media screen and (max-width: 640px) {
+	.featuredBikecontainer {
+		display: block;
 	}
 }

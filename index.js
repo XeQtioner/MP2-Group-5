@@ -505,7 +505,7 @@ function refreshOnResize() {
 location.reload();
 }
 
-// window.addEventListener('resize', refreshOnResize);
+window.addEventListener('resize', refreshOnResize);
 
 
 
@@ -544,7 +544,7 @@ if (window.innerWidth < 991) {
   })
   
   }
-  
+  //navbar movable y-axis
   var touchmode2   = document.querySelector(".navbar-nav");
   
   touchmode2.addEventListener('touchmove', function(ev){
