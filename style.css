@@ -170,27 +170,6 @@ body {
 	z-index: 0;
 }
 
-.modelbike img {
-	display: none;
-	width: 30%;
-	position: absolute;
-	bottom: 0;
-	right: 35%;
-	z-index: 1;
-	animation: intro 1.5s;
-}
-
-@keyframes intro {
-	0% {
-		scale: 45%;
-		left: 0;
-		bottom: 100px;
-	}
-
-	100% {
-		left: 35%;
-	}
-}
 
 .modelbike:hover img {
 	scale: 103%;
@@ -250,21 +229,21 @@ body .icons a:hover {
 	border-radius: 28px;
 }
 
-.modelbike2 {
+.modelbike {
 	position: relative;
 }
 
-.modelbike2 img {
+.modelbike img {
 	display: f;
 	width: 20%;
 	position: absolute;
 	bottom: 0;
 	right: 40%;
 	z-index: 1;
-	animation: intro2 1.5s;
+	animation: intro 1.5s;
 }
 
-@keyframes intro2 {
+@keyframes intro {
 	0% {
 		scale: 45%;
 		left: 0;
@@ -851,7 +830,7 @@ body .icons a:hover {
 	display: none;
 	position: fixed;
 	bottom: 200px;
-	right: 70px;
+	right: 10px;
 	width: 50px;
 	height: 90px;
 	border: 3px solid black;
@@ -963,17 +942,12 @@ body .icons a:hover {
 	}
 
 	.navbar-brand {
-		/* display: none; */
 		margin-inline: min(10%);
 		transform: translateX(-10px);
 	}
 
 	.brandtitle img {
 		display: none;
-		/* position: absolute;
-    left: 0;
-    bottom: 60%;
-    width: 100%; */
 	}
 
 	.heropath h1 {
@@ -987,7 +961,7 @@ body .icons a:hover {
 		color: white;
 	}
 
-	.modelbike2 img {
+	.modelbike img {
 		width: 50%;
 		position: absolute;
 		bottom: -25%;
@@ -1007,10 +981,6 @@ body .icons a:hover {
 			left: 25%;
 		}
 	}
-
-	/* .navbar-toggler-icon {
-		position: relative;
-	} */
 
 	.navbar-toggler:hover {
 		opacity: 1;

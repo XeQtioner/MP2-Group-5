@@ -1,15 +1,15 @@
 //animation-in left or right
 
 function toggleVisibility(elementSelector) {
-	const element = document.querySelector(elementSelector);
+	let element = document.querySelector(elementSelector);
 
 	if (!element) {
 		console.error("Element not found.");
 		return;
 	}
 
-	const rect = element.getBoundingClientRect();
-	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	let rect = element.getBoundingClientRect();
+	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 	if (rect.top < window.innerHeight && rect.bottom > 0) {
 		element.classList.add("visible");
@@ -28,21 +28,21 @@ function toggleVisibility(elementSelector) {
 }
 
 function addVisibilityListener(elementSelector) {
-	const element = document.querySelector(elementSelector);
+	let element = document.querySelector(elementSelector);
 
 	if (!element) {
 		console.error("Element not found.");
 		return;
 	}
 
-	const originalClassName = element.className;
+	let originalClassName = element.className;
 
 	window.addEventListener("scroll", () => {
 		toggleVisibility(elementSelector);
 	});
 
 	window.addEventListener("scroll", () => {
-		const rect = element.getBoundingClientRect();
+		let rect = element.getBoundingClientRect();
 
 		if (rect.top >= window.innerHeight || rect.bottom <= 0) {
 			element.className = originalClassName;
@@ -56,15 +56,15 @@ addVisibilityListener(".section5");
 //animation-in scale or opacity
 
 function toggleVisibility(elementSelector) {
-	const element = document.querySelector(elementSelector);
+	let element = document.querySelector(elementSelector);
 
 	if (!element) {
 		console.error("Element not found.");
 		return;
 	}
 
-	const rect = element.getBoundingClientRect();
-	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	let rect = element.getBoundingClientRect();
+	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 	if (rect.top < window.innerHeight && rect.bottom > 0) {
 		element.classList.add("visible");
@@ -83,21 +83,21 @@ function toggleVisibility(elementSelector) {
 }
 
 function addVisibilityListener(elementSelector) {
-	const element = document.querySelector(elementSelector);
+	let element = document.querySelector(elementSelector);
 
 	if (!element) {
 		console.error("Element not found.");
 		return;
 	}
 
-	const originalClassName = element.className;
+	let originalClassName = element.className;
 
 	window.addEventListener("scroll", () => {
 		toggleVisibility(elementSelector);
 	});
 
 	window.addEventListener("scroll", () => {
-		const rect = element.getBoundingClientRect();
+		let rect = element.getBoundingClientRect();
 
 		if (rect.top >= window.innerHeight || rect.bottom <= 0) {
 			element.className = originalClassName;
@@ -113,7 +113,7 @@ if (window.innerWidth < 991) {
 	dragElement(document.querySelector(".navbar-toggler"));
 
 	function dragElement(elmnt) {
-		var pos1 = 0,
+		let pos1 = 0,
 			pos2 = 0,
 			pos3 = 0,
 			pos4 = 0;
@@ -146,7 +146,7 @@ if (window.innerWidth < 991) {
 		}
 
 		function savePosition(elmnt) {
-			var position = {
+			let position = {
 				top: elmnt.offsetTop,
 				left: elmnt.offsetLeft,
 			};
@@ -154,9 +154,9 @@ if (window.innerWidth < 991) {
 		}
 
 		// Check if position data is stored in sessionStorage
-		var storedPosition = sessionStorage.getItem("navbarTogglerPosition");
+		let storedPosition = sessionStorage.getItem("navbarTogglerPosition");
 		if (storedPosition) {
-			var position = JSON.parse(storedPosition);
+			let position = JSON.parse(storedPosition);
 			elmnt.style.top = position.top + "px";
 			elmnt.style.left = position.left + "px";
 		}
@@ -164,7 +164,7 @@ if (window.innerWidth < 991) {
 		dragElement(document.querySelector(".navbar-nav"));
 
 		function dragElement(elmnt) {
-			var pos1 = 0,
+			let pos1 = 0,
 				pos2 = 0,
 				pos3 = 0,
 				pos4 = 0;
@@ -207,10 +207,10 @@ if (window.innerWidth < 991) {
 
 if (window.innerWidth < 991) {
 	window.onload = function () {
-		var navbarToggler = document.querySelector(".navbar-toggler");
+		let navbarToggler = document.querySelector(".navbar-toggler");
 
 		navbarToggler.addEventListener("touchmove", function (ev) {
-			var touchLocation = ev.targetTouches[0];
+			let touchLocation = ev.targetTouches[0];
 			navbarToggler.style.left = touchLocation.clientX - 25 + "px";
 			navbarToggler.style.top = touchLocation.clientY - 36 + "px";
 			navbarToggler.style.opacity = "1";
@@ -218,8 +218,8 @@ if (window.innerWidth < 991) {
 		});
 
 		navbarToggler.addEventListener("touchend", function (ev) {
-			var x = parseInt(navbarToggler.style.left);
-			var y = parseInt(navbarToggler.style.top);
+			let x = parseInt(navbarToggler.style.left);
+			let y = parseInt(navbarToggler.style.top);
 			navbarToggler.style.opacity = ".7";
 		});
 
@@ -228,26 +228,26 @@ if (window.innerWidth < 991) {
 		});
 
 		function savePosition(element) {
-			var position = {
+			let position = {
 				top: parseInt(element.style.top),
 				left: parseInt(element.style.left),
 			};
 			sessionStorage.setItem("navbarTogglerPosition", JSON.stringify(position));
 		}
 
-		var storedTogglerPosition = sessionStorage.getItem("navbarTogglerPosition");
+		let storedTogglerPosition = sessionStorage.getItem("navbarTogglerPosition");
 		if (storedTogglerPosition) {
-			var position = JSON.parse(storedTogglerPosition);
+			let position = JSON.parse(storedTogglerPosition);
 			navbarToggler.style.top = position.top + "px";
 			navbarToggler.style.left = position.left + "px";
 		}
 	};
 
 	// Navbar movable y-axis
-	var navbarNav = document.querySelector(".navbar-nav");
+	let navbarNav = document.querySelector(".navbar-nav");
 
 	navbarNav.addEventListener("touchmove", function (ev) {
-		var touchLocation = ev.targetTouches[0];
+		let touchLocation = ev.targetTouches[0];
 		navbarNav.style.top = touchLocation.clientY - 30 + "px";
 
 		function refreshOnResize() {
@@ -258,15 +258,15 @@ if (window.innerWidth < 991) {
 	});
 
 	navbarNav.addEventListener("touchend", function (ev) {
-		var x = parseInt(navbarNav.style.left);
-		var y = parseInt(navbarNav.style.top);
+		let x = parseInt(navbarNav.style.left);
+		let y = parseInt(navbarNav.style.top);
 	});
 }
 
 //backtotop button
 
 function checkScrollPosition() {
-	var backToTopButton = document.getElementById("backToTopButton");
+	let backToTopButton = document.getElementById("backToTopButton");
 
 	if (window.scrollY > 1000) {
 		backToTopButton.classList.add("show");
@@ -288,7 +288,7 @@ window.addEventListener("scroll", checkScrollPosition); // Add an event listener
 // tabcontent
 
 function bikeType(evt, typeName) {
-	var i, tabcontent, tablinks;
+	let i, tabcontent, tablinks;
 	tabcontent = document.getElementsByClassName("tabcontent");
 	for (i = 0; i < tabcontent.length; i++) {
 		tabcontent[i].style.display = "none";
@@ -306,16 +306,16 @@ document.getElementById("defaultOpen").click();
 //featuredbikes animation
 
 function setupTabContent(container) {
-	const { gsap, imagesLoaded } = window;
+	let { gsap, imagesLoaded } = window;
 
-	const buttons = {
+	let buttons = {
 		prev: container.querySelector(".btn--left"),
 		next: container.querySelector(".btn--right"),
 	};
-	const cardsContainerEl = container.querySelector(".cards__wrapper");
-	const appBgContainerEl = container.querySelector(".app__bg");
+	let cardsContainerEl = container.querySelector(".cards__wrapper");
+	let appBgContainerEl = container.querySelector(".app__bg");
 
-	const cardInfosContainerEl = container.querySelector(".info__wrapper");
+	let cardInfosContainerEl = container.querySelector(".info__wrapper");
 
 	let touchStartX = 0;
 	let touchEndX = 0;
@@ -332,7 +332,7 @@ function setupTabContent(container) {
 	});
 
 	cardsContainerEl.addEventListener("touchend", () => {
-		const swipeDistance = touchStartX - touchEndX;
+		let swipeDistance = touchStartX - touchEndX;
 		if (swipeDistance > 50) {
 			swapCards("right");
 		} else if (swipeDistance < -50) {
@@ -341,14 +341,13 @@ function setupTabContent(container) {
 	});
 
 	function swapCards(direction) {
-		const currentCardEl = cardsContainerEl.querySelector(".current--card");
-		const previousCardEl = cardsContainerEl.querySelector(".previous--card");
-		const nextCardEl = cardsContainerEl.querySelector(".next--card");
+		let currentCardEl = cardsContainerEl.querySelector(".current--card");
+		let previousCardEl = cardsContainerEl.querySelector(".previous--card");
+		let nextCardEl = cardsContainerEl.querySelector(".next--card");
 
-		const currentBgImageEl = appBgContainerEl.querySelector(".current--image");
-		const previousBgImageEl =
-			appBgContainerEl.querySelector(".previous--image");
-		const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
+		let currentBgImageEl = appBgContainerEl.querySelector(".current--image");
+		let previousBgImageEl = appBgContainerEl.querySelector(".previous--image");
+		let nextBgImageEl = appBgContainerEl.querySelector(".next--image");
 
 		changeInfo(direction);
 		swapCardsClass();
@@ -458,9 +457,9 @@ function setupTabContent(container) {
 	}
 
 	function updateCard(e) {
-		const card = e.currentTarget;
-		const box = card.getBoundingClientRect();
-		const centerPosition = {
+		let card = e.currentTarget;
+		let box = card.getBoundingClientRect();
+		let centerPosition = {
 			x: box.left + box.width / 2,
 			y: box.top + box.height / 2,
 		};
@@ -468,15 +467,15 @@ function setupTabContent(container) {
 		gsap.set(card, {
 			"--current-card-rotation-offset": `${angle}deg`,
 		});
-		const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+		let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
 		gsap.set(currentInfoEl, {
 			rotateY: `${angle}deg`,
 		});
 	}
 
 	function resetCardTransforms(e) {
-		const card = e.currentTarget;
-		const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+		let card = e.currentTarget;
+		let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
 		gsap.set(card, {
 			"--current-card-rotation-offset": 0,
 		});
@@ -486,7 +485,7 @@ function setupTabContent(container) {
 	}
 
 	function initCardEvents() {
-		const currentCardEl = cardsContainerEl.querySelector(".current--card");
+		let currentCardEl = cardsContainerEl.querySelector(".current--card");
 		currentCardEl.addEventListener("pointermove", updateCard);
 		currentCardEl.addEventListener("pointerout", (e) => {
 			resetCardTransforms(e);
@@ -535,11 +534,11 @@ function setupTabContent(container) {
 			);
 	}
 
-	const waitForImages = () => {
-		const images = [...container.querySelectorAll("img")];
-		const totalImages = images.length;
+	let waitForImages = () => {
+		let images = [...container.querySelectorAll("img")];
+		let totalImages = images.length;
 		let loadedImages = 0;
-		const loaderEl = container.querySelector(".loader span");
+		let loaderEl = container.querySelector(".loader span");
 
 		gsap.set(cardsContainerEl.children, {
 			"--card-translateY-offset": "100vh",
@@ -588,17 +587,17 @@ function setupTabContent(container) {
 	waitForImages();
 }
 
-const tabContent1 = document.getElementById("Cruiser");
+let tabContent1 = document.getElementById("Cruiser");
 setupTabContent(Cruiser);
 
-const tabContent2 = document.getElementById("OffRoad");
+let tabContent2 = document.getElementById("OffRoad");
 setupTabContent(OffRoad);
 
-const tabContent3 = document.getElementById("Sports");
+let tabContent3 = document.getElementById("Sports");
 setupTabContent(Sports);
 
-const tabContent4 = document.getElementById("Touring");
+let tabContent4 = document.getElementById("Touring");
 setupTabContent(Touring);
 
-const tabContent5 = document.getElementById("Scooter");
+let tabContent5 = document.getElementById("Scooter");
 setupTabContent(Scooter);
