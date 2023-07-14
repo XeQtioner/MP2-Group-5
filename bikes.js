@@ -53,30 +53,36 @@
 
 // Retrieve input values and update the corresponding elements
 function updateCard() {
-  const bikelogo = document.getElementById("bikelogoInput").value;
-  const bikeCardImg = document.getElementById("bikeCardImgInput").value;
-  const bikeCardTitle = document.getElementById("bikeCardTitleInput").value;
-  const bikeCardText = document.getElementById("bikeCardTextInput").value;
-  const bikeCardPrice = document.getElementById("bikeCardPriceInput").value;
+	const bikelogo = document.getElementById("bikelogoInput").value;
+	const bikeCardImg = document.getElementById("bikeCardImgInput").value;
+	const bikeCardTitle = document.getElementById("bikeCardTitleInput").value;
+	const bikeCardText = document.getElementById("bikeCardTextInput").value;
+	const bikeCardPrice = document.getElementById("bikeCardPriceInput").value;
 
-  const logoImage = document.querySelector(".bikelogo img");
-  const cardImage = document.querySelector(".bike-card-img-top");
-  const cardTitle = document.querySelector(".bike-card-title");
-  const cardText = document.querySelector(".bike-card-text");
-  const cardPrice = document.querySelector(".bike-card-price");
+	const logoImage = document.querySelector(".bikelogo img");
+	const cardImage = document.querySelector(".bike-card-img-top");
+	const cardTitle = document.querySelector(".bike-card-title");
+	const cardText = document.querySelector(".bike-card-text");
+	const cardPrice = document.querySelector(".bike-card-price");
 
-  logoImage.src = bikelogo;
-  cardImage.src = bikeCardImg;
-  cardTitle.textContent = bikeCardTitle;
-  cardText.textContent = bikeCardText;
-  cardPrice.textContent = bikeCardPrice;
+	logoImage.src = bikelogo;
+	cardImage.src = bikeCardImg;
+	cardTitle.textContent = bikeCardTitle;
+	cardText.textContent = bikeCardText;
+	cardPrice.textContent = bikeCardPrice;
 }
 
 // Example usage: Call updateCard() function whenever the input values change
 document.getElementById("bikelogoInput").addEventListener("input", updateCard);
-document.getElementById("bikeCardImgInput").addEventListener("input", updateCard);
-document.getElementById("bikeCardTitleInput").addEventListener("input", updateCard);
-document.getElementById("bikeCardTextInput").addEventListener("input", updateCard);
-document.getElementById("bikeCardPriceInput").addEventListener("input", updateCard);
-
-
+document
+	.getElementById("bikeCardImgInput")
+	.addEventListener("input", updateCard);
+document
+	.getElementById("bikeCardTitleInput")
+	.addEventListener("input", updateCard);
+document
+	.getElementById("bikeCardTextInput")
+	.addEventListener("input", updateCard);
+document
+	.getElementById("bikeCardPriceInput")
+	.addEventListener("input", updateCard);

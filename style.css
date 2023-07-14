@@ -6,24 +6,34 @@
 	box-sizing: border-box;
 }
 
+body {
+	margin: 0;
+	padding: 0;
+	display: flexbox;
+	align-items: center;
+	justify-content: center;
+	overflow-x: hidden;
+	height: 5000px;
+}
+
 :root {
 	--card-width: 200px;
 	--card-height: 300px;
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
-  }
+	width: 15px;
+}
 
-  ::-webkit-scrollbar-track {
-    background-color: black;
-  }
+::-webkit-scrollbar-track {
+	background-color: black;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #9eca2e;
-    border-radius: 7px;
-    border: thin solid white;
-  }
+::-webkit-scrollbar-thumb {
+	background-color: #9eca2e;
+	border-radius: 7px;
+	border: thin solid white;
+}
 
 .fromright {
 	opacity: 0.9;
@@ -58,16 +68,6 @@
 	transform: translateX(0%);
 	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 	transition-delay: 0.4s;
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	display: flexbox;
-	align-items: center;
-	justify-content: center;
-  overflow-x: hidden;
-
 }
 
 .navbar {
@@ -119,6 +119,7 @@ body {
 	box-shadow: -1px 1px 1px gray, -1px 2px 1px gray, -1px 3px 1px gray,
 		-1px 8px 6px rgb(16, 16, 16, 0.9), -1px 12px 8px rgb(16, 16, 16, 0.2),
 		-1px 10px 10px rgb(16, 16, 16, 0.4);
+	animation: fadeIn 2s;
 }
 
 .herosection {
@@ -276,7 +277,7 @@ body .icons a:hover {
 }
 
 .section1 {
-  overflow-x: hidden;
+	overflow-x: hidden;
 	margin-top: 50px;
 	position: relative;
 	width: 100%;
@@ -529,8 +530,6 @@ body .icons a:hover {
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 }
 
-
-
 .info .tranny {
 	--mg-left: 40px;
 	--text-size-offset: 0.12;
@@ -708,17 +707,16 @@ body .icons a:hover {
 	text-align: left;
 }
 
-.bikeinfo	{
-	background-color: rgba(255,255,255,.0);
+.bikeinfo {
+	background-color: rgba(255, 255, 255, 0);
 	backdrop-filter: blur(15px);
 	padding: 5px;
 	margin-bottom: 15px;
 	color: #fff;
-
 }
 
-
 .bikeclassinfo {
+	color: #fff;
 	text-align: left;
 	position: fixed;
 	height: calc(100vh - 80px);
@@ -726,25 +724,26 @@ body .icons a:hover {
 	padding: 10px;
 	top: 70px;
 	right: 10px;
-	background-color: #9eca2e;
+	background-color: rgba(158, 202, 46, .5);
 	border-radius: 15px;
 	backdrop-filter: blur(10px);
 	border: 1px thin black;
 	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 	animation: enterup 1s;
 	animation-timing-function: ease-in;
+	backdrop-filter: blur(15px);
 }
 
 @keyframes enterup {
-	0%	{
+	0% {
 		top: 900px;
 	}
-	100%	{
+	100% {
 		top: 70px;
 	}
 }
 
-.bikelist	{
+.bikelist {
 	padding-top: 70px;
 }
 .bikecontainer {
@@ -753,9 +752,8 @@ body .icons a:hover {
 	gap: 20px;
 	flex-wrap: wrap;
 	position: relative;
-
 }
-.bike-card-container{
+.bike-card-container {
 	position: relative;
 	align-self: center;
 	width: 300px;
@@ -765,7 +763,7 @@ body .icons a:hover {
 	backdrop-filter: blur(10px);
 }
 
-.bikelogo	{
+.bikelogo {
 	width: 20%;
 	aspect-ratio: 1/1;
 	border: thin solid gray;
@@ -776,36 +774,36 @@ body .icons a:hover {
 	object-fit: contain;
 }
 
-.bikelogo img{
+.bikelogo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
- 
-.bike-card	{
+
+.bike-card {
 	padding: 0 5px;
 	overflow: hidden;
 	z-index: -1;
-	background-color: rgba(255,255,255,.30);
+	background-color: rgba(255, 255, 255, 0.3);
 	backdrop-filter: blur(15px);
 	height: 400px;
 	transform: translateY(-60px);
 }
 
-.bike-card-img-top	{
-	background-color: rgba(0,0,0,.70);
+.bike-card-img-top {
+	background-color: rgba(0, 0, 0, 0.7);
 	padding: 30px;
 	height: 300px;
 	object-fit: contain;
 	overflow: hidden;
 }
 
-.bike-card-body	{
+.bike-card-body {
 	height: 200px;
 	line-height: 10px;
 }
 
-.bike-card-link	{
+.bike-card-link {
 	position: absolute;
 	bottom: 2px;
 }
@@ -849,8 +847,6 @@ body .icons a:hover {
 	border-radius: 50px;
 }
 
-
-
 #backToTopButton {
 	display: none;
 	position: fixed;
@@ -867,7 +863,7 @@ body .icons a:hover {
 	transition: ease-in-out;
 }
 
-#backToTopButton::before, 
+#backToTopButton::before,
 #backToTopButton::after {
 	content: "";
 	position: absolute;
@@ -878,13 +874,13 @@ body .icons a:hover {
 	left: 50%;
 	bottom: 20%;
 	transform: translate(-50%, 100%) rotate(45deg);
-	animation: upbutton .8s infinite;
+	animation: upbutton 0.8s infinite;
 	animation-timing-function: ease-in-out;
 }
 
-#backToTopButton::after	{
+#backToTopButton::after {
 	bottom: 30%;
-	animation-delay: .3s;
+	animation-delay: 0.3s;
 }
 
 .backToTopButton {
@@ -899,7 +895,7 @@ body .icons a:hover {
 	z-index: 9999;
 }
 
-.backToTopButton::before, 
+.backToTopButton::before,
 .backToTopButton::after {
 	content: "";
 	position: absolute;
@@ -910,31 +906,29 @@ body .icons a:hover {
 	left: 50%;
 	bottom: 20%;
 	transform: translate(-50%, 100%) rotate(45deg);
-	animation: upbutton .8s infinite;
+	animation: upbutton 0.8s infinite;
 	animation-timing-function: ease-in-out;
 }
 
-.backToTopButton::after	{
+.backToTopButton::after {
 	bottom: 27%;
-	animation-delay: .3s;
-	
+	animation-delay: 0.3s;
 }
 
 @keyframes upbutton {
-	0%	{
+	0% {
 		opacity: 0;
 	}
-	40%	{
+	40% {
 		opacity: 1;
 	}
-	70%	{
+	70% {
 		opacity: 1;
 	}
-	100%	{
+	100% {
 		opacity: 0;
 		bottom: 90%;
 	}
-	
 }
 
 #backToTopButton:hover {
@@ -952,20 +946,17 @@ body .icons a:hover {
 }
 
 @keyframes fadeIn {
-	0%	{
+	0% {
 		opacity: 0;
 	}
 }
 
-
-
 @media screen and (max-width: 991px) {
-
-	#backToTopButton.show	{
-		opacity: .2;
+	#backToTopButton.show {
+		opacity: 0.2;
 		right: 0;
 		bottom: 65px;
-	}	
+	}
 
 	.icons {
 		display: none;
@@ -1017,14 +1008,12 @@ body .icons a:hover {
 		}
 	}
 
-	.navbar	{
-		background-color: rgba(255,255,255,.0);
-		backdrop-filter: blur(15px);
-	
-	}
-
-	.navbar-toggler-icon {
+	/* .navbar-toggler-icon {
 		position: relative;
+	} */
+
+	.navbar-toggler:hover {
+		opacity: 1;
 	}
 
 	.navbar-nav {
@@ -1034,25 +1023,31 @@ body .icons a:hover {
 		touch-action: none;
 		position: absolute;
 		text-align: center;
-		/* border: thin solid rgba(0, 0, 0, 0.5); */
 		width: 100%;
 		top: 330%;
 		left: 0%;
-		border-left: 20px solid white;
-		border-right: 20px solid white;
-		background-color: rgba(0,0,0,.5);
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		background-color: rgba(0, 0, 0, 0.5);
 		border-radius: 50px;
-		/* box-shadow: -5px 4px 2px rgba(158, 202, 46, 0.7); */
-		
+		box-shadow: none;
+		backdrop-filter: blur(15px);
 	}
 
 	.nav-item {
 		margin: 5px;
 		width: 70%;
-		background-color: rgba(158, 202, 46, .9);
+		background-color: rgba(158, 202, 46, 0.8);
 		border-radius: 50px;
 		opacity: 1;
 		color: white;
+	}
+
+	.active {
+		color: #9eca2e;
+		border: thin solid black;
+		border-radius: 50px;
+		background-color: rgba(0, 0, 0, 0.3);
 	}
 
 	.navbar-toggler {
@@ -1118,7 +1113,7 @@ body .icons a:hover {
 
 	.bikeclassinfo {
 		display: none;
-		position: relative;;
+		position: relative;
 		text-align: left;
 		height: 80px;
 		width: 100%;
@@ -1131,7 +1126,6 @@ body .icons a:hover {
 		animation: enterup 1s;
 		animation-timing-function: ease-in;
 	}
-
 }
 
 @media screen and (max-width: 640px) {
