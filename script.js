@@ -168,9 +168,15 @@ if (window.innerWidth < 991) {
 				pos2 = 0,
 				pos3 = 0,
 				pos4 = 0;
-
+		
+			// Retrieve the saved position from local storage
+			let savedTop = localStorage.getItem("navbarTop");
+			if (savedTop) {
+				elmnt.style.top = savedTop;
+			}
+		
 			elmnt.onmousedown = dragMouseDown;
-
+		
 			function dragMouseDown(e) {
 				e.preventDefault();
 				pos3 = e.clientX;
@@ -178,7 +184,7 @@ if (window.innerWidth < 991) {
 				document.onmouseup = closeDragElement;
 				document.onmousemove = elementDrag;
 			}
-
+		
 			function elementDrag(e) {
 				e = e || window.event;
 				e.preventDefault();
@@ -187,18 +193,23 @@ if (window.innerWidth < 991) {
 				pos3 = e.clientX;
 				pos4 = e.clientY;
 				elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-
+		
+				// Save the position to local storage
+				localStorage.setItem("navbarTop", elmnt.style.top);
+		
 				function refreshOnResize() {
 					location.reload();
 				}
-
+		
 				window.addEventListener("resize", refreshOnResize);
 			}
-
+		
 			function closeDragElement() {
 				document.onmouseup = null;
 				document.onmousemove = null;
 			}
+		
+		
 		}
 	}
 }
@@ -245,22 +256,44 @@ if (window.innerWidth < 991) {
 
 	// Navbar movable y-axis
 	let navbarNav = document.querySelector(".navbar-nav");
-
-	navbarNav.addEventListener("touchmove", function (ev) {
+	let initialTouchLocationY = null;
+	let initialTop = null;
+	
+	// Retrieve the saved position from local storage
+	let savedTop = sessionStorage.getItem("navbarTop");
+	if (savedTop) {
+		navbarNav.style.top = savedTop;
+	}
+	
+	navbarNav.addEventListener("touchstart", function (ev) {
 		let touchLocation = ev.targetTouches[0];
-		navbarNav.style.top = touchLocation.clientY - 30 + "px";
+		initialTouchLocationY = touchLocation.clientY;
+		initialTop = parseInt(navbarNav.style.top) || 0;
+	});
+	
+	navbarNav.addEventListener("touchmove", function (ev) {
+		if (initialTouchLocationY === null) {
+			return;
+		}
+		let touchLocation = ev.targetTouches[0];
+		let deltaY = touchLocation.clientY - initialTouchLocationY;
+		navbarNav.style.top = initialTop + deltaY + "px";
 
 		function refreshOnResize() {
 			location.reload();
 		}
-
-		window.addEventListener("resize", refreshOnResize);
+		
 	});
-
+	
 	navbarNav.addEventListener("touchend", function (ev) {
 		let x = parseInt(navbarNav.style.left);
 		let y = parseInt(navbarNav.style.top);
+		initialTouchLocationY = null;
+	
+		// Save the position to local storage
+		sessionStorage.setItem("navbarTop", navbarNav.style.top);
 	});
+
 }
 
 //backtotop button

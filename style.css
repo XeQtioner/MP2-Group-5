@@ -14,6 +14,7 @@ body {
 	justify-content: center;
 	overflow-x: hidden;
 	height: 5000px;
+	overflow-y: scroll;
 }
 
 :root {
@@ -22,6 +23,7 @@ body {
 }
 
 ::-webkit-scrollbar {
+	display: none;
 	width: 15px;
 }
 
