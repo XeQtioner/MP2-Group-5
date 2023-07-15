@@ -72,10 +72,6 @@ body {
 	transition-delay: 0.4s;
 }
 
-.navbar {
-	margin-top: 10px;
-	padding: 0;
-}
 
 .navbar-brand {
 	background-color: white;
@@ -1015,8 +1011,7 @@ body .icons a:hover {
 		color: white;
 	}
 
-	.active {
-		color: #9eca2e;
+	.nav-item .active {
 		border: thin solid black;
 		border-radius: 50px;
 		background-color: rgba(0, 0, 0, 0.3);

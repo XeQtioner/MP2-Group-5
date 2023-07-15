@@ -110,57 +110,77 @@ addVisibilityListener(".section2");
 //navbar-toggler movable via mouse
 
 if (window.innerWidth < 991) {
-	dragElement(document.querySelector(".navbar-toggler"));
+dragElement(document.querySelector(".navbar-toggler"));
 
-	function dragElement(elmnt) {
-		let pos1 = 0,
-			pos2 = 0,
-			pos3 = 0,
-			pos4 = 0;
+function dragElement(elmnt) {
+  let pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
 
-		elmnt.onmousedown = dragMouseDown;
+  elmnt.onmousedown = dragMouseDown;
 
-		function dragMouseDown(e) {
-			e.preventDefault();
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			document.onmouseup = closeDragElement;
-			document.onmousemove = elementDrag;
-		}
+  function dragMouseDown(e) {
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
 
-		function elementDrag(e) {
-			e = e || window.event;
-			e.preventDefault();
-			pos1 = pos3 - e.clientX;
-			pos2 = pos4 - e.clientY;
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-			elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-			savePosition(elmnt);
-		}
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
 
-		function closeDragElement() {
-			document.onmouseup = null;
-			document.onmousemove = null;
-		}
+    // Calculate the boundaries based on window size
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+    let togglerWidth = elmnt.offsetWidth;
+    let togglerHeight = elmnt.offsetHeight;
+    let maxLeft = windowWidth - togglerWidth;
+    let maxTop = windowHeight - togglerHeight;
 
-		function savePosition(elmnt) {
-			let position = {
-				top: elmnt.offsetTop,
-				left: elmnt.offsetLeft,
-			};
-			sessionStorage.setItem("navbarTogglerPosition", JSON.stringify(position));
-		}
+    // Restrict the horizontal movement within the window boundaries
+    let newLeft = elmnt.offsetLeft - pos1;
+    newLeft = Math.max(0, Math.min(newLeft, maxLeft));
 
-		// Check if position data is stored in sessionStorage
-		let storedPosition = sessionStorage.getItem("navbarTogglerPosition");
-		if (storedPosition) {
-			let position = JSON.parse(storedPosition);
-			elmnt.style.top = position.top + "px";
-			elmnt.style.left = position.left + "px";
-		}
+    // Restrict the vertical movement within the window boundaries
+    let newTop = elmnt.offsetTop - pos2;
+    newTop = Math.max(0, Math.min(newTop, maxTop));
 
+    elmnt.style.left = newLeft + "px";
+    elmnt.style.top = newTop + "px";
+
+    savePosition(elmnt);
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+
+  function savePosition(elmnt) {
+    let position = {
+      top: elmnt.offsetTop,
+      left: elmnt.offsetLeft,
+    };
+    sessionStorage.setItem("navbarTogglerPosition", JSON.stringify(position));
+  }
+
+  // Check if position data is stored in sessionStorage
+  let storedPosition = sessionStorage.getItem("navbarTogglerPosition");
+  if (storedPosition) {
+    let position = JSON.parse(storedPosition);
+    elmnt.style.top = position.top + "px";
+    elmnt.style.left = position.left + "px";
+  }
+
+
+		//navbar draggable on y-axis via mouse
 		dragElement(document.querySelector(".navbar-nav"));
 
 		function dragElement(elmnt) {
@@ -168,15 +188,9 @@ if (window.innerWidth < 991) {
 				pos2 = 0,
 				pos3 = 0,
 				pos4 = 0;
-		
-			// Retrieve the saved position from local storage
-			let savedTop = localStorage.getItem("navbarTop");
-			if (savedTop) {
-				elmnt.style.top = savedTop;
-			}
-		
+
 			elmnt.onmousedown = dragMouseDown;
-		
+
 			function dragMouseDown(e) {
 				e.preventDefault();
 				pos3 = e.clientX;
@@ -184,7 +198,7 @@ if (window.innerWidth < 991) {
 				document.onmouseup = closeDragElement;
 				document.onmousemove = elementDrag;
 			}
-		
+
 			function elementDrag(e) {
 				e = e || window.event;
 				e.preventDefault();
@@ -192,24 +206,29 @@ if (window.innerWidth < 991) {
 				pos2 = pos4 - e.clientY;
 				pos3 = e.clientX;
 				pos4 = e.clientY;
-				elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-		
-				// Save the position to local storage
-				localStorage.setItem("navbarTop", elmnt.style.top);
-		
+
+				// Calculate the boundaries based on window size
+				let windowHeight = window.innerHeight;
+				let navbarHeight = elmnt.offsetHeight;
+				let maxTop = windowHeight - navbarHeight;
+
+				// Restrict the vertical movement within the window boundaries
+				let newTop = elmnt.offsetTop - pos2;
+				newTop = Math.max(0, Math.min(newTop, maxTop));
+
+				elmnt.style.top = newTop + "px";
+
 				function refreshOnResize() {
 					location.reload();
 				}
-		
+
 				window.addEventListener("resize", refreshOnResize);
 			}
-		
+
 			function closeDragElement() {
 				document.onmouseup = null;
 				document.onmousemove = null;
 			}
-		
-		
 		}
 	}
 }
@@ -219,25 +238,39 @@ if (window.innerWidth < 991) {
 if (window.innerWidth < 991) {
 	window.onload = function () {
 		let navbarToggler = document.querySelector(".navbar-toggler");
-
+	
 		navbarToggler.addEventListener("touchmove", function (ev) {
 			let touchLocation = ev.targetTouches[0];
-			navbarToggler.style.left = touchLocation.clientX - 25 + "px";
-			navbarToggler.style.top = touchLocation.clientY - 36 + "px";
+	
+			// Calculate the boundaries based on window size
+			let windowWidth = window.innerWidth;
+			let windowHeight = window.innerHeight;
+			let togglerWidth = navbarToggler.offsetWidth;
+			let togglerHeight = navbarToggler.offsetHeight;
+			let maxLeft = windowWidth - togglerWidth;
+			let maxTop = windowHeight - togglerHeight;
+	
+			// Calculate the new left and top positions, restricting them within the window boundaries
+			let newLeft = Math.max(0, Math.min(touchLocation.clientX - 25, maxLeft));
+			let newTop = Math.max(0, Math.min(touchLocation.clientY - 36, maxTop));
+	
+			navbarToggler.style.left = newLeft + "px";
+			navbarToggler.style.top = newTop + "px";
 			navbarToggler.style.opacity = "1";
+	
 			savePosition(navbarToggler);
 		});
-
+	
 		navbarToggler.addEventListener("touchend", function (ev) {
 			let x = parseInt(navbarToggler.style.left);
 			let y = parseInt(navbarToggler.style.top);
 			navbarToggler.style.opacity = ".7";
 		});
-
+	
 		navbarToggler.addEventListener("touchstart", function (ev) {
 			navbarToggler.style.opacity = "1";
 		});
-
+	
 		function savePosition(element) {
 			let position = {
 				top: parseInt(element.style.top),
@@ -245,7 +278,7 @@ if (window.innerWidth < 991) {
 			};
 			sessionStorage.setItem("navbarTogglerPosition", JSON.stringify(position));
 		}
-
+	
 		let storedTogglerPosition = sessionStorage.getItem("navbarTogglerPosition");
 		if (storedTogglerPosition) {
 			let position = JSON.parse(storedTogglerPosition);
@@ -253,8 +286,9 @@ if (window.innerWidth < 991) {
 			navbarToggler.style.left = position.left + "px";
 		}
 	};
+	
 
-	// Navbar movable y-axis
+	// Navbar movable y-axis via touch
 	let navbarNav = document.querySelector(".navbar-nav");
 	let initialTouchLocationY = null;
 	let initialTop = null;
@@ -277,12 +311,22 @@ if (window.innerWidth < 991) {
 		}
 		let touchLocation = ev.targetTouches[0];
 		let deltaY = touchLocation.clientY - initialTouchLocationY;
-		navbarNav.style.top = initialTop + deltaY + "px";
 
 		function refreshOnResize() {
 			location.reload();
 		}
-		
+
+		window.addEventListener("resize", refreshOnResize);
+	
+		// Calculate the boundaries based on window size
+		let windowHeight = window.innerHeight;
+		let navbarHeight = navbarNav.offsetHeight;
+		let maxTop = windowHeight - navbarHeight;
+	
+		// Restrict the vertical movement within the window boundaries
+		let newTop = initialTop + deltaY;
+		newTop = Math.max(0, Math.min(newTop, maxTop));
+		navbarNav.style.top = newTop + "px";
 	});
 	
 	navbarNav.addEventListener("touchend", function (ev) {
@@ -293,8 +337,7 @@ if (window.innerWidth < 991) {
 		// Save the position to local storage
 		sessionStorage.setItem("navbarTop", navbarNav.style.top);
 	});
-
-}
+	}
 
 //backtotop button
 
