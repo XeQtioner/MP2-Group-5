@@ -111,7 +111,7 @@
 								<a class="nav-link" href="#">Contact</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Login</a>
+								<a class="nav-link" href="adminbikes.html">Login</a>
 							</li>
 							<!-- <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -190,9 +190,9 @@ Login
 
 					<div class="bikecontainer">
 						<div id="bikeCardTemplate" class="bike-card-container">
-							<div id="logoBox" class="bikelogo" onclick="updateLogo()">
+							<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
 								<img
-									id="bikelogo"
+									id="bikeLogo"
 									src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
 									alt="bikelogo"
 								/>
@@ -207,7 +207,11 @@ Login
 										alt="bike-Card image"
 									/>
 								</div>
-								<div id="cardBodyEdit" class="bike-card-body" onclick="editCardBody(event)">
+								<div
+									id="cardBodyEdit"
+									class="bike-card-body"
+									onclick="editCardBody(event)"
+								>
 									<h4 id="bikeCardTitle" class="bike-card-title">Bike Name</h4>
 									<p id="bikeCardText" class="bike-card-text">Transmission</p>
 									<p id="bikeCardPrice" class="bike-card-price">Amount</p>
@@ -232,21 +236,27 @@ Login
 						<div class="bike-card-container">
 							<div class="bikelogo">
 								<img
+									id="bikelogoInput"
 									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
 									alt="bikelogo"
 								/>
 							</div>
 							<div class="card bike-card">
 								<img
+									id="bikeCardImgInput"
 									class="bike-card-img-top"
 									src="./images/bmw2.png"
 									alt="bike-Card image"
 								/>
 
 								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
+									<h4 id="bikeCardTitleInput" class="bike-card-title">
+										BMW S1000 RR 2023
+									</h4>
+									<p id="bikeCardTextInput" class="bike-card-text">
+										6-Speed Manual
+									</p>
+									<p id="bikeCardPriceInput" class="bike-card-price">₱12,000</p>
 									<div class="bike-card-link">
 										<a href="#" class="btn btn-dark">Book Now</a>
 										<a href="#" class="btn btn-dark">See Details</a>

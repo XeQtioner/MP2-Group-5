@@ -1,33 +1,99 @@
-<div id="logoBox" class="bikelogo" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img
-    id="bikelogo"
-    src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
-    alt="bikelogo"
-    draggable="true"
-    ondragstart="drag(event)"
-  />
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #dropBox {
+        width: 300px;
+        height: 300px;
+        border: 2px dashed #ccc;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+      
+      #dropBox img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dropBox" onclick="promptForImage()">
+      <p>Click here or drag and drop an image file</p>
+    </div>
 
-<script>
-function allowDrop(event) {
-  event.preventDefault();
-}
+    <script>
+      function promptForImage() {
+        var imageUrl = prompt("Please provide the image URL:");
+        if (imageUrl !== null && imageUrl.trim() !== "") {
+          var img = new Image();
+          img.onload = function() {
+            displayImage(img);
+          };
+          img.onerror = function() {
+            alert("Failed to load image from URL.");
+          };
+          img.src = imageUrl;
+        } else {
+          var fileInput = document.createElement("input");
+          fileInput.type = "file";
+          fileInput.accept = "image/*";
+          fileInput.addEventListener("change", handleFileSelection);
+          fileInput.click();
+        }
+      }
 
-function drag(event) {
-  event.dataTransfer.setData("text/plain", event.target.id);
-}
+      function handleDrop(e) {
+        e.preventDefault();
+        var file = e.dataTransfer.files[0];
+        if (file.type.match("image.*")) {
+          readAndDisplayImage(file);
+        } else {
+          alert("Please drop an image file.");
+        }
+      }
 
-function drop(event) {
-  event.preventDefault();
-  var data = event.dataTransfer.getData("text/plain");
-  var draggedElement = document.getElementById(data);
-  var dropZone = event.target;
+      function handleDragOver(e) {
+        e.preventDefault();
+      }
 
-  if (dropZone.id === "logoBox") {
-    dropZone.innerHTML = draggedElement.outerHTML;
-    var newImage = dropZone.querySelector("img");
-    newImage.setAttribute("draggable", "true");
-    newImage.setAttribute("ondragstart", "drag(event)");
-  }
-}
-</script>
+      var dropBox = document.getElementById("dropBox");
+      dropBox.addEventListener("drop", handleDrop, false);
+      dropBox.addEventListener("dragover", handleDragOver, false);
+
+      function handleFileSelection(e) {
+        var fileInput = e.target;
+        if (fileInput.files.length > 0) {
+          var file = fileInput.files[0];
+          if (file.type.match("image.*")) {
+            readAndDisplayImage(file);
+          } else {
+            alert("Please select an image file.");
+          }
+        } else {
+          alert("Please select an image file.");
+        }
+      }
+
+      function readAndDisplayImage(file) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+          var dropBox = document.getElementById("dropBox");
+          dropBox.innerHTML = "";
+          var img = new Image();
+          img.onload = function() {
+            displayImage(img);
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function displayImage(img) {
+        var dropBox = document.getElementById("dropBox");
+        dropBox.innerHTML = "";
+        dropBox.appendChild(img);
+      }
+    </script>
+  </body>
+</html>

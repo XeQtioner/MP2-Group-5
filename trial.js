@@ -1,117 +1,148 @@
-//logo uploader
-function updateLogo() {
-  var imageUrl = prompt("Enter the image URL or leave it empty to browse for media:");
-  if (imageUrl) {
-    var imgElement = document.getElementById("bikelogo");
-    imgElement.src = imageUrl;
-  } else {
-    // Browse for media functionality
-    var fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.accept = "image/*";
-
-    fileInput.onchange = function(event) {
-      var file = event.target.files[0];
-      if (file) {
-        var reader = new FileReader();
-        reader.onload = function() {
-          var imgElement = document.getElementById("bikelogo");
-          imgElement.src = reader.result;
-        };
-        reader.readAsDataURL(file);
-      }
+ // Logo uploader
+ function updateLogo() {
+  var logoUrl = prompt("Please provide the logo image URL:");
+  if (logoUrl !== null && logoUrl.trim() !== "") {
+    var img = new Image();
+    img.onload = function() {
+      displayLogo(img);
     };
-
-    fileInput.click();
+    img.onerror = function() {
+      alert("Failed to load logo image from URL.");
+    };
+    img.src = logoUrl;
+  } else {
+    var fileInput1 = document.createElement("input");
+    fileInput1.type = "file";
+    fileInput1.accept = "image/*";
+    fileInput1.addEventListener("change", handleLogoFileSelection);
+    fileInput1.click();
   }
 }
 
-function handleDrop(e) {
-  e.preventDefault();
-  let file1 = e.dataTransfer.files[0];
-  if (file1.type.match("image.*")) {
-    let reader = new FileReader();
-    reader.onload = function (event) {
-      let dropBoxLogo = document.getElementById("logoBox");
-      dropBoxLogo.innerHTML = "";
-      let img = new Image();
-      img.src = event.target.result;
-      dropBoxLogo.appendChild(img);
-    };
-    reader.readAsDataURL(file1); 
-  } else {
-    alert("Please drop an image file.");
-  }
-}
-
-function handleDragOver(e) {
-  e.preventDefault();
-};
-
-let dropBoxLogo = document.getElementById("logoBox");
-dropBoxLogo.addEventListener("drop", handleDrop, false);
-dropBoxLogo.addEventListener("dragover", handleDragOver, false);
-
-
-
-
-
-//image uploader
-
-function updateImage() {
-  var imageUrl = prompt("Enter the image URL or leave it blank to browse for media:");
-  if (imageUrl) {
-    var imgElement = document.getElementById("bikeCardImg");
-    imgElement.src = imageUrl;
-  } else {
-    // Browse for media functionality
-    var fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.accept = "image/*";
-
-    fileInput.onchange = function(event) {
-      var file = event.target.files[0];
-      if (file) {
-        var reader = new FileReader();
-        reader.onload = function() {
-          var imgElement = document.getElementById("bikeCardImg");
-          imgElement.src = reader.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    };
-
-    fileInput.click();
-  }
-}
-
-
-
-function handleDrop2(e) {
+function handleLogoImageDrop(e) {
   e.preventDefault();
   var file = e.dataTransfer.files[0];
   if (file.type.match("image.*")) {
-    var reader = new FileReader();
-    reader.onload = function (event) {
-      var dropBox = document.getElementById("imageBox");
-      dropBox.innerHTML = "";
-      var img = new Image();
-      img.src = event.target.result;
-      dropBox.appendChild(img);
+    readAndDisplayLogo(file);
+  } else {
+    alert("Please drop a logo image file.");
+  }
+}
+
+function handleLogoImageDragOver(e) {
+  e.preventDefault();
+}
+
+var logoBox = document.getElementById("logoBox");
+logoBox.addEventListener("drop", handleLogoImageDrop, false);
+logoBox.addEventListener("dragover", handleLogoImageDragOver, false);
+
+function handleLogoFileSelection(e) {
+  var fileInput = e.target;
+  if (fileInput.files.length > 0) {
+    var file = fileInput.files[0];
+    if (file.type.match("image.*")) {
+      readAndDisplayLogo(file);
+    } else {
+      alert("Please select a logo image file.");
+    }
+  } else {
+    alert("Please select a logo image file.");
+  }
+}
+
+function readAndDisplayLogo(file) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var logoBox = document.getElementById("logoBox");
+    logoBox.innerHTML = "";
+    var img = new Image();
+    img.onload = function() {
+      displayLogo(img);
     };
-    reader.readAsDataURL(file);
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function displayLogo(img) {
+  var logoBox = document.getElementById("logoBox");
+  logoBox.innerHTML = "";
+  logoBox.appendChild(img);
+}
+
+// Image uploader
+function updateImage() {
+  var imageUrl = prompt("Please provide the image URL:");
+  if (imageUrl !== null && imageUrl.trim() !== "") {
+    var img = new Image();
+    img.onload = function() {
+      displayImage(img);
+    };
+    img.onerror = function() {
+      alert("Failed to load image from URL.");
+    };
+    img.src = imageUrl;
+  } else {
+    var fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    fileInput.addEventListener("change", handleImageFileSelection);
+    fileInput.click();
+  }
+}
+
+function handleImageDrop(e) {
+  e.preventDefault();
+  var file = e.dataTransfer.files[0];
+  if (file.type.match("image.*")) {
+    readAndDisplayImage(file);
   } else {
     alert("Please drop an image file.");
   }
 }
 
-function handleDragOver2(e) {
+function handleImageDragOver(e) {
   e.preventDefault();
 }
 
-var dropBox = document.getElementById("imageBox");
-dropBox.addEventListener("drop", handleDrop2, false);
-dropBox.addEventListener("dragover", handleDragOver2, false);
+var imageBox = document.getElementById("imageBox");
+imageBox.addEventListener("drop", handleImageDrop, false);
+imageBox.addEventListener("dragover", handleImageDragOver, false);
+
+function handleImageFileSelection(e) {
+  var fileInput = e.target;
+  if (fileInput.files.length > 0) {
+    var file = fileInput.files[0];
+    if (file.type.match("image.*")) {
+      readAndDisplayImage(file);
+    } else {
+      alert("Please select an image file.");
+    }
+  } else {
+    alert("Please select an image file.");
+  }
+}
+
+function readAndDisplayImage(file) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var imageBox = document.getElementById("imageBox");
+    imageBox.innerHTML = "";
+    var img = new Image();
+    img.onload = function() {
+      displayImage(img);
+    };
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function displayImage(img) {
+  var imageBox = document.getElementById("imageBox");
+  imageBox.innerHTML = "";
+  imageBox.appendChild(img);
+}
 
 
 var originalValues = {}; // Store original values for reset
@@ -145,7 +176,7 @@ function editCardBody(event) {
     }
   });
 
-}
+};
 
 function saveCardValues() {
   // Disable editing mode and remove the border
@@ -166,32 +197,32 @@ function saveCardValues() {
   var template = currentContainer.cloneNode(true);
   newContainer.appendChild(template);
 
-  // Update the button text and remove the IDs
-  var saveButton = newContainer.querySelector("#saveButton");
-  var resetButton = newContainer.querySelector("#resetButton");
-  var cardEdit = newContainer.querySelector("#cardBodyEdit");
+  // Update the button text and remove the IDs onclickfunction
+  let saveButton = newContainer.querySelector("#saveButton");
+  let resetButton = newContainer.querySelector("#resetButton");
+  let cardEdit = newContainer.querySelector("#cardBodyEdit");
+  let logoBox = newContainer.querySelector("#logoBox");
+  let imageBox = newContainer.querySelector("#imageBox");
   saveButton.textContent = "Book Now";
   resetButton.textContent = "See Details";
-  saveButton.removeAttribute("id");
-  resetButton.removeAttribute("id");
+  cardEdit.onclick = null;
   saveButton.onclick = null;
   resetButton.onclick = null;
-  cardEdit.removeAttribute("onclick");
+  logoBox.onclick = null;
+  imageBox.onclick = null;
+  resetCardValues();
 
 
   // Make the text content non-editable in the new container
   var nonEditableElements = newContainer.querySelector(".bike-card-title, .bike-card-text, .bike-card-price")
-
   nonEditableElements.contentEditable = false;
-  nonEditableElements.style.border = "none";
-  location.reload()
 
-
+  //store new card created to sessionStorage
   var cardContainerHTML = newContainer.outerHTML;
   var savedContainers = JSON.parse(sessionStorage.getItem("bikeCardContainers")) || [];
   savedContainers.push(cardContainerHTML);
   sessionStorage.setItem("bikeCardContainers", JSON.stringify(savedContainers));
-    
+
 
   // Insert the new container after the current container
   currentContainer.parentNode.insertBefore(newContainer, currentContainer.nextSibling);
@@ -214,12 +245,24 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-function resetCardValues() {
-  // Reset the values to their original state
-  var editableElements = document.querySelectorAll(".bike-card-title[contentEditable='true'], .bike-card-text[contentEditable='true'], .bike-card-price[contentEditable='true']");
-  for (var i = 0; i < editableElements.length; i++) {
-    var element = editableElements[i];
-    element.innerText = originalValues[element.id];
+	// Function to reset the card values
+	function resetCardValues() {
+    const bikeCardTitle = document.getElementById('bikeCardTitle');
+    const bikeCardText = document.getElementById('bikeCardText');
+    const bikeCardPrice = document.getElementById('bikeCardPrice');
 
-  }
+    // Reset to the original values
+    bikeCardTitle.innerText = 'Bike Name';
+    bikeCardText.innerText = 'Transmission';
+    bikeCardPrice.innerText = 'Amount';
+
+    const logoBox = document.getElementById('logoBox');
+    const logoUrl = 'https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg';
+    const logoHTML = '<img id="bikelogo" src="' + logoUrl + '" alt="bikelogo" />';
+    logoBox.innerHTML = logoHTML;
+    const imageBox = document.getElementById('imageBox');
+    const imageUrl = 'https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png';
+    const imageHTML = '<img id="bikelogo" src="' + imageUrl + '" alt="bikelogo" />';
+    imageBox.innerHTML = imageHTML;
+
 }
