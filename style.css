@@ -740,7 +740,7 @@ body .icons a:hover {
 	backdrop-filter: blur(10px);
 }
 
-.bikelogo {
+.bikelogobox {
 	width: 20%;
 	aspect-ratio: 1/1;
 	border: thin solid gray;
@@ -751,7 +751,7 @@ body .icons a:hover {
 	object-fit: contain;
 }
 
-.bikelogo img {
+.bikelogobox img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -767,10 +767,17 @@ body .icons a:hover {
 	transform: translateY(-60px);
 }
 
-.bike-card-img-top {
+.imageBox {
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 30px;
 	height: 300px;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.imageBox img {
+	width: 100%;
+	height: 100%;
 	object-fit: contain;
 	overflow: hidden;
 }
