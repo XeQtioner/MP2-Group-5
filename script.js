@@ -9,7 +9,7 @@ function toggleVisibility(elementSelector) {
 	}
 
 	let rect = element.getBoundingClientRect();
-	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 	if (rect.top < window.innerHeight && rect.bottom > 0) {
 		element.classList.add("visible");
@@ -64,7 +64,7 @@ function toggleVisibility(elementSelector) {
 	}
 
 	let rect = element.getBoundingClientRect();
-	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 	if (rect.top < window.innerHeight && rect.bottom > 0) {
 		element.classList.add("visible");

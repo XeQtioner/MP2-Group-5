@@ -684,15 +684,64 @@ body .icons a:hover {
 	text-align: left;
 }
 
-.bikeinfo {
+.tabcontent .accordion .btn h6{
+	font-size: 1px;
+}
+
+.tabcontent .accordion button {
+	position: relative;
+	display: flex;
+	font-size: small;
+	color: white;
+	height: 1px;
+	width: 100%;
+	padding-inline:50%;
+	align-self: center;
+	justify-content: center;
+	background-color: transparent;
+	box-shadow:none;
+	text-align: center;
+}
+
+
+.tabcontent .accordion button:not(.collapsed) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	box-shadow: none;
+	
+}
+
+.tabcontent .accordion button:focus {
+	box-shadow: none;
+	border: none;
+}
+
+.tabcontent .accordion-item {
+	box-shadow:none;
 	background-color: rgba(255, 255, 255, 0);
 	backdrop-filter: blur(15px);
-	padding: 5px;
+	padding-bottom: 50px;
+
+	border-radius: 50px;
+
+}
+
+.classinfo {
+	background-color: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(15px);
+	padding: 20px;
 	margin-bottom: 15px;
 	color: #fff;
+	
 }
 
 .bikeclassinfo {
+	background-color: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(15px);
+	padding: 20px;
+	margin-bottom: 15px;
 	color: #fff;
 	text-align: left;
 	position: fixed;
@@ -701,14 +750,11 @@ body .icons a:hover {
 	padding: 10px;
 	top: 70px;
 	right: 10px;
-	background-color: rgba(158, 202, 46, .5);
 	border-radius: 15px;
-	backdrop-filter: blur(10px);
 	border: 1px thin black;
 	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 	animation: enterup 1s;
 	animation-timing-function: ease-in;
-	backdrop-filter: blur(15px);
 }
 
 @keyframes enterup {
@@ -1086,7 +1132,7 @@ body .icons a:hover {
 	}
 
 	.bikeclassinfo {
-		display: none;
+		display: fixed;
 		position: relative;
 		text-align: left;
 		height: 80px;
