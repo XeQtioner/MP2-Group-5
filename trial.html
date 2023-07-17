@@ -9,11 +9,17 @@
         text-align: center;
         padding: 10px;
         cursor: pointer;
+        position: relative; /* Added for positioning */
+        overflow: hidden;
       }
       
       #dropBox img {
         max-width: 100%;
         max-height: 100%;
+        position: absolute; /* Added for positioning */
+        left: 0;
+        top: 0;
+        pointer-events: auto; /* Added to enable dragging */
       }
     </style>
   </head>
@@ -23,6 +29,12 @@
     </div>
 
     <script>
+      var dragStartX;
+      var dragStartY;
+      var dragOffsetX;
+      var dragOffsetY;
+      var isDragging = false;
+      
       function promptForImage() {
         var imageUrl = prompt("Please provide the image URL:");
         if (imageUrl !== null && imageUrl.trim() !== "") {
@@ -93,6 +105,59 @@
         var dropBox = document.getElementById("dropBox");
         dropBox.innerHTML = "";
         dropBox.appendChild(img);
+
+        // Add event listeners for dragging the image
+        img.addEventListener("mousedown", startDragging);
+        img.addEventListener("touchstart", startDragging);
+        img.addEventListener("mouseup", stopDragging);
+        img.addEventListener("touchend", stopDragging);
+        img.addEventListener("mousemove", dragImage);
+        img.addEventListener("touchmove", dragImage);
+      }
+
+      function startDragging(e) {
+        e.preventDefault();
+        isDragging = true;
+
+        if (e.type === "mousedown") {
+          dragStartX = e.clientX;
+          dragStartY = e.clientY;
+        } else if (e.type === "touchstart") {
+          dragStartX = e.touches[0].clientX;
+          dragStartY = e.touches[0].clientY;
+        }
+
+        var dropBox = document.getElementById("dropBox");
+        var img = dropBox.querySelector("img");
+        var imgRect = img.getBoundingClientRect();
+        dragOffsetX = dragStartX - imgRect.left;
+        dragOffsetY = dragStartY - imgRect.top;
+      }
+
+      function stopDragging() {
+        isDragging = false;
+      }
+
+      function dragImage(e) {
+        if (!isDragging) {
+          return;
+        }
+
+        e.preventDefault();
+
+        var dropBox = document.getElementById("dropBox");
+        var img = dropBox.querySelector("img");
+
+        if (e.type === "mousemove") {
+          img.style.left = e.clientX - dragOffsetX + "px";
+          img.style.top = e.clientY - dragOffsetY + "px";
+          dropBox.removeAttribute('onclick');
+        } else if (e.type === "touchmove") {
+          img.style.left = e.touches[0].clientX - dragOffsetX + "px";
+          img.style.top = e.touches[0].clientY - dragOffsetY + "px";
+          dropBox.removeAttribute('onclick');
+
+        }
       }
     </script>
   </body>
