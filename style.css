@@ -710,7 +710,7 @@ body .icons a:hover {
 }
 
 #bikeCardTemplate {
-	display: none;
+	/* display: none; */
 }
 
 .tabcontent .accordion button:not(.collapsed) {
