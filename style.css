@@ -682,6 +682,11 @@ body .icons a:hover {
 	text-align: left;
 }
 
+.accordion-header	{
+	border: none;
+}
+
+
 .tabcontent .accordion .btn h6 {
 	font-size: 1px;
 }
@@ -699,10 +704,13 @@ body .icons a:hover {
 	background-color: transparent;
 	box-shadow: none;
 	text-align: center;
+	border: none;
+
+
 }
 
 #bikeCardTemplate {
-	/* display: none; */
+	display: none;
 }
 
 .tabcontent .accordion button:not(.collapsed) {
@@ -711,6 +719,9 @@ body .icons a:hover {
 	justify-content: center;
 	background-color: transparent;
 	box-shadow: none;
+	border: none;
+
+
 }
 
 .tabcontent .accordion button:focus {
@@ -724,7 +735,10 @@ body .icons a:hover {
 	backdrop-filter: blur(15px);
 	padding-bottom: 50px;
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 30px;
+	border: none;
+	border-top: 1px solid whitesmoke;
+
 }
 
 .classinfo {
