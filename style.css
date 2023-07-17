@@ -684,6 +684,7 @@ body .icons a:hover {
 	text-align: left;
 }
 
+
 .tabcontent .accordion .btn h6{
 	font-size: 1px;
 }
@@ -723,7 +724,7 @@ body .icons a:hover {
 	background-color: rgba(255, 255, 255, 0);
 	backdrop-filter: blur(15px);
 	padding-bottom: 50px;
-
+	width: 100%;
 	border-radius: 50px;
 
 }
@@ -768,6 +769,7 @@ body .icons a:hover {
 
 .bikelist {
 	padding-top: 70px;
+	
 }
 .bikecontainer {
 	display: flex;
@@ -779,7 +781,7 @@ body .icons a:hover {
 .bike-card-container {
 	position: relative;
 	align-self: center;
-	width: 300px;
+	width: min(90%, 300px);
 	flex-wrap: wrap;
 	flex: none;
 	height: 400px;
@@ -1081,7 +1083,7 @@ body .icons a:hover {
 	}
 
 	p {
-		font-size: smaller;
+		font-size: small;
 	}
 
 	h5 {
@@ -1090,7 +1092,7 @@ body .icons a:hover {
 	}
 
 	h3 {
-		font-size: smaller;
+		font-size: small;
 		width: 100%;
 	}
 

@@ -177,206 +177,238 @@ Login
 				</div>
 
 				<div id="Cruiser" class="tabcontent">
-					<div class="bikeclassinfo">
-						<h3>Cruiser</h3>
-						<p>
-							The cruiser, also called a chopper, is designed for leisurely
-							cruising. It has a lower seat height, making it great for city
-							rides, but can also handle longer trips with added luggage. With
-							its low-slung profile and various accessories, it's perfect for
-							quick getaways or enjoyable weekend adventures.
-						</p>
-					</div>
-
-					<div class="bikecontainer">
-						<div id="bikeCardTemplate" class="bike-card-container">
-							<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
-								<img
-									id="bikeLogo"
-									src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-
-							<div id="addBikeCard" class="card bike-card">
-								<div id="imageBox" class="imageBox" onclick="updateImage()">
-									<img
-										id="bikeCardImg"
-										class="bike-card-img-top"
-										src="https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png"
-										alt="bike-Card image"
-									/>
-								</div>
+					<div class="accordion" id="bikeInfoFlush">
+						<div class="accordion-item">
+							<div class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapse"
+									aria-expanded="false"
+									aria-controls="flush-collapse"
+								></button>
 								<div
-									id="cardBodyEdit"
-									class="bike-card-body"
-									onclick="editCardBody(event)"
+									id="flush-collapse"
+									class="accordion-collapse collapse"
+									data-bs-parent="#accordionFlush"
 								>
-									<h4 id="bikeCardTitle" class="bike-card-title">Bike Name</h4>
-									<p id="bikeCardText" class="bike-card-text">Transmission</p>
-									<p id="bikeCardPrice" class="bike-card-price">Amount</p>
-									<div class="bike-card-link">
-										<a
-											id="saveButton"
-											class="btn btn-dark"
-											onclick="saveCardValues()"
-											>Save</a
+									<div class="accordion-body" style="text-align: left">
+										<div class="classinfo">
+											<h3>Cruiser</h3>
+											<p>
+												The cruiser, also called a chopper, is designed for
+												leisurely cruising. It has a lower seat height, making
+												it great for city rides, but can also handle longer
+												trips with added luggage. With its low-slung profile and
+												various accessories, it's perfect for quick getaways or
+												enjoyable weekend adventures.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br />
+
+							<div class="bikecontainer">
+								<div id="bikeCardTemplate" class="bike-card-container">
+									<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
+										<img
+											id="bikeLogo"
+											src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+
+									<div id="addBikeCard" class="card bike-card">
+										<div id="imageBox" class="imageBox" onclick="updateImage()">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div
+											id="cardBodyEdit"
+											class="bike-card-body"
+											onclick="editCardBody(event)"
 										>
-										<a
-											id="resetButton"
-											class="btn btn-dark"
-											onclick="resetCardValues()"
-											>Reset</a
-										>
+											<h4 id="bikeCardTitle" class="bike-card-title">
+												Bike Name
+											</h4>
+											<p id="bikeCardText" class="bike-card-text">
+												Transmission
+											</p>
+											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<div class="bike-card-link">
+												<a
+													id="saveButton"
+													class="btn btn-dark"
+													onclick="saveCardValues()"
+													>Save</a
+												>
+												<a
+													id="resetButton"
+													class="btn btn-dark"
+													onclick="resetCardValues()"
+													>Reset</a
+												>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									id="bikelogoInput"
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										id="bikeCardImg"
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											id="bikelogoInput"
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
 
-								<div class="bike-card-body">
-									<h4 id="bikeCardTitleInput" class="bike-card-title">
-										BMW S1000 RR 2023
-									</h4>
-									<p id="bikeCardTextInput" class="bike-card-text">
-										6-Speed Manual
-									</p>
-									<p id="bikeCardPriceInput" class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+										<div class="bike-card-body">
+											<h4 id="bikeCardTitleInput" class="bike-card-title">
+												BMW S1000 RR 2023
+											</h4>
+											<p id="bikeCardTextInput" class="bike-card-text">
+												6-Speed Manual
+											</p>
+											<p id="bikeCardPriceInput" class="bike-card-price">
+												₱12,000
+											</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									id="bikelogoInput"
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										id="bikeCardImg"
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											id="bikelogoInput"
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
 
-								<div class="bike-card-body">
-									<h4 id="bikeCardTitleInput" class="bike-card-title">
-										BMW S1000 RR 2023
-									</h4>
-									<p id="bikeCardTextInput" class="bike-card-text">
-										6-Speed Manual
-									</p>
-									<p id="bikeCardPriceInput" class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+										<div class="bike-card-body">
+											<h4 id="bikeCardTitleInput" class="bike-card-title">
+												BMW S1000 RR 2023
+											</h4>
+											<p id="bikeCardTextInput" class="bike-card-text">
+												6-Speed Manual
+											</p>
+											<p id="bikeCardPriceInput" class="bike-card-price">
+												₱12,000
+											</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -385,149 +417,222 @@ Login
 				</div>
 
 				<div id="OffRoad" class="tabcontent">
-					<div class="bikeclassinfo">
-						<h3>Off-Road</h3>
-						<p>
-							Off-road motorcycles are designed for exploring uncharted
-							territories. They have taller seat heights and high suspension to
-							handle rough bumps and brush. Typically, they lack lights and turn
-							signals, so they need to be transported to riding spots. These
-							lightweight bikes are perfect for weekend rides on back trails.
-						</p>
-					</div>
-
-					<div class="bikecontainer">
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/ktm2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
-									<p class="bike-card-text">4-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+					<div class="accordion" id="bikeInfoFlush">
+						<div class="accordion-item">
+							<div class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapse"
+									aria-expanded="false"
+									aria-controls="flush-collapse"
+								></button>
+								<div
+									id="flush-collapse"
+									class="accordion-collapse collapse"
+									data-bs-parent="#accordionFlush"
+								>
+									<div class="accordion-body" style="text-align: left">
+										<div class="classinfo">
+											<h3>Off-Road</h3>
+											<p>
+												Off-road motorcycles are designed for exploring
+												uncharted territories. They have taller seat heights and
+												high suspension to handle rough bumps and brush.
+												Typically, they lack lights and turn signals, so they
+												need to be transported to riding spots. These
+												lightweight bikes are perfect for weekend rides on back
+												trails.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+							<br />
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/ktm2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
-									<p class="bike-card-text">4-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+							<div class="bikecontainer">
+								<div id="bikeCardTemplate" class="bike-card-container">
+									<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
+										<img
+											id="bikeLogo"
+											src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+
+									<div id="addBikeCard" class="card bike-card">
+										<div id="imageBox" class="imageBox" onclick="updateImage()">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div
+											id="cardBodyEdit"
+											class="bike-card-body"
+											onclick="editCardBody(event)"
+										>
+											<h4 id="bikeCardTitle" class="bike-card-title">
+												Bike Name
+											</h4>
+											<p id="bikeCardText" class="bike-card-text">
+												Transmission
+											</p>
+											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<div class="bike-card-link">
+												<a
+													id="saveButton"
+													class="btn btn-dark"
+													onclick="saveCardValues()"
+													>Save</a
+												>
+												<a
+													id="resetButton"
+													class="btn btn-dark"
+													onclick="resetCardValues()"
+													>Reset</a
+												>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/ktm2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
-									<p class="bike-card-text">4-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/ktm2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
+											<p class="bike-card-text">4-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/ktm2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
-									<p class="bike-card-text">4-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/ktm2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
+											<p class="bike-card-text">4-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/ktm2.png"
-										alt="bike-Card image"
-									/>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/ktm2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
+											<p class="bike-card-text">4-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
-									<p class="bike-card-text">4-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
 
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/ktm2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
+											<p class="bike-card-text">4-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/ktm2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
+											<p class="bike-card-text">4-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -536,155 +641,227 @@ Login
 				</div>
 
 				<div id="Sports" class="tabcontent">
-					<div class="bikeclassinfo">
-						<h3>Sports</h3>
-						<p>
-							Sports motorcycles are built for speed and agility, prioritizing
-							forward-leaning ergonomics for sharp cornering. One key feature of
-							these bikes is their lightweight construction, often utilizing
-							materials like aluminum for enhanced maneuverability.
-							Additionally, they often have higher seat heights, enabling riders
-							to lean the motorcycle without worrying about scraping foot pegs
-							or fairings.
-						</p>
-					</div>
-
-					<div class="bikecontainer">
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+					<div class="accordion" id="bikeInfoFlush">
+						<div class="accordion-item">
+							<div class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapse"
+									aria-expanded="false"
+									aria-controls="flush-collapse"
+								></button>
+								<div
+									id="flush-collapse"
+									class="accordion-collapse collapse"
+									data-bs-parent="#accordionFlush"
+								>
+									<div class="accordion-body" style="text-align: left">
+										<div class="classinfo">
+											<h3>Sports</h3>
+											<p>
+												Sports motorcycles are built for speed and agility,
+												prioritizing forward-leaning ergonomics for sharp
+												cornering. One key feature of these bikes is their
+												lightweight construction, often utilizing materials like
+												aluminum for enhanced maneuverability. Additionally,
+												they often have higher seat heights, enabling riders to
+												lean the motorcycle without worrying about scraping foot
+												pegs or fairings.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+							<br />
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+							<div class="bikecontainer">
+								<div id="bikeCardTemplate" class="bike-card-container">
+									<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
+										<img
+											id="bikeLogo"
+											src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+
+									<div id="addBikeCard" class="card bike-card">
+										<div id="imageBox" class="imageBox" onclick="updateImage()">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div
+											id="cardBodyEdit"
+											class="bike-card-body"
+											onclick="editCardBody(event)"
+										>
+											<h4 id="bikeCardTitle" class="bike-card-title">
+												Bike Name
+											</h4>
+											<p id="bikeCardText" class="bike-card-text">
+												Transmission
+											</p>
+											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<div class="bike-card-link">
+												<a
+													id="saveButton"
+													class="btn btn-dark"
+													onclick="saveCardValues()"
+													>Save</a
+												>
+												<a
+													id="resetButton"
+													class="btn btn-dark"
+													onclick="resetCardValues()"
+													>Reset</a
+												>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -693,152 +870,223 @@ Login
 				</div>
 
 				<div id="Touring" class="tabcontent">
-					<div class="bikeclassinfo">
-						<h3>Touring</h3>
-						<p>
-							Touring motorcycles are larger and built for long-distance travel,
-							perfect for exploring coastlines. They offer spacious storage,
-							comfortable ergonomics for extended rides, and feature large
-							fairings to protect against wind and weather. With powerful
-							engines, they can maintain highway speeds while carrying extra
-							gear and clothing.
-						</p>
-					</div>
-
-					<div class="bikecontainer">
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+					<div class="accordion" id="bikeInfoFlush">
+						<div class="accordion-item">
+							<div class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapse"
+									aria-expanded="false"
+									aria-controls="flush-collapse"
+								></button>
+								<div
+									id="flush-collapse"
+									class="accordion-collapse collapse"
+									data-bs-parent="#accordionFlush"
+								>
+									<div class="accordion-body" style="text-align: left">
+										<div class="classinfo">
+											<h3>Touring</h3>
+											<p>
+												Touring motorcycles are larger and built for
+												long-distance travel, perfect for exploring coastlines.
+												They offer spacious storage, comfortable ergonomics for
+												extended rides, and feature large fairings to protect
+												against wind and weather. With powerful engines, they
+												can maintain highway speeds while carrying extra gear
+												and clothing.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+							<br />
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+							<div class="bikecontainer">
+								<div id="bikeCardTemplate" class="bike-card-container">
+									<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
+										<img
+											id="bikeLogo"
+											src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+
+									<div id="addBikeCard" class="card bike-card">
+										<div id="imageBox" class="imageBox" onclick="updateImage()">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div
+											id="cardBodyEdit"
+											class="bike-card-body"
+											onclick="editCardBody(event)"
+										>
+											<h4 id="bikeCardTitle" class="bike-card-title">
+												Bike Name
+											</h4>
+											<p id="bikeCardText" class="bike-card-text">
+												Transmission
+											</p>
+											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<div class="bike-card-link">
+												<a
+													id="saveButton"
+													class="btn btn-dark"
+													onclick="saveCardValues()"
+													>Save</a
+												>
+												<a
+													id="resetButton"
+													class="btn btn-dark"
+													onclick="resetCardValues()"
+													>Reset</a
+												>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -847,149 +1095,222 @@ Login
 				</div>
 
 				<div id="Scooter" class="tabcontent">
-					<div class="bikeclassinfo">
-						<h3>Scooters</h3>
-						<p>
-							Scooters may not be considered true motorcycles by some, but they
-							offer practical and stylish transportation similar to larger
-							bikes. They excel in urban areas without high-speed highways,
-							thanks to their lightweight design and easy maneuverability.
-							Scooters are also convenient for longer trips, as their automatic
-							transmissions make traveling more comfortable and hassle-free.
-						</p>
-					</div>
-
-					<div class="bikecontainer">
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+					<div class="accordion" id="bikeInfoFlush">
+						<div class="accordion-item">
+							<div class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapse"
+									aria-expanded="false"
+									aria-controls="flush-collapse"
+								></button>
+								<div
+									id="flush-collapse"
+									class="accordion-collapse collapse"
+									data-bs-parent="#accordionFlush"
+								>
+									<div class="accordion-body" style="text-align: left">
+										<div class="classinfo">
+											<h3>Scooters</h3>
+											<p>
+												Scooters may not be considered true motorcycles by some,
+												but they offer practical and stylish transportation
+												similar to larger bikes. They excel in urban areas
+												without high-speed highways, thanks to their lightweight
+												design and easy maneuverability. Scooters are also
+												convenient for longer trips, as their automatic
+												transmissions make traveling more comfortable and
+												hassle-free.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+							<br />
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+							<div class="bikecontainer">
+								<div id="bikeCardTemplate" class="bike-card-container">
+									<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
+										<img
+											id="bikeLogo"
+											src="https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+
+									<div id="addBikeCard" class="card bike-card">
+										<div id="imageBox" class="imageBox" onclick="updateImage()">
+											<img
+												id="bikeCardImg"
+												class="bike-card-img-top"
+												src="https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div
+											id="cardBodyEdit"
+											class="bike-card-body"
+											onclick="editCardBody(event)"
+										>
+											<h4 id="bikeCardTitle" class="bike-card-title">
+												Bike Name
+											</h4>
+											<p id="bikeCardText" class="bike-card-text">
+												Transmission
+											</p>
+											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<div class="bike-card-link">
+												<a
+													id="saveButton"
+													class="btn btn-dark"
+													onclick="saveCardValues()"
+													>Save</a
+												>
+												<a
+													id="resetButton"
+													class="btn btn-dark"
+													onclick="resetCardValues()"
+													>Reset</a
+												>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
-								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="bike-card-container">
-							<div class="bikelogobox">
-								<img
-									src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-									alt="bikelogo"
-								/>
-							</div>
-							<div class="card bike-card">
-								<div class="imageBox">
-									<img
-										class="bike-card-img-top"
-										src="./images/bmw2.png"
-										alt="bike-Card image"
-									/>
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="bike-card-body">
-									<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-									<p class="bike-card-text">6-Speed Manual</p>
-									<p class="bike-card-price">₱12,000</p>
-									<div class="bike-card-link">
-										<a href="#" class="btn btn-dark">Book Now</a>
-										<a href="#" class="btn btn-dark">See Details</a>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<a href="#" class="btn btn-dark">Book Now</a>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
