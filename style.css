@@ -72,7 +72,6 @@ body {
 	transition-delay: 0.4s;
 }
 
-
 .navbar-brand {
 	background-color: white;
 	margin-top: 0;
@@ -167,7 +166,6 @@ body {
 	opacity: 0.6;
 	z-index: 0;
 }
-
 
 .modelbike:hover img {
 	scale: 103%;
@@ -684,8 +682,7 @@ body .icons a:hover {
 	text-align: left;
 }
 
-
-.tabcontent .accordion .btn h6{
+.tabcontent .accordion .btn h6 {
 	font-size: 1px;
 }
 
@@ -696,14 +693,17 @@ body .icons a:hover {
 	color: white;
 	height: 1px;
 	width: 100%;
-	padding-inline:50%;
+	padding-inline: 50%;
 	align-self: center;
 	justify-content: center;
 	background-color: transparent;
-	box-shadow:none;
+	box-shadow: none;
 	text-align: center;
 }
 
+#bikeCardTemplate {
+	/* display: none; */
+}
 
 .tabcontent .accordion button:not(.collapsed) {
 	display: flex;
@@ -711,7 +711,6 @@ body .icons a:hover {
 	justify-content: center;
 	background-color: transparent;
 	box-shadow: none;
-	
 }
 
 .tabcontent .accordion button:focus {
@@ -720,13 +719,12 @@ body .icons a:hover {
 }
 
 .tabcontent .accordion-item {
-	box-shadow:none;
+	box-shadow: none;
 	background-color: rgba(255, 255, 255, 0);
 	backdrop-filter: blur(15px);
 	padding-bottom: 50px;
 	width: 100%;
-	border-radius: 50px;
-
+	border-radius: 10px;
 }
 
 .classinfo {
@@ -735,7 +733,6 @@ body .icons a:hover {
 	padding: 20px;
 	margin-bottom: 15px;
 	color: #fff;
-	
 }
 
 .bikeclassinfo {
@@ -769,7 +766,6 @@ body .icons a:hover {
 
 .bikelist {
 	padding-top: 70px;
-	
 }
 .bikecontainer {
 	display: flex;
@@ -1083,7 +1079,7 @@ body .icons a:hover {
 	}
 
 	p {
-		font-size: small;
+		font-size: medium;
 	}
 
 	h5 {
@@ -1092,7 +1088,7 @@ body .icons a:hover {
 	}
 
 	h3 {
-		font-size: small;
+		font-size: medium;
 		width: 100%;
 	}
 
@@ -1107,11 +1103,11 @@ body .icons a:hover {
 	.iconbox {
 		margin: 0px;
 		width: 80%;
-		clip-path: circle();
 		background-color: #9eca2e;
 		padding: 0;
 		height: 80%;
 	}
+
 
 	.section1 img {
 		height: 50%;
@@ -1147,11 +1143,5 @@ body .icons a:hover {
 		box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 		animation: enterup 1s;
 		animation-timing-function: ease-in;
-	}
-}
-
-@media screen and (max-width: 640px) {
-	.featuredBikecontainer {
-		display: block;
 	}
 }
