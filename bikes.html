@@ -221,7 +221,7 @@ Login
 									</div>
 
 									<div id="addBikeCard" class="card bike-card">
-										<div id="imageBox" class="imageBox" onclick="updateImage()">
+										<div id="imageBox" class="imageBox"  style="pointer-events: auto;" onclick="updateImage()">
 											<img
 												id="bikeCardImg"
 												class="bike-card-img-top"
@@ -254,6 +254,18 @@ Login
 													onclick="resetCardValues()"
 													>Reset</a
 												>
+												
+												<a
+												id="zoomOutBtn"
+												class="btn btn-dark"onclick="zoomOut()"
+												>-</a>
+												
+												<a
+													id="zoomInBtn"
+													class="btn btn-dark"onclick="zoomIn()"
+													>+</a>
+												
+
 											</div>
 										</div>
 									</div>

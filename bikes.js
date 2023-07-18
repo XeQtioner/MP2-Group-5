@@ -124,6 +124,30 @@ function handleImageFileSelection(e) {
 	}
 }
 
+function zoomIn() {
+	var dropBox = document.getElementById("imageBox");
+	var img = dropBox.querySelector("img");
+	var aspectRatio = img.naturalWidth / img.naturalHeight;
+	var currWidth = img.clientWidth;
+	var newWidth = currWidth + 2;
+	var newHeight = newWidth / aspectRatio;
+	img.style.width = newWidth + "px";
+	img.style.height = newHeight + "px";
+}
+
+function zoomOut() {
+	var dropBox = document.getElementById("imageBox");
+	var img = dropBox.querySelector("img");
+	var aspectRatio = img.naturalWidth / img.naturalHeight;
+	var currWidth = img.clientWidth;
+	var newWidth = currWidth - 2;
+	var newHeight = newWidth / aspectRatio;
+	img.style.width = newWidth + "px";
+	img.style.height = newHeight + "px";
+}
+
+
+
 function readAndDisplayImage(file) {
 	var reader = new FileReader();
 	reader.onload = function (event) {
@@ -137,6 +161,7 @@ function readAndDisplayImage(file) {
 	};
 	reader.readAsDataURL(file);
 }
+
 
 function displayImage(img) {
 	var imageBox = document.getElementById("imageBox");
@@ -203,6 +228,8 @@ function saveCardValues() {
 	let cardEdit = newContainer.querySelector("#cardBodyEdit");
 	let logoBox = newContainer.querySelector("#logoBox");
 	let imageBox = newContainer.querySelector("#imageBox");
+	let zoomOutBtn = newContainer.querySelector("#zoomOutBtn");
+	let zoomInBtn = newContainer.querySelector("#zoomInBtn");
 	saveButton.textContent = "Book Now";
 	resetButton.textContent = "See Details";
 	cardEdit.onclick = null;
@@ -210,6 +237,8 @@ function saveCardValues() {
 	resetButton.onclick = null;
 	logoBox.onclick = null;
 	imageBox.onclick = null;
+	zoomOutBtn.style.display = 'none';
+	zoomInBtn.style.display = 'none';
 	resetCardValues();
 
 	// Make the text content non-editable in the new container
