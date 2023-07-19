@@ -73,8 +73,15 @@ body::after {
 	/* border: thin solid white; */
 }
 
+/* .tiremark	{
+	position: fixed;
+	width: 50px;
+	top: -100px;
+	right: -10px;
+	transform: rotate(-45deg);
+} */
+
 #fullscreen-modal {
-	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -94,7 +101,7 @@ body::after {
 .fromright {
 	opacity: 0.9;
 	transform: translateX(100%);
-	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out,transform 0.1s ease-in-out;
 	transition-delay: 0.4s;
 }
 
@@ -173,7 +180,6 @@ body::after {
 	margin-inline: auto;
 	height: 100vh;
 	scroll-snap-align: start;
-	scroll-margin-top: 50px;
 }
 
 .heropath {
@@ -323,9 +329,8 @@ body .icons a:hover {
 	position: relative;
 	width: 100%;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
-	height: calc(100vh - 40px);
+	height: 104vh;;
 	scroll-snap-align: start;
-	scroll-margin-top: 50px;
 }
 
 .section1 .container {
@@ -375,13 +380,13 @@ body .icons a:hover {
 
 .section2 {
 	padding-top: 20px;
-	overflow: hidden;
+	overflow-x: hidden;
 	--card-transition-duration: 800ms;
 	--card-transition-easing: ease;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
-	height: calc(100vh - 40px);
+	height: 100vh;
 	scroll-snap-align: start;
-	scroll-margin-top: 50px;
+	transform: translate3d(0, 0, 0);
 
 }
 
@@ -829,7 +834,7 @@ body .icons a:hover {
 	color: #fff;
 	text-align: left;
 	position: fixed;
-	height: calc(100vh - 80px);
+	height: 108vh;;
 	width: 15vw;
 	padding: 10px;
 	top: 70px;
@@ -923,22 +928,21 @@ body .icons a:hover {
 }
 
 .section3 {
-	height: calc(100vh - 40px);
+	height: 104vh;;
 	scroll-snap-align: start;
-	scroll-margin-top: 50px;
 	padding-top: 20px;
 	overflow: hidden;
 }
 
 .section4 {
-	height: calc(100vh - 40px);
+	height: 104vh;;
 	scroll-snap-align: start;
-	scroll-margin-top: 50px;
 	padding-top: 20px;
 	overflow: hidden;
 }
 
 .section5 {
+	overflow-x: hidden;
 	padding-top: 20px;
 	display: flexbox;
 	align-items: center;
@@ -946,9 +950,8 @@ body .icons a:hover {
 	width: min(90%, 800px);
 	margin-inline: auto;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
-	height: calc(100vh - 40px);
+	height: 104vh;;
 	scroll-snap-align: start;
-	scroll-margin-top: 50px;
 
 }
 
@@ -1078,6 +1081,10 @@ body .icons a:hover {
 
 @media screen and (max-width: 991px) {
 
+.scrollmargin	{
+	scroll-margin-top: 50px;
+}
+
 	html{
 		scroll-snap-type: normal;
 	}
@@ -1090,7 +1097,7 @@ body .icons a:hover {
 
 	body	{
 		overflow-y: visible;
-
+		overflow-x: hidden;
 	}
 
 	.icons {
