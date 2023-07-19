@@ -2,24 +2,6 @@
 <html>
   <head>
     <style>
-
-#fullscreen-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: 9999;
-    }
-    
-    #fullscreen-modal p {
-      color: #fff;
-      text-align: center;
-      margin-top: 20%;
-      font-size: 24px;
-    }
       #dropBox {
         width: 300px;
         height: 300px;
@@ -44,41 +26,11 @@
     </style>
   </head>
   <body>
-
-    <div id="fullscreen-modal">
-      <p>This website works best in fullscreen mode. Click below to enter fullscreen.</p>
-      <button onclick="enterFullscreen()">Go Fullscreen</button>
-    </div>
-
     <div id="dropBox" onclick="promptForImage()" style="pointer-events: auto;">
       <p>Click here or drag and drop an image file</p>
     </div>
 
     <script>
-// Function to enter fullscreen mode
-function enterFullscreen() {
-  var elem = document.documentElement;
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) {
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) {
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    elem.msRequestFullscreen();
-  }
-
-  var fullscreenModal = document.getElementById('fullscreen-modal');
-  fullscreenModal.style.display = 'none';
-}
-
-// Show the fullscreen modal on page load
-window.addEventListener('load', function() {
-  var fullscreenModal = document.getElementById('fullscreen-modal');
-  fullscreenModal.style.display = 'block';
-});
-
-    
       var dragStartX;
       var dragStartY;
       var dragOffsetX;
