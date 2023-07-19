@@ -1,3 +1,27 @@
+// Function to enter fullscreen mode
+function enterFullscreen() {
+  var elem = document.documentElement;
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+  }
+
+  var fullscreenModal = document.getElementById('fullscreen-modal');
+  fullscreenModal.style.display = 'none';
+}
+
+// Show the fullscreen modal on page load
+window.addEventListener('load', function() {
+  var fullscreenModal = document.getElementById('fullscreen-modal');
+  fullscreenModal.style.display = 'block';
+});
+
+
 //animation-in left or right
 
 function toggleVisibility(elementSelector) {
@@ -675,3 +699,4 @@ setupTabContent(Touring);
 
 let tabContent5 = document.getElementById("Scooter");
 setupTabContent(Scooter);
+

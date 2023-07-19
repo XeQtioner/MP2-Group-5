@@ -276,3 +276,19 @@ function resetCardValues() {
 		'<img id="bikelogo" src="' + imageUrl + '" alt="bikelogo" />';
 	imageBox.innerHTML = imageHTML;
 }
+
+function enterFullscreen(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) { // Firefox
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+    element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) { // Internet Explorer/Edge
+    element.msRequestFullscreen();
+  }
+}
+
+// Example usage
+var myElement = document.getElementById("terms");
+enterFullscreen(myElement);
