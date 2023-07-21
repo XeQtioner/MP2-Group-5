@@ -1,25 +1,37 @@
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+
+
 // Function to enter fullscreen mode
 function enterFullscreen() {
-	var elem = document.documentElement;
-	if (elem.requestFullscreen) {
-		elem.requestFullscreen();
-	} else if (elem.mozRequestFullScreen) {
-		elem.mozRequestFullScreen();
-	} else if (elem.webkitRequestFullscreen) {
-		elem.webkitRequestFullscreen();
-	} else if (elem.msRequestFullscreen) {
-		elem.msRequestFullscreen();
-	}
+	// var elem = document.documentElement;
+	// if (elem.requestFullscreen) {
+	// 	elem.requestFullscreen();
+	// } else if (elem.mozRequestFullScreen) {
+	// 	elem.mozRequestFullScreen();
+	// } else if (elem.webkitRequestFullscreen) {
+	// 	elem.webkitRequestFullscreen();
+	// } else if (elem.msRequestFullscreen) {
+	// 	elem.msRequestFullscreen();
+	// }
 
 	var fullscreenModal = document.getElementById("fullscreen-modal");
 	fullscreenModal.style.display = "none";
 }
 
 // Show the fullscreen modal on page load
+var fullscreenModal = document.getElementById("fullscreen-modal");
 window.addEventListener("load", function () {
-	var fullscreenModal = document.getElementById("fullscreen-modal");
+	if (window.innerWidth > 991) {
+
 	fullscreenModal.style.display = "block";
+} else	{
+		fullscreenModal.style.display = "none";
+
+	}
 });
+
 
 //animation-in left or right
 
@@ -73,7 +85,7 @@ function addVisibilityListener(elementSelector) {
 	});
 }
 
-addVisibilityListener(".section1");
+addVisibilityListener(".section1a");
 addVisibilityListener(".section5");
 
 //animation-in scale or opacity

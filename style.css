@@ -6,10 +6,9 @@
 	box-sizing: border-box;
 }
 
-html{
+html {
 	scroll-snap-type: y mandatory;
 }
-
 
 body {
 	background-image: url(./images/mapbg.png);
@@ -25,35 +24,43 @@ body {
 	overflow-x: hidden;
 	color: whitesmoke;
 	overflow-y: scroll;
-  height: 100vh;
+	height: 100vh;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(158, 202, 46, 1), rgba(0, 0, 0, .5));
-  opacity: 1;
-  z-index: -1;
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		to top,
+		rgba(158, 202, 46, 1),
+		rgba(0, 0, 0, 0.5)
+	);
+	opacity: 1;
+	z-index: -1;
 }
 
 body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .99), rgba(0, 0, 0, .90), rgba(0, 0, 0, .1));
-  opacity: 1;
-  z-index: -1;
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1),
+		rgba(0, 0, 0, 0.95),
+		rgba(0, 0, 0, 0.9),
+		rgba(0, 0, 0, 0.1)
+	);
+	opacity: 1;
+	z-index: -1;
 	text-shadow: #000;
 }
-
-
 
 ::-webkit-scrollbar {
 	width: 3px;
@@ -78,6 +85,7 @@ body::after {
 } */
 
 #fullscreen-modal {
+	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -85,19 +93,41 @@ body::after {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 9999;
+	transition: all 4s ease-out;
 }
 
-#fullscreen-modal p {
-	color: #fff;
-	text-align: center;
-	margin-top: 20%;
-	font-size: 24px;
+.entersite {
+	width: 200px;
+	height: 50px;
+	background-color: #9eca2e;
+	color: black;
+	font-size: 20px;
+	font-weight: 700;
+	position: absolute;
+	bottom: 10%;
+	right: 10%;
+	border-radius: 50px;
+	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px, #fff 2px 3px 10px;
+	z-index: 2;
+}
+
+.entersite:hover {
+	scale: 1.02;
+	background-color: black;
+	font-weight: 600;
+	color: #9eca2e;
+	border: 1px solid #9eca2e;
+	box-shadow: #333 3px 3px 4px, #333 3px 3px 2px, #fff 2px 3px 10px;
+}
+
+.formobile {
+	display: none;
 }
 
 .fromright {
 	opacity: 0.9;
 	transform: translateX(100%);
-	transition: opacity 0.1s ease-in-out,transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 	transition-delay: 0.4s;
 }
 
@@ -169,6 +199,46 @@ body::after {
 	animation: fadeIn 2s;
 }
 
+.toggler-container {
+	cursor: pointer;
+	animation: fadeIn 2s;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 30px;
+	height: 2px;
+	background-color: #333;
+	margin: 5px 0;
+	transition: 0.4s;
+}
+
+.bar2 {
+	width: 20px;
+	align-self: center;
+	height: 2px;
+	background-color: #333;
+	margin: 7px 0;
+	transition: 0.4s;
+}
+
+.change .bar1 {
+	transform: translate(-1px, 10px) rotate(-45deg);
+	width: 20px;
+	margin: 0;
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	transform: translate(-0px, -7.5px) rotate(45deg);
+	width: 20px;
+	margin: 0;
+}
+
 .herosection {
 	width: min(90%, 800px);
 	height: 100vh;
@@ -185,9 +255,9 @@ body::after {
 	margin-inline: auto;
 	object-fit: cover;
 	-webkit-mask-image: url(./images/helmetcut.png);
-  mask-image: url(./images/helmetcut.png);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+	mask-image: url(./images/helmetcut.png);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
 	-webkit-mask-size: 100% 100%;
 	mask-size: 100% 100%;
 }
@@ -199,7 +269,6 @@ body::after {
 	z-index: 0;
 }
 
-
 .visor {
 	width: 100%;
 	height: 100%;
@@ -210,7 +279,6 @@ body::after {
 	z-index: 1;
 }
 
-
 .brandtitle img {
 	width: 80%;
 	position: absolute;
@@ -220,19 +288,33 @@ body::after {
 }
 
 .image-with-shadow {
-	filter: drop-shadow(0px 0px 0px white);
+	filter: drop-shadow(0px 0px 15px white);
+}
+
+.image-with-shadow2 {
+	filter: box-shadow(0px 0px 0px white);
 }
 
 .herosection h1 {
 	position: absolute;
 	text-align: center;
-	top: 50%;
+	top: 55%;
 	width: 50%;
 	left: 25%;
 	color: white;
 	z-index: 100;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+}
 
+.herowelcome h1 {
+	position: absolute;
+	text-align: center;
+	top: 15%;
+	width: 50%;
+	left: 25%;
+	color: white;
+	z-index: 100;
+	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 }
 
 /* social icons */
@@ -242,11 +324,13 @@ body::after {
 	bottom: 10%;
 	left: 1%;
 	z-index: 2;
-	background-color: #9eca2e;
+	/* background-image: url(./images/biketiremark.png);
+	background-size: 100%;
+	background-color: rgba(0, 0, 0, 0.259); */
 	border-radius: 50px;
 	padding-top: 14px;
 	opacity: 1;
-  transition: opacity 1s ease;
+	transition: opacity 1s ease;
 }
 
 .icons li {
@@ -264,7 +348,8 @@ body::after {
 .icons a {
 	list-style-type: none;
 	padding: 10px;
-	color: rgba(0, 0, 0, 0.9);
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 }
 
 body .icons a:hover {
@@ -282,7 +367,7 @@ body .icons a:hover {
 	width: 250px;
 	position: absolute;
 	bottom: 0;
-	right: calc((100% - 250px) /2);
+	right: calc((100% - 250px) / 2);
 	z-index: 1;
 	animation: intro 1.5s;
 }
@@ -295,7 +380,7 @@ body .icons a:hover {
 	}
 
 	100% {
-		left: calc((100% - 250px) /2);
+		left: calc((100% - 250px) / 2);
 	}
 }
 
@@ -309,7 +394,8 @@ body .icons a:hover {
 	overflow-x: hidden;
 	padding: 20px 0px;
 	position: relative;
-	width: 100%;
+	width: min(90%, 1000px);
+	margin-inline: auto;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
 	scroll-snap-align: start;
 }
@@ -339,7 +425,7 @@ body .icons a:hover {
 	width: 150px;
 	border-radius: 75px;
 	justify-content: center;
-	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px, #fff 2px 3px 10px;
 }
 
 .iconbox:hover {
@@ -352,6 +438,16 @@ body .icons a:hover {
 	height: 55%;
 }
 
+.section1b {
+	font-size: max(0.9rem);
+	overflow-x: hidden;
+	text-align: justify;
+	margin-top: 50px;
+	padding: 20px;
+	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+}
 
 .section2 {
 	--card-width: 200px;
@@ -365,7 +461,6 @@ body .icons a:hover {
 	scroll-snap-align: start;
 	transform: translate3d(0, 0, 0);
 	overflow-y: hidden;
-
 }
 
 .cardList button {
@@ -714,7 +809,6 @@ body .icons a:hover {
 	font-size: 17px;
 	color: gray;
 	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
-
 }
 
 .tab button:hover {
@@ -790,29 +884,29 @@ body .icons a:hover {
 
 .tabcontent .accordion-item {
 	box-shadow: none;
-	background-color: rgba(255, 255, 255, 0);
+	background-color: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(15px);
 	padding-bottom: 50px;
 	border-radius: 50px;
 }
 
 .classinfo {
-	background-color: rgba(255, 255, 255, 0);
-	backdrop-filter: blur(15px);
+	/* background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px); */
 	padding: 20px;
 	margin-bottom: 15px;
 	color: #fff;
 }
 
 .bikeclassinfo {
-	background-color: rgba(255, 255, 255, 0);
+	background-color: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(15px);
 	padding: 20px;
 	margin-bottom: 15px;
 	color: #fff;
 	text-align: left;
 	position: fixed;
-	height: 108vh;;
+	height: 108vh;
 	width: 15vw;
 	padding: 10px;
 	top: 70px;
@@ -1057,13 +1151,15 @@ body .icons a:hover {
 }
 
 @media screen and (max-width: 991px) {
+	.formobile {
+		display: block;
+	}
 
+	.scrollmargin {
+		scroll-margin-top: 50px;
+	}
 
-.scrollmargin	{
-	scroll-margin-top: 50px;
-}
-
-	html{
+	html {
 		scroll-snap-type: normal;
 	}
 
@@ -1073,7 +1169,7 @@ body .icons a:hover {
 		bottom: 65px;
 	}
 
-	body	{
+	body {
 		overflow-y: visible;
 		overflow-x: hidden;
 	}
@@ -1138,14 +1234,16 @@ body .icons a:hover {
 	p {
 		font-size: smaller;
 		transition: all 1s ease-in-out;
+	}
 
+	.section5 h2 {
+		font-size: x-small;
 	}
 
 	h5 {
 		font-size: x-small;
 		width: 100%;
 		transition: all 1s ease-in-out;
-
 	}
 
 	.section1a .card {
@@ -1160,10 +1258,10 @@ body .icons a:hover {
 	.iconbox {
 		margin: 0px;
 		width: 80%;
-		clip-path: circle();
 		background-color: #9eca2e;
 		padding: 0;
 		height: 80%;
+		box-shadow: #000 3px 3px 4px, #000 3px 3px 2px, #fff 2px 3px 5px;
 	}
 
 	.section1 img {
@@ -1202,4 +1300,3 @@ body .icons a:hover {
 		animation-timing-function: ease-in;
 	}
 }
-

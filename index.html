@@ -30,14 +30,40 @@
 	</head>
 
 	<body>
-		<!-- <img class="tiremark" src="./images/biketiremark.png" alt="tiremark"> -->
+		<div id="fullscreen-modal">
+			<center>
+				<div class="herosection">
+					<div class="heropath">
+						<video src="./images/hero.mp4" muted loop autoplay></video><br />
+						<div class="visorbox">
+							<img
+								class="visor image-with-shadow2"
+								src="./images/helmetcut.png"
+								alt="visor"
+							/>
+						</div>
+					</div>
+					<div class="herowelcome">
+						<h1>Welcome to</h1>
+					</div>
+					<div class="brandtitle">
+						<img
+							class="image-with-shadow"
+							src="./images/MSlogo.png"
+							alt="logo"
+						/>
+						<h1>Your Premium Bike Rental Company</h1>
+						<button class="entersite" onclick="enterFullscreen()">
+							Enter website
+						</button>
+					</div>
+				</div>
 
-		<!-- <div id="fullscreen-modal">
-	<center>
-		<p>This modal will show the latests promos available.</p>
-		<button class="btn bg-body-secondary border-success" onclick="enterFullscreen()">Proceed to website</button>
-	</center>
-</div> -->
+				<div class="modelbike">
+					<img src="./images/bmw2.png" alt="modelbike" />
+				</div>
+			</center>
+		</div>
 
 		<!-- Messenger Chat Plugin Code -->
 		<div id="fb-root"></div>
@@ -79,6 +105,7 @@
 					/></a>
 					<button
 						class="navbar-toggler"
+						onclick="myFunction(this)"
 						type="button"
 						data-bs-toggle="collapse"
 						data-bs-target="#navbarToggler"
@@ -86,7 +113,13 @@
 						aria-expanded="false"
 						aria-label="Toggle navigation"
 					>
-						<span class="navbar-toggler-icon"></span>
+					<div class="toggler-container">
+						<center>
+							<div class="bar1"></div>
+							<div class="bar2"></div>
+							<div class="bar3"></div>
+						</center>
+						</div>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarToggler">
 						<ul class="navbar-nav mb-2 mb-lg-0">
@@ -120,13 +153,17 @@
 		</div>
 
 		<div class="herosection">
-			<div class="heropath">
+			<div class="heropath formobile">
 				<video src="./images/hero.mp4" muted loop autoplay></video><br />
 				<div class="visorbox">
-					<img class="visor" src="./images/helmetcut.png" alt="visor" />
+					<img
+						class="visor"
+						src="./images/helmetcut.png"
+						alt="visor"
+					/>
 				</div>
 			</div>
-			<div class="brandtitle">
+			<div class="brandtitle formobile">
 				<img class="image-with-shadow" src="./images/MSlogo.png" alt="logo" />
 				<h1>Premium Bike Rental</h1>
 			</div>
@@ -155,36 +192,36 @@
 			</ul>
 		</div>
 
-		<div class="modelbike">
+		<div class="modelbike formobile ">
 			<img src="./images/bmw2.png" alt="modelbike" />
 		</div>
 
-		<div class="section1 fromleft scrollmargin">
+		<div class="section1 scrollmargin">
 			<center>
 				<h3>Renting 4 Easy Steps</h3>
 				<br />
-				<div class="section1a">
+				<div class="section1a fromright">
 					<div class="card">
 						<h5>Pick Location</h5>
 						<div class="iconbox">
 							<img src="./images/loc2.png" alt="" />
 						</div>
 					</div>
-					
+
 					<div class="card">
 						<h5>Select Date</h5>
 						<div class="iconbox">
 							<img src="./images/date.png" alt="" />
 						</div>
 					</div>
-					
+
 					<div class="card">
 						<h5>Choose Bike</h5>
 						<div class="iconbox">
 							<img src="./images/unit.png" alt="" />
 						</div>
 					</div>
-					
+
 					<div class="card">
 						<h5>Opt Payment</h5>
 						<div class="iconbox">
@@ -194,7 +231,20 @@
 				</div>
 
 				<div class="section1b">
-					<div class="section1a-grid"></div>
+					<p>
+						At MotoSavant, we offer you the flexibility to choose a drop-off
+						location different from the pick-up branch. This convenient option
+						comes in handy when it suits your specific travel plans. We want to
+						make your bike rental experience as smooth as possible. To ensure a
+						seamless process, our website displays available bikes based on
+						their availability at each branch and the period you require the
+						rental. This way, you can avoid any unnecessary conflicts or
+						disappointment due to unavailability. When you find the perfect bike
+						available on your desired dates, you have the option to proceed with
+						the reservation. By paying a reservation fee, you secure the
+						selected bike for your chosen dates. This means you can rest assured
+						that your desired bike will be waiting for you when you arrive.
+					</p>
 				</div>
 			</center>
 		</div>
@@ -922,12 +972,12 @@
 		</div>
 		<br />
 
-		<div class="loading__wrapper">
+		<!-- <div class="loading__wrapper">
 			<div class="loader--text">Loading...</div>
 			<div class="loader">
 				<span></span>
 			</div>
-		</div>
+		</div> -->
 
 		<svg class="icons" style="display: none">
 			<symbol
