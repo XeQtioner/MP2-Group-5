@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="trial.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shop</title>
+		<link rel="icon" type="image/x-icon" href="./images/faviconhelmet2.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+		/>
+	</head>
+
+	<body>
+		<!-- Messenger Chat Plugin Code -->
+		<div id="fb-root"></div>
+
+		<!-- Your Chat Plugin code -->
+		<div id="fb-customer-chat" class="fb-customerchat"></div>
+
+		<script>
+			var chatbox = document.getElementById("fb-customer-chat");
+			chatbox.setAttribute("page_id", "116081774880368");
+			chatbox.setAttribute("attribution", "biz_inbox");
+		</script>
+
+		<!-- Your SDK code -->
+		<script>
+			window.fbAsyncInit = function () {
+				FB.init({
+					xfbml: true,
+					version: "v17.0",
+				});
+			};
+
+			(function (d, s, id) {
+				var js,
+					fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			})(document, "script", "facebook-jssdk");
+		</script>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg bg-body-none fixed-top d-flex">
+				<div class="container-fluid">
+					<a class="navbar-brand mb-lg-0" href="index.html"
+						><img src="./images/MSlogo.png" alt="logo"
+					/></a>
+					<button
+						class="navbar-toggler"
+						onclick="myFunction(this)"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarToggler"
+						aria-controls="navbarToggler"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+					<div class="toggler-container">
+						<center>
+							<div class="bar1"></div>
+							<div class="bar2"></div>
+							<div class="bar3"></div>
+						</center>
+						</div>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarToggler">
+						<ul class="navbar-nav mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="index.html"
+									>Home</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="bikes.html">Bikes</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="shop.html">Shop</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="terms.html">Terms</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contactus.html">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="adminbikes.html">Login</a>
+							</li>
+							<!-- <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+Login
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">Profile</a></li>
+<li><a class="dropdown-item" href="#"></a></li>
+<li><a class="dropdown-item" href="#">Something else here</a></li>
+</ul>
+</li> -->
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- social icons -->
+
+		<div class="icons">
+			<ul>
+				<li>
+					<a href="#" alt=""><i class="bi bi-instagram"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-youtube"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-facebook"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-messenger"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-whatsapp"></i></a>
+				</li>
+			</ul>
+		</div>
+		<br><br>
+		<br><br>
+		<center>
+			<div class="reach-us">
+				<h2>Contact Us</h2>
+				<br>
+				<!-- About us -->	
+                <div class="col-md-6 my-4">
+                    <h2 class="text-center">Lets Talk!</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="txt-fullName">Full Name:</label>
+                            <input type="text" name="fullName" id="txt-fullName" class="form-control" placeholder="First Name, Middle Initial, Last Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt-email">Email:</label>
+                            <input type="email" name="email" id="txt-email" placeholder="example@gmail.com" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt-subject">Subject:</label>
+                            <input type="text" name="subject" id="txt-subject" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt-textarea">Message:</label>
+                            <textarea class="form-control" id="txt-textarea" rows="2" placeholder="Leave me a message" required></textarea>
+                        </div>
+							<br>
+                        <div class="form-group form-btn">
+                            <button type="submit" class="btn btn-block btn-success">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+      
+			</div>
+
+
+
+
+		<div class="geo-location">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.0488310106475!2d121.1019352752299!3d14.65316957578717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9bfb77545e1%3A0xe99470e932f8b745!2sConcepcion%20Uno%20Barangay%20Hall%2C%20Molave%20St%2C%20Marikina%2C%201800%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1690204590351!5m2!1sen!2sph" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+		</div>	
+			</center>
+		
+		
+
+		<button id="backToTopButton" onclick="scrollToTop()">
+			<div class="backToTopButton"></div>
+		</button>
+
+		<script
+			type="text/javascript"
+			src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"
+		></script>
+		<script src="script.js"></script>
+		<script src="bikes.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

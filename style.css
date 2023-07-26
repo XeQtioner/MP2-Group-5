@@ -1144,6 +1144,7 @@ body .icons a:hover {
 	animation: fadeIn 1s;
 }
 
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -1154,6 +1155,24 @@ body .icons a:hover {
 	.formobile {
 		display: block;
 	}
+	
+	.form-group {
+		width: 75%;
+	}
+	
+	.reach-us {
+		width: 80%;
+	}
+	.about-us {
+		text-align: left;
+		width: 80%;
+	}
+	iframe {
+		height: 300px;
+		width: 300px;
+		resize: both;
+		overflow: auto;
+	  }
 
 	.scrollmargin {
 		scroll-margin-top: 50px;

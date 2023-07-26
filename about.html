@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="trial.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shop</title>
+		<link rel="icon" type="image/x-icon" href="./images/faviconhelmet2.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+		/>
+	</head>
+
+	<body>
+		<!-- Messenger Chat Plugin Code -->
+		<div id="fb-root"></div>
+
+		<!-- Your Chat Plugin code -->
+		<div id="fb-customer-chat" class="fb-customerchat"></div>
+
+		<script>
+			var chatbox = document.getElementById("fb-customer-chat");
+			chatbox.setAttribute("page_id", "116081774880368");
+			chatbox.setAttribute("attribution", "biz_inbox");
+		</script>
+
+		<!-- Your SDK code -->
+		<script>
+			window.fbAsyncInit = function () {
+				FB.init({
+					xfbml: true,
+					version: "v17.0",
+				});
+			};
+
+			(function (d, s, id) {
+				var js,
+					fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			})(document, "script", "facebook-jssdk");
+		</script>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg bg-body-none fixed-top d-flex">
+				<div class="container-fluid">
+					<a class="navbar-brand mb-lg-0" href="index.html"
+						><img src="./images/MSlogo.png" alt="logo"
+					/></a>
+					<button
+						class="navbar-toggler"
+						onclick="myFunction(this)"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarToggler"
+						aria-controls="navbarToggler"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+					<div class="toggler-container">
+						<center>
+							<div class="bar1"></div>
+							<div class="bar2"></div>
+							<div class="bar3"></div>
+						</center>
+						</div>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarToggler">
+						<ul class="navbar-nav mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="index.html"
+									>Home</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="bikes.html">Bikes</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="shop.html">Shop</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="terms.html">Terms</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contactus.html">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="adminbikes.html">Login</a>
+							</li>
+							<!-- <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+Login
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">Profile</a></li>
+<li><a class="dropdown-item" href="#"></a></li>
+<li><a class="dropdown-item" href="#">Something else here</a></li>
+</ul>
+</li> -->
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- social icons -->
+
+		<div class="icons">
+			<ul>
+				<li>
+					<a href="#" alt=""><i class="bi bi-instagram"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-youtube"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-facebook"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-messenger"></i></a>
+				</li>
+				<li>
+					<a href="#" alt=""><i class="bi bi-whatsapp"></i></a>
+				</li>
+			</ul>
+		</div>
+		<br><br>
+		<br><br>
+		<center>
+			<div class="about-us">
+				<h2>About Us</h2>
+				<br>
+				<!-- About us -->	
+                <div class="col-md-6 my-4">
+                    <h3>What is MOTO SAVANT?</h3>
+                    <br>
+
+                    <div class="about">Welcome to Moto Savant Motorcycle Rental, where the thrill of the open road awaits you! We are a passionate team of motorcycle enthusiasts who believe that the joy of riding should be accessible to everyone. Our mission is to provide you with unforgettable experiences and adventures on two wheels, all while ensuring your safety and comfort.
+                    </div>
+                    <br>
+                    <br>
+                    <h3>Our Fleet</h3>
+                    <br>
+                    <div class="fleet">
+                        At Moto Savant Motorcycle Rental, we take pride in our diverse fleet of top-quality motorcycles. Whether you're a seasoned rider or a complete beginner, we have the perfect bike for you. From sleek and stylish cruisers to powerful adventure bikes and nimble sports motorcycles, we've got something to suit every taste and skill level.
+                    </div>
+                    <br>
+                    <br>
+                    <h3>Safety First</h3>
+                    <br>
+                    <div class="safety">
+                        Your safety is our top priority. Before each rental, our experienced mechanics meticulously inspect and maintain every motorcycle to ensure it's in pristine condition. We provide you with all the necessary safety gear, including helmets, gloves, and protective clothing, to keep you well-protected during your journey.
+                    </div>
+                    <br>
+                    <br>
+                    <h3>Our Vision</h3>
+                    <br>
+                    <div class="vision">
+                        At our motorcycle rental company, we envision a world where the thrill of riding on two wheels is accessible to everyone, empowering adventure and embracing the spirit of freedom. Our vision is to be the leading provider of motorcycle rentals, revolutionizing the way people experience travel, exploration, and the open road.
+                    </div>
+                    
+
+
+                </div>
+            
+      
+			</div>
+			</center>
+            <br>
+            <br>
+            <br>
+		
+		
+
+		<button id="backToTopButton" onclick="scrollToTop()">
+			<div class="backToTopButton"></div>
+		</button>
+
+		<script
+			type="text/javascript"
+			src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"
+		></script>
+		<script src="script.js"></script>
+		<script src="bikes.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
