@@ -7,7 +7,7 @@
 }
 
 html {
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: y proximity;
 }
 
 body {
@@ -154,6 +154,7 @@ body::after {
 
 .visible {
 	opacity: 1;
+	scale: 1;
 	transform: translateX(0%);
 	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 	transition-delay: 0.4s;
@@ -449,7 +450,287 @@ body .icons a:hover {
 	backdrop-filter: blur(15px);
 }
 
+.tab {
+	background-color: transparent;
+	margin-bottom: 20px;
+}
+
+.tab button {
+	background-color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 5px 16px;
+	font-size: 17px;
+	color: gray;
+	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+}
+
+.tab button:hover {
+	border-bottom: 5px solid #9eca2e;
+}
+
+.tab button.active {
+	border-bottom: 5px solid #9eca2e;
+}
+
+.tabcontent {
+	display: none;
+	width: min(90%, 1000px);
+	text-align: justify;
+	padding: 6px 12px;
+	-webkit-animation: fadeEffect 1s;
+	animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeEffect {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.tabcontent .accordion .btn h6 {
+	font-size: 1px;
+}
+
+.tabcontent .accordion button {
+	position: relative;
+	display: flex;
+	font-size: small;
+	color: white;
+	height: 1px;
+	width: 100%;
+	padding-inline: 50%;
+	align-self: center;
+	justify-content: center;
+	background-color: transparent;
+	box-shadow: none;
+	text-align: center;
+}
+
+.tabcontent .accordion button:not(.collapsed) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.tabcontent .accordion button:focus {
+	box-shadow: none;
+	border: none;
+}
+
+.tabcontent .accordion-item {
+	box-shadow: none;
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+	padding-bottom: 50px;
+	border-radius: 50px;
+}
+
+.classinfo {
+	/* background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px); */
+	padding: 20px;
+	margin-bottom: 15px;
+	color: #fff;
+}
+
+.bikeclassinfo {
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+	padding: 20px;
+	margin-bottom: 15px;
+	color: #fff;
+	text-align: left;
+	position: fixed;
+	height: 108vh;
+	width: 15vw;
+	padding: 10px;
+	top: 70px;
+	right: 10px;
+	border-radius: 15px;
+	border: 1px thin black;
+	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+	animation: enterup 1s;
+	animation-timing-function: ease-in;
+}
+
+@keyframes enterup {
+	0% {
+		top: 900px;
+	}
+	100% {
+		top: 70px;
+	}
+}
+
+.bikelist {
+	padding-top: 70px;
+}
+.bikecontainer {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	position: relative;
+}
+.bike-card-container {
+	position: relative;
+	align-self: center;
+	width: 300px;
+	flex-wrap: wrap;
+	flex: none;
+	height: 400px;
+	backdrop-filter: blur(10px);
+}
+
+.bikelogobox {
+	background-color: whitesmoke;
+	position: relative;
+	width: 20%;
+	aspect-ratio: 1/1;
+	border: thin solid gray;
+	border-radius: 50%;
+	overflow: hidden;
+	transform: translate(20%, calc(80% - 60px));
+	z-index: 2;
+	object-fit: contain;
+}
+
+.bikelogobox img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	touch-action: none;
+}
+
+.bike-card {
+	padding: 0 5px;
+	overflow: hidden;
+	z-index: -1;
+	background-color: rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(15px);
+	height: 400px;
+	transform: translateY(-60px);
+}
+
+.imageBox {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 30px;
+	height: 300px;
+	object-fit: cover;
+	overflow: hidden;
+	touch-action: none;
+}
+
+.imageBox img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.bike-card-body {
+	height: 200px;
+	line-height: 10px;
+}
+
+.bike-card-link {
+	position: absolute;
+	bottom: 2px;
+}
+
+#sizeMinusLogo {
+	position: relative;
+}
+
+#sizeMinusLogo::before {
+	content: "Logo";
+	position: absolute;
+	top: -25px;
+	left: 20px;
+}
+
+#sizeMinusImage {
+	position: relative;
+}
+
+#sizeMinusImage::before {
+	content: "Image";
+	position: absolute;
+	top: -25px;
+	left: 10px;
+}
+
 .section2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	scroll-snap-align: start;
+	padding: 20px 0px;
+	overflow: hidden;
+}
+
+.carousel-inner {
+	overflow: visible;
+	align-content: center;
+}
+
+.carousel-indicators {
+	transform: translateY(100px);
+}
+
+.carousel-data {
+	text-align: left;
+	position: relative;
+	width: min(90%, 800px);
+	height: 250px;
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+	padding: 15px;
+	border-radius: 15px;
+}
+
+.carousel-data-info {
+	width: 70%;
+}
+
+.carousel-data-image img {
+	width: 400px;
+	position: absolute;
+	right: -150px;
+	top: -30px;
+	animation: fadeIn 2s;
+	animation-timing-function: ease-in;
+}
+
+.section3 .card-title {
+	text-align: left;
+}
+
+.section3 {
 	--card-width: 200px;
 	--card-height: 300px;
 	height: 100vh;
@@ -731,7 +1012,7 @@ body .icons a:hover {
 	opacity: 0;
 	display: none;
 }
-.loading__wrapper {
+/* .loading__wrapper {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -765,9 +1046,9 @@ body .icons a:hover {
 	background: #9eca2e;
 	transform: scaleX(0);
 	transform-origin: left;
-}
+} */
 @media only screen and (min-width: 800px) {
-	.section2 {
+	.section3 {
 		--card-width: 250px;
 		--card-height: 350px;
 	}
@@ -795,239 +1076,72 @@ body .icons a:hover {
 	transform: scale(1.1);
 }
 
-.tab {
-	background-color: transparent;
-	margin-bottom: 20px;
-}
-
-.tab button {
-	background-color: inherit;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 5px 16px;
-	font-size: 17px;
-	color: gray;
-	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
-}
-
-.tab button:hover {
-	border-bottom: 5px solid #9eca2e;
-}
-
-.tab button.active {
-	border-bottom: 5px solid #9eca2e;
-}
-
-.tabcontent {
-	display: none;
-	width: min(90%, 1000px);
-	text-align: justify;
-	padding: 6px 12px;
-	-webkit-animation: fadeEffect 1s;
-	animation: fadeEffect 1s;
-}
-
-@-webkit-keyframes fadeEffect {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeEffect {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-.section2 .card-title {
-	text-align: left;
-}
-
-.tabcontent .accordion .btn h6 {
-	font-size: 1px;
-}
-
-.tabcontent .accordion button {
-	position: relative;
-	display: flex;
-	font-size: small;
-	color: white;
-	height: 1px;
-	width: 100%;
-	padding-inline: 50%;
-	align-self: center;
-	justify-content: center;
-	background-color: transparent;
-	box-shadow: none;
-	text-align: center;
-}
-
-.tabcontent .accordion button:not(.collapsed) {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: transparent;
-	box-shadow: none;
-}
-
-.tabcontent .accordion button:focus {
-	box-shadow: none;
-	border: none;
-}
-
-.tabcontent .accordion-item {
-	box-shadow: none;
-	background-color: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(15px);
-	padding-bottom: 50px;
-	border-radius: 50px;
-}
-
-.classinfo {
-	/* background-color: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(15px); */
-	padding: 20px;
-	margin-bottom: 15px;
-	color: #fff;
-}
-
-.bikeclassinfo {
-	background-color: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(15px);
-	padding: 20px;
-	margin-bottom: 15px;
-	color: #fff;
-	text-align: left;
-	position: fixed;
-	height: 108vh;
-	width: 15vw;
-	padding: 10px;
-	top: 70px;
-	right: 10px;
-	border-radius: 15px;
-	border: 1px thin black;
-	box-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
-	animation: enterup 1s;
-	animation-timing-function: ease-in;
-}
-
-@keyframes enterup {
-	0% {
-		top: 900px;
-	}
-	100% {
-		top: 70px;
-	}
-}
-
-.bikelist {
-	padding-top: 70px;
-}
-.bikecontainer {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	flex-wrap: wrap;
-	position: relative;
-}
-.bike-card-container {
-	position: relative;
-	align-self: center;
-	width: 300px;
-	flex-wrap: wrap;
-	flex: none;
-	height: 400px;
-	backdrop-filter: blur(10px);
-}
-
-.bikelogobox {
-	width: 20%;
-	aspect-ratio: 1/1;
-	border: thin solid gray;
-	border-radius: 50%;
-	overflow: hidden;
-	transform: translate(20%, calc(80% - 60px));
-	z-index: 2;
-	object-fit: contain;
-}
-
-.bikelogobox img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.bike-card {
-	padding: 0 5px;
-	overflow: hidden;
-	z-index: -1;
-	background-color: rgba(255, 255, 255, 0.3);
-	backdrop-filter: blur(15px);
-	height: 400px;
-	transform: translateY(-60px);
-}
-
-.imageBox {
-	background-color: rgba(0, 0, 0, 0.7);
-	padding: 30px;
-	height: 300px;
-	object-fit: cover;
-	overflow: hidden;
-}
-
-.imageBox img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	overflow: hidden;
-}
-
-.bike-card-body {
-	height: 200px;
-	line-height: 10px;
-}
-
-.bike-card-link {
-	position: absolute;
-	bottom: 2px;
-}
-
-.section3 {
-	height: 100vh;
-	scroll-snap-align: start;
-	padding: 20px 0px;
-	overflow: hidden;
-}
-
 .section4 {
 	height: 100vh;
 	scroll-snap-align: start;
 	padding: 20px 0px;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.newsletter {
+	position: relative;
+	width: min(90%, 800px);
+	height: 330px;
+	background-color: #9eca2e;
+	padding: 10px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: end;
+	align-items: end;
+	flex-direction: column;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.newsletter-image {
+	position: absolute;
+	height: 400px;
+	left: -150px;
+	top: 0;
+}
+
+.newsletter-info1 {
+	width: 40%;
+	float: right;
+}
+
+.newsletter-info2 {
+	width: 35%;
+	float: right;
+}
+
+.newsletter-info2 a {
+	float: right;
 }
 
 .section5 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	height: 100vh;
 	overflow-x: hidden;
-	padding: 20px 0px;
+	padding-top: 20px;
 	display: flexbox;
 	align-items: center;
 	justify-content: center;
 	width: min(90%, 800px);
 	margin-inline: auto;
 	scroll-snap-align: start;
+	overflow: visible;
 }
 
-.accordion .btn h6 {
-	font-size: 10px;
-	text-shadow: #000 3px 3px 4px, #000 3px 3px 2px;
+.accordion {
+	margin-top: 20px;
+	width: 100%;
 }
 
 .accordion button:not(.collapsed) {
@@ -1044,6 +1158,53 @@ body .icons a:hover {
 	background-color: rgba(158, 202, 46, 0.6);
 	box-shadow: -5px 5px 10px rgba(158, 202, 46, 0.7);
 	border-radius: 50px;
+	border-left: none;
+	border-right: none;
+}
+
+footer {
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+	width: 100vw;
+	height: 300px;
+	text-align: left;
+	padding-top: 40px;
+	padding-bottom: 100px;
+	padding-left: 100px;
+	padding-right: 100px;
+	list-style-type: none;
+	position: relative;
+	overflow-x: hidden;
+}
+
+footer a {
+	text-decoration: none;
+	width: 30%;
+	color: whitesmoke;
+}
+
+footer li {
+	list-style-type: none;
+	font-size: 15px;
+	line-height: 40px;
+}
+
+tr {
+	font-size: 20px;
+	text-align: right;
+	line-height: 50px;
+}
+
+footer h4 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+footer img {
+	width: 30vw;
+	padding: 0;
+	margin-top: 0px;
+	align-items: center;
 }
 
 #backToTopButton {
@@ -1232,7 +1393,7 @@ body .icons a:hover {
 	}
 
 	p {
-		font-size: smaller;
+		font-size: small;
 		transition: all 1s ease-in-out;
 	}
 
@@ -1299,4 +1460,154 @@ body .icons a:hover {
 		animation: enterup 1s;
 		animation-timing-function: ease-in;
 	}
+
+	.section2 {
+		display: flex;
+		margin-inline: 10%;
+	}
+
+	.carousel-data {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		background-color: rgba(255, 255, 255, 0.05);
+		backdrop-filter: blur(15px);
+		padding: 15px;
+		border-radius: 15px;
+	}
+
+	.carousel-data-info {
+		width: 100%;
+	}
+
+	.carousel-data-image img {
+		position: relative;
+		width: 300px;
+		right: 0;
+	}
+
+	.newsletter {
+		position: relative;
+		width: min(90%, 800px);
+		height: 330px;
+		background-color: #9eca2e;
+		backdrop-filter: blur(15px);
+		padding: 15px;
+		border-radius: 15px;
+		display: flex;
+		justify-content: end;
+		align-items: end;
+		flex-direction: column;
+	}
+
+	.newsletter-image {
+		position: relative;
+		min-height: 50%;
+		left: 0;
+		top: 0;
+	}
+
+	.newsletter-info1 {
+		width: 100%;
+		float: right;
+	}
+
+	.newsletter-info2 {
+		width: 100%;
+		float: left;
+	}
+
+	.newsletter-info2 a {
+		float: left;
+	}
+
+	footer {
+		display: grid;
+		width: 100%;
+		height: 400px;
+		text-align: center;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		list-style-type: none;
+		position: relative;
+	}
+
+	footer a {
+		text-decoration: none;
+		text-align: right;
+		padding-left: 10px;
+	}
+
+	footer li {
+		padding-right: 30px;
+		list-style-type: none;
+		font-size: 12px;
+		line-height: 20px;
+		letter-spacing: 3px;
+	}
+
+	tr {
+		font-size: 10px;
+		text-align: right;
+		line-height: 20px;
+		padding-right: 10px;
+	}
+
+	footer h4 {
+		font-size: medium;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	footer h6 {
+		font-size: x-small;
+	}
+
+	footer img {
+		width: 60%;
+		padding: 0;
+		margin-top: 0px;
+		align-items: center;
+	}
+
+	.quicklinks {
+		padding-top: 10px;
+		width: 100%;
+		text-align: left;
+	}
+
+	.allrightreserve {
+		width: 100%;
+		transform: translatey(80px);
+	}
+
+	.getintouch {
+		width: 100%;
+		text-align: right;
+		padding-right: 10px;
+		transform: translatey(-150px);
+	}
+}
+
+.form-group {
+	width: 75%;
+}
+
+.reach-us {
+	width: 80%;
+}
+.about-us {
+	text-align: left;
+	width: 80%;
+}
+iframe {
+	height: 300px;
+	width: 300px;
+	resize: both;
+	overflow: auto;
 }

@@ -71,6 +71,35 @@ function displayLogo(img) {
 	logoBox.appendChild(img);
 }
 
+let currentLogoScale = 1;
+
+// Function to resize the ;ogo
+function resizeLogo(operation) {
+	// Get the image element
+	const logoBox = document.getElementById("logoBox");
+	const img = logoBox.querySelector("img");
+
+	// Check if an image is displayed
+	if (!img) {
+		alert("No image to resize.");
+		return;
+	}
+
+	// Calculate the new scale based on the operation ("+" or "-")
+	const scaleFactor = 0.02; // You can adjust the resize step as per your requirements
+
+	if (operation === "+") {
+		currentLogoScale += scaleFactor;
+	} else if (operation === "-") {
+		currentLogoScale -= scaleFactor;
+	}
+
+	// Apply the new scale to the logo
+	img.style.transform = `scale(${currentLogoScale})`;
+}
+
+
+
 // Image uploader
 function updateImage() {
 	var imageUrl = prompt("Please provide the image URL:");
@@ -142,6 +171,37 @@ function displayImage(img) {
 	var imageBox = document.getElementById("imageBox");
 	imageBox.innerHTML = "";
 	imageBox.appendChild(img);
+
+	// Enable dragging after displaying the image
+	enableImageDragging();
+}
+
+// Keep a variable to store the current scale of the image
+let currentScale = 1;
+
+// Function to resize the image
+function resizeImage(operation) {
+	// Get the image element
+	const imageBox = document.getElementById("imageBox");
+	const img = imageBox.querySelector("img");
+
+	// Check if an image is displayed
+	if (!img) {
+		alert("No image to resize.");
+		return;
+	}
+
+	// Calculate the new scale based on the operation ("+" or "-")
+	const scaleFactor = 0.02; // You can adjust the resize step as per your requirements
+
+	if (operation === "+") {
+		currentScale += scaleFactor;
+	} else if (operation === "-") {
+		currentScale -= scaleFactor;
+	}
+
+	// Apply the new scale to the image
+	img.style.transform = `scale(${currentScale})`;
 }
 
 var originalValues = {}; // Store original values for reset
@@ -178,31 +238,44 @@ function editCardBody(event) {
 
 function saveCardValues() {
 	// Disable editing mode and remove the border
-	var editableElements = document.querySelectorAll(
+	const editableElements = document.querySelectorAll(
 		".bike-card-title, .bike-card-text, .bike-card-price"
 	);
-	for (var i = 0; i < editableElements.length; i++) {
-		var element = editableElements[i];
+	for (let i = 0; i < editableElements.length; i++) {
+		const element = editableElements[i];
 		element.contentEditable = false;
 	}
 
 	// Get the current container and remove its ID
-	var currentContainer = document.getElementById("bikeCardTemplate");
+	const currentContainer = document.getElementById("bikeCardTemplate");
 
 	// Create a new bike card container
-	var newContainer = document.createElement("div");
+	const newContainer = document.createElement("div");
 	newContainer.classList.add("bike-card-container");
 
 	// Clone the existing bike card template and append it to the new container
-	var template = currentContainer.cloneNode(true);
+	const template = currentContainer.cloneNode(true);
 	newContainer.appendChild(template);
 
-	// Update the button text and remove the IDs onclickfunction
-	let saveButton = newContainer.querySelector("#saveButton");
-	let resetButton = newContainer.querySelector("#resetButton");
-	let cardEdit = newContainer.querySelector("#cardBodyEdit");
-	let logoBox = newContainer.querySelector("#logoBox");
-	let imageBox = newContainer.querySelector("#imageBox");
+	// Generate the new ID in camelCase format
+	const bikeCardTitle = template.querySelector(".bike-card-title");
+	const newTitle = bikeCardTitle.textContent.trim().replace(/\s+/g, '');
+	const nthChildNumber = document.querySelectorAll(".bike-card-container").length + 1;
+	const newID = "unit" + nthChildNumber + "_" + newTitle.charAt(0).toUpperCase() + newTitle.slice(1);
+
+	// Replace the old ID with the new formatted ID
+	newContainer.id = newID;
+
+	// Update the button text and remove the IDs onclick function
+	const saveButton = newContainer.querySelector("#saveButton");
+	const resetButton = newContainer.querySelector("#resetButton");
+	const cardEdit = newContainer.querySelector("#cardBodyEdit");
+	const logoBox = newContainer.querySelector("#logoBox");
+	const imageBox = newContainer.querySelector("#imageBox");
+	const sizeMinusLogo = newContainer.querySelector("#sizeMinusLogo");
+	const sizePlusLogo = newContainer.querySelector("#sizePlusLogo");
+	const sizeMinusImage = newContainer.querySelector("#sizeMinusImage");
+	const sizePlusImage = newContainer.querySelector("#sizePlusImage");
 	saveButton.textContent = "Book Now";
 	resetButton.textContent = "See Details";
 	cardEdit.onclick = null;
@@ -210,18 +283,21 @@ function saveCardValues() {
 	resetButton.onclick = null;
 	logoBox.onclick = null;
 	imageBox.onclick = null;
+	sizeMinusLogo.style.display = "none";
+	sizePlusLogo.style.display = "none";
+	sizeMinusImage.style.display = "none";
+	sizePlusImage.style.display = "none";
 	resetCardValues();
 
 	// Make the text content non-editable in the new container
-	var nonEditableElements = newContainer.querySelector(
+	const nonEditableElements = newContainer.querySelector(
 		".bike-card-title, .bike-card-text, .bike-card-price"
 	);
 	nonEditableElements.contentEditable = false;
 
-	//store new card created to sessionStorage
-	var cardContainerHTML = newContainer.outerHTML;
-	var savedContainers =
-		JSON.parse(sessionStorage.getItem("bikeCardContainers")) || [];
+	// Store the new card created to sessionStorage
+	const cardContainerHTML = newContainer.outerHTML;
+	const savedContainers = JSON.parse(sessionStorage.getItem("bikeCardContainers")) || [];
 	savedContainers.push(cardContainerHTML);
 	sessionStorage.setItem("bikeCardContainers", JSON.stringify(savedContainers));
 
@@ -231,20 +307,19 @@ function saveCardValues() {
 		currentContainer.nextSibling
 	);
 }
+
 // Retrieve the saved bike card containers from local storage on page load
 document.addEventListener("DOMContentLoaded", function () {
-	var savedContainers = JSON.parse(
-		sessionStorage.getItem("bikeCardContainers")
-	);
+	const savedContainers = JSON.parse(sessionStorage.getItem("bikeCardContainers"));
 	if (savedContainers && savedContainers.length > 0) {
-		for (var i = 0; i < savedContainers.length; i++) {
-			var savedContainer = savedContainers[i];
+		for (let i = 0; i < savedContainers.length; i++) {
+			const savedContainer = savedContainers[i];
 
-			var containerWrapper = document.createElement("div");
+			const containerWrapper = document.createElement("div");
 			containerWrapper.innerHTML = savedContainer;
-			var savedCard = containerWrapper.firstChild;
+			const savedCard = containerWrapper.firstChild;
 
-			var currentContainer = document.getElementById("bikeCardTemplate");
+			const currentContainer = document.getElementById("bikeCardTemplate");
 			currentContainer.parentNode.insertBefore(
 				savedCard,
 				currentContainer.nextSibling
@@ -260,23 +335,19 @@ function resetCardValues() {
 	const bikeCardPrice = document.getElementById("bikeCardPrice");
 
 	// Reset to the original values
-	bikeCardTitle.innerText = "Bike Name";
-	bikeCardText.innerText = "Transmission";
-	bikeCardPrice.innerText = "Amount";
+	bikeCardTitle.innerText = "Bike Name (editable)";
+	bikeCardText.innerText = "Transmission (editable)";
+	bikeCardPrice.innerText = "Amount (editable)";
 
 	const logoBox = document.getElementById("logoBox");
-	const logoUrl =
-		"https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg";
+	const logoUrl = "https://cdn.vectorstock.com/i/preview-1x/76/79/your-logo-here-placeholder-symbol-vector-26077679.jpg";
 	const logoHTML = '<img id="bikelogo" src="' + logoUrl + '" alt="bikelogo" />';
 	logoBox.innerHTML = logoHTML;
 	const imageBox = document.getElementById("imageBox");
-	const imageUrl =
-		"https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png";
-	const imageHTML =
-		'<img id="bikelogo" src="' + imageUrl + '" alt="bikelogo" />';
+	const imageUrl = "https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png";
+	const imageHTML = '<img id="bikelogo" src="' + imageUrl + '" alt="bikelogo" />';
 	imageBox.innerHTML = imageHTML;
 }
-
 function enterFullscreen(element) {
 	if (element.requestFullscreen) {
 		element.requestFullscreen();
@@ -292,6 +363,5 @@ function enterFullscreen(element) {
 	}
 }
 
-// Example usage
-var myElement = document.getElementById("terms");
+// var myElement = document.getElementById("terms");
 enterFullscreen(myElement);

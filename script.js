@@ -86,6 +86,8 @@ function addVisibilityListener(elementSelector) {
 }
 
 addVisibilityListener(".section1a");
+addVisibilityListener(".newsletter-image");
+addVisibilityListener(".section4");
 addVisibilityListener(".section5");
 
 //animation-in scale or opacity
@@ -643,57 +645,104 @@ function setupTabContent(container) {
 			);
 	}
 
-	let waitForImages = () => {
-		let images = [...container.querySelectorAll("img")];
-		let totalImages = images.length;
-		let loadedImages = 0;
-		let loaderEl = container.querySelector(".loader span");
+// Function to be executed when the section2 element comes into view
+function onSectionInView(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // The section2 element is now in view, run the script
+      waitForImages();
+    }
+  });
+}
 
-		gsap.set(cardsContainerEl.children, {
-			"--card-translateY-offset": "100vh",
-		});
-		gsap.set(
-			cardInfosContainerEl
-				.querySelector(".current--info")
-				.querySelectorAll(".text"),
-			{
-				translateY: "40px",
-				opacity: 0,
-			}
-		);
-		gsap.set([buttons.prev, buttons.next], {
-			pointerEvents: "none",
-			opacity: "0",
-		});
+// Function to be executed when the section2 element goes out of view
+function onSectionOutOfView(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      // The section2 element is now out of view, revert the script
+      revertImages();
+    }
+  });
+}
 
-		images.forEach((image) => {
-			imagesLoaded(image, (instance) => {
-				if (instance.isComplete) {
-					loadedImages++;
-					let loadProgress = loadedImages / totalImages;
+const options = {
+  root: null, // Use the viewport as the root
+  rootMargin: "0px",
+  threshold: 0 // Trigger the callback as soon as the target element is partially visible
+};
 
-					gsap.to(loaderEl, {
-						duration: 1,
-						scaleX: loadProgress,
-						backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
-					});
+// Create two separate Intersection Observers
+const observerInView = new IntersectionObserver(onSectionInView, options);
+const observerOutOfView = new IntersectionObserver(onSectionOutOfView, options);
 
-					if (totalImages == loadedImages) {
-						gsap
-							.timeline()
-							.to(".loading__wrapper", {
-								duration: 0.8,
-								opacity: 0,
-								pointerEvents: "none",
-							})
-							.call(() => init());
-					}
-				}
-			});
-		});
-	};
+// Get the section2 element
+const section2 = document.querySelector(".tablinks");
 
-	waitForImages();
+// Start observing the section2 element with both observers
+observerInView.observe(section2);
+observerOutOfView.observe(section2);
+
+function waitForImages() {
+  let images = [...container.querySelectorAll("img")];
+  let totalImages = images.length;
+  let loadedImages = 0;
+  let loaderEl = container.querySelector(".loader span");
+
+  gsap.set(cardsContainerEl.children, {
+    "--card-translateY-offset": "100vh",
+  });
+  gsap.set(
+    cardInfosContainerEl
+      .querySelector(".current--info")
+      .querySelectorAll(".text"),
+    {
+      translateY: "40px",
+      opacity: 0,
+    }
+  );
+  gsap.set([buttons.prev, buttons.next], {
+    pointerEvents: "none",
+    opacity: "0",
+  });
+
+  images.forEach((image) => {
+    imagesLoaded(image, (instance) => {
+      if (instance.isComplete) {
+        loadedImages++;
+        let loadProgress = loadedImages / totalImages;
+
+        gsap.to(loaderEl, {
+          duration: 1,
+          scaleX: loadProgress,
+          backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%)`,
+        });
+
+        if (totalImages == loadedImages) {
+          gsap
+            .timeline()
+            .to(".loading__wrapper", {
+              duration: 0.8,
+              opacity: 0,
+              pointerEvents: "none",
+            })
+            .call(() => init());
+        }
+      }
+    });
+  });
+}
+
+function revertImages() {
+	translateY: "0px";
+
+  // Code to revert the changes done in waitForImages()
+  // Add code here to revert any animations or styles applied
+  // when the section2 element was in view and the script ran.
+  // For example, remove any classes, reset styles, etc.
+  // Make sure to handle any changes you applied in waitForImages()
+  // to ensure the script reverts smoothly when the element goes out of view.
+}
+
 }
 
 let tabContent1 = document.getElementById("Cruiser");
@@ -710,3 +759,6 @@ setupTabContent(Touring);
 
 let tabContent5 = document.getElementById("Scooter");
 setupTabContent(Scooter);
+
+
+//carousel behavior
