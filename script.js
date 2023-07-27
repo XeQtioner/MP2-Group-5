@@ -761,4 +761,3 @@ let tabContent5 = document.getElementById("Scooter");
 setupTabContent(Scooter);
 
 
-//carousel behavior

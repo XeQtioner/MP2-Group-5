@@ -684,6 +684,8 @@ body .icons a:hover {
 }
 
 .section2 {
+	height: 100vh;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1522,6 +1524,19 @@ footer img {
 
 	.newsletter-info2 a {
 		float: left;
+	}
+
+	.carousel-indicators {
+		top: -40px;
+		transform: translateY(0px);
+	}
+
+	.current--info	{
+		transform: translateY(-20px);
+	}
+
+	.text-description	{
+		transform: translateY(120px);
 	}
 
 	footer {
