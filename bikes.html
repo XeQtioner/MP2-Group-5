@@ -62,7 +62,7 @@
 				fjs.parentNode.insertBefore(js, fjs);
 			})(document, "script", "facebook-jssdk");
 		</script>
-		
+
 		<div class="container">
 			<nav class="navbar navbar-expand-lg bg-body-none fixed-top d-flex">
 				<div class="container-fluid">
@@ -110,22 +110,240 @@
 								<a class="nav-link" href="contact.html">Contact</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="login.html">Login</a>
+								<a
+									class="nav-link"
+									data-bs-toggle="modal"
+									data-bs-target="#loginFormWrapper"
+									href="login.html"
+									>Login</a
+								>
 							</li>
-							<!-- <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-Login
-</a>
-<ul class="dropdown-menu">
-<li><a class="dropdown-item" href="#">Profile</a></li>
-<li><a class="dropdown-item" href="#"></a></li>
-<li><a class="dropdown-item" href="#">Something else here</a></li>
-</ul>
-</li> -->
 						</ul>
 					</div>
 				</div>
 			</nav>
+		</div>
+
+		<div class="login-modal">
+			<div class="modal fade" id="loginFormWrapper">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-image">
+						<img
+							class="modal-helmet"
+							src="./images/faviconhelmet2.png"
+							alt="helmet"
+						/>
+					</div>
+					<div class="modal-content">
+						<div class="modal-body">
+							<center>
+								<h3>Login</h3>
+								<form id="loginForm">
+									<div class="form-group">
+										<input
+											type="text"
+											name="username"
+											id="username"
+											class="form-control"
+											placeholder="Username"
+											required
+										/>
+									</div>
+
+									<div class="form-group">
+										<input
+											type="password"
+											name="Password"
+											id="password"
+											placeholder="Password"
+											class="form-control"
+											required
+										/>
+										<button type="button" id="seeLoginPasswordBtn">
+											See Password
+										</button>
+									</div>
+
+									<input
+										class="form-check-input"
+										type="checkbox"
+										id="rememberMe"
+									/>
+									<label
+										class="form-check-label fw-light"
+										for="checkbox"
+										>Remember me</label
+									><br /><br />
+									<p class="fw-light">
+										Forget password? Click here to
+										<a id="reset" href="#">Reset..</a>
+									</p>
+
+									<div class="form-group form-btn">
+										<button
+											type="button"
+											data-bs-dismiss="modal"
+											class="btn btn-block btn-dark"
+										>
+											Close
+										</button>
+										<button
+											type="submit"
+											class="btn btn-block btn-dark"
+											value="Login"
+										>
+											Login
+										</button>
+										<button
+											type="button"
+											data-bs-toggle="modal"
+											data-bs-target="#registerFormWrapper"
+											class="btn btn-block btn-dark"
+										>
+											Register
+										</button>
+									</div>
+								</form>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="registerFormWrapper">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-image">
+						<img
+							class="modal-helmet"
+							src="./images/faviconhelmet2.png"
+							alt="helmet"
+						/>
+					</div>
+					<div class="modal-content">
+						<div class="modal-body">
+							<center>
+								<h3>Register</h3>
+								<form id="registerForm">
+									<div class="form-group">
+										<input
+											type="text"
+											name="firstname"
+											id="firstname"
+											class="form-control"
+											placeholder="Firstname"
+											required
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="text"
+											name="lastname"
+											id="lastname"
+											class="form-control"
+											placeholder="Lastname"
+											required
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="number"
+											name="mobile"
+											id="mobile"
+											class="form-control"
+											placeholder="Mobile Number"
+											required
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="text"
+											name="newusername"
+											id="newUsername"
+											class="form-control"
+											placeholder="Email Account"
+											required
+										/>
+									</div>
+
+									<div class="form-group">
+										<input
+											type="password"
+											name="regPassword"
+											id="newPassword"
+											placeholder="Password"
+											class="form-control"
+											required
+										/>
+										<button type="button" id="seeRegisterPasswordBtn">
+											See Password
+										</button>
+									</div>
+
+									<p class="fw-light">
+										By clicking Register, you agree to our
+										<a id="reset" href="#">Terms</a>,
+										<a id="reset" href="#">Privacy Policy</a> and
+										<a id="reset" href="#">Cookies Policyy</a>. You
+										may receive SMS Notifications from us and can opt
+										out any time.
+									</p>
+
+									<div class="form-group form-btn">
+										<button
+											type="button"
+											data-bs-dismiss="modal"
+											class="btn btn-block btn-dark"
+										>
+											Close
+										</button>
+										<button
+											type="button"
+											data-bs-toggle="modal"
+											data-bs-target="#loginFormWrapper"
+											class="btn btn-block btn-dark"
+										>
+											Login
+										</button>
+										<button
+											type="submit"
+											class="btn btn-block btn-dark"
+										>
+											Register
+										</button>
+									</div>
+								</form>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="avatar" class="avatar"></div>
+
+		<div id="dashboard" style="display: none">
+			<h3>Welcome to the Dashboard!</h3>
+			<p>This is some content that should be visible upon login.</p>
+			<button id="logoutBtn">Logout</button>
+		</div>
+
+		<!-- Login Status Modal -->
+		<div class="modal" id="loginStatusModal" style="display: none">
+			<div class="modal-content">
+				<h3 id="loginStatusTitle" style="color: black"></h3>
+				<p id="loginStatusMessage" style="color: black"></p>
+				<button id="closeModalBtn">Close</button>
+			</div>
+		</div>
+
+		<!-- Logout Confirmation Modal -->
+		<div class="modal" id="logoutModal" style="display: none">
+			<div class="modal-content">
+				<h3>Logout Confirmation</h3>
+				<p>Are you sure you want to log out?</p>
+				<button id="logoutYesBtn">Yes</button>
+				<button id="logoutNoBtn">No</button>
+			</div>
 		</div>
 
 		<!-- social icons -->
@@ -498,7 +716,13 @@ Login
 									</div>
 
 									<div id="addBikeCard" class="card bike-card">
-										<div id="imageBox" class="imageBox" onclick="updateImage()">
+										<div
+											id="imageBox"
+											class="imageBox"
+											onclick="updateImage()"
+											ondrop="handleImageDrop(event)"
+											ondragover="handleImageDragOver(event)"
+										>
 											<img
 												id="bikeCardImg"
 												class="bike-card-img-top"
@@ -512,12 +736,19 @@ Login
 											onclick="editCardBody(event)"
 										>
 											<h4 id="bikeCardTitle" class="bike-card-title">
-												Bike Name
+												Bike Name (editable)
 											</h4>
 											<p id="bikeCardText" class="bike-card-text">
-												Transmission
+												Transmission (editable)
 											</p>
-											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<span contenteditable="false">&#8369;</span>
+											<p
+												id="bikeCardPrice"
+												style="display: inline"
+												class="bike-card-price"
+											>
+												Amount (editable)
+											</p>
 											<div class="bike-card-link">
 												<a
 													id="saveButton"
@@ -530,6 +761,30 @@ Login
 													class="btn btn-dark"
 													onclick="resetCardValues()"
 													>Reset</a
+												>
+												<a
+													id="sizeMinusLogo"
+													class="btn btn-dark"
+													onclick="resizeLogo('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusLogo"
+													onclick="resizeLogo('+')"
+													class="btn btn-dark"
+													>+</a
+												>
+												<a
+													id="sizeMinusImage"
+													class="btn btn-dark"
+													onclick="resizeImage('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusImage"
+													onclick="resizeImage('+')"
+													class="btn btn-dark"
+													>+</a
 												>
 											</div>
 										</div>
@@ -723,7 +978,13 @@ Login
 									</div>
 
 									<div id="addBikeCard" class="card bike-card">
-										<div id="imageBox" class="imageBox" onclick="updateImage()">
+										<div
+											id="imageBox"
+											class="imageBox"
+											onclick="updateImage()"
+											ondrop="handleImageDrop(event)"
+											ondragover="handleImageDragOver(event)"
+										>
 											<img
 												id="bikeCardImg"
 												class="bike-card-img-top"
@@ -737,12 +998,19 @@ Login
 											onclick="editCardBody(event)"
 										>
 											<h4 id="bikeCardTitle" class="bike-card-title">
-												Bike Name
+												Bike Name (editable)
 											</h4>
 											<p id="bikeCardText" class="bike-card-text">
-												Transmission
+												Transmission (editable)
 											</p>
-											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<span contenteditable="false">&#8369;</span>
+											<p
+												id="bikeCardPrice"
+												style="display: inline"
+												class="bike-card-price"
+											>
+												Amount (editable)
+											</p>
 											<div class="bike-card-link">
 												<a
 													id="saveButton"
@@ -755,6 +1023,30 @@ Login
 													class="btn btn-dark"
 													onclick="resetCardValues()"
 													>Reset</a
+												>
+												<a
+													id="sizeMinusLogo"
+													class="btn btn-dark"
+													onclick="resizeLogo('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusLogo"
+													onclick="resizeLogo('+')"
+													class="btn btn-dark"
+													>+</a
+												>
+												<a
+													id="sizeMinusImage"
+													class="btn btn-dark"
+													onclick="resizeImage('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusImage"
+													onclick="resizeImage('+')"
+													class="btn btn-dark"
+													>+</a
 												>
 											</div>
 										</div>
@@ -951,7 +1243,13 @@ Login
 									</div>
 
 									<div id="addBikeCard" class="card bike-card">
-										<div id="imageBox" class="imageBox" onclick="updateImage()">
+										<div
+											id="imageBox"
+											class="imageBox"
+											onclick="updateImage()"
+											ondrop="handleImageDrop(event)"
+											ondragover="handleImageDragOver(event)"
+										>
 											<img
 												id="bikeCardImg"
 												class="bike-card-img-top"
@@ -965,12 +1263,19 @@ Login
 											onclick="editCardBody(event)"
 										>
 											<h4 id="bikeCardTitle" class="bike-card-title">
-												Bike Name
+												Bike Name (editable)
 											</h4>
 											<p id="bikeCardText" class="bike-card-text">
-												Transmission
+												Transmission (editable)
 											</p>
-											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<span contenteditable="false">&#8369;</span>
+											<p
+												id="bikeCardPrice"
+												style="display: inline"
+												class="bike-card-price"
+											>
+												Amount (editable)
+											</p>
 											<div class="bike-card-link">
 												<a
 													id="saveButton"
@@ -984,10 +1289,35 @@ Login
 													onclick="resetCardValues()"
 													>Reset</a
 												>
+												<a
+													id="sizeMinusLogo"
+													class="btn btn-dark"
+													onclick="resizeLogo('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusLogo"
+													onclick="resizeLogo('+')"
+													class="btn btn-dark"
+													>+</a
+												>
+												<a
+													id="sizeMinusImage"
+													class="btn btn-dark"
+													onclick="resizeImage('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusImage"
+													onclick="resizeImage('+')"
+													class="btn btn-dark"
+													>+</a
+												>
 											</div>
 										</div>
 									</div>
 								</div>
+
 								<div class="bike-card-container">
 									<div class="bikelogobox">
 										<img
@@ -1177,7 +1507,13 @@ Login
 									</div>
 
 									<div id="addBikeCard" class="card bike-card">
-										<div id="imageBox" class="imageBox" onclick="updateImage()">
+										<div
+											id="imageBox"
+											class="imageBox"
+											onclick="updateImage()"
+											ondrop="handleImageDrop(event)"
+											ondragover="handleImageDragOver(event)"
+										>
 											<img
 												id="bikeCardImg"
 												class="bike-card-img-top"
@@ -1191,12 +1527,19 @@ Login
 											onclick="editCardBody(event)"
 										>
 											<h4 id="bikeCardTitle" class="bike-card-title">
-												Bike Name
+												Bike Name (editable)
 											</h4>
 											<p id="bikeCardText" class="bike-card-text">
-												Transmission
+												Transmission (editable)
 											</p>
-											<p id="bikeCardPrice" class="bike-card-price">Amount</p>
+											<span contenteditable="false">&#8369;</span>
+											<p
+												id="bikeCardPrice"
+												style="display: inline"
+												class="bike-card-price"
+											>
+												Amount (editable)
+											</p>
 											<div class="bike-card-link">
 												<a
 													id="saveButton"
@@ -1209,6 +1552,30 @@ Login
 													class="btn btn-dark"
 													onclick="resetCardValues()"
 													>Reset</a
+												>
+												<a
+													id="sizeMinusLogo"
+													class="btn btn-dark"
+													onclick="resizeLogo('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusLogo"
+													onclick="resizeLogo('+')"
+													class="btn btn-dark"
+													>+</a
+												>
+												<a
+													id="sizeMinusImage"
+													class="btn btn-dark"
+													onclick="resizeImage('-')"
+													>-</a
+												>
+												<a
+													id="sizePlusImage"
+													onclick="resizeImage('+')"
+													class="btn btn-dark"
+													>+</a
 												>
 											</div>
 										</div>
@@ -1355,6 +1722,102 @@ Login
 				</div>
 			</center>
 		</div>
+		<footer>
+			<div class="row">
+				<div class="quicklinks col-3">
+					<h4>QUICK LINKS</h4>
+					<ul>
+						<li>
+							<a href="" data-bs-toggle="modal" data-bs-target="#careerModal"
+								><i class="bi bi-caret-right"></i> Careers</a
+							>
+						</li>
+						<li>
+							<a href=""><i class="bi bi-caret-right"></i> Gallery</a>
+						</li>
+						<li>
+							<a href=""><i class="bi bi-caret-right"></i> Testimonials</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="allrightreserve col">
+					<center>
+						<img
+							class="image-with-shadow"
+							src="./images/MSlogo.png"
+							alt="logo"
+						/>
+						<br /><br />
+						<h6>
+							<i class="bi bi-c-circle"></i> 2023 <b>MotoSavant Corp.</b> All
+							Rights Reserved
+						</h6>
+					</center>
+				</div>
+
+				<div class="getintouch col-3">
+					<h4>GET IN TOUCH</h4>
+					<ul>
+						<li>
+							<a href=""
+								><i class="bi bi-buildings"></i>Main Branch Marikina City</a
+							>
+						</li>
+						<li>
+							<a href=""><i class="bi bi-phone"></i>09481433185</a>
+						</li>
+						<li>
+							<a href=""
+								><i class="bi bi-envelope"></i>info.customer@motosavant.ph</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<!-- <div class="loading__wrapper">
+		<div class="loader--text">Loading...</div>
+		<div class="loader">
+			<span></span>
+		</div>
+	</div> -->
+
+		<svg class="icons" style="display: none">
+			<symbol
+				id="arrow-left"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 512 512"
+			>
+				<polyline
+					points="328 112 184 256 328 400"
+					style="
+						fill: none;
+						stroke: #fff;
+						stroke-linecap: round;
+						stroke-linejoin: round;
+						stroke-width: 48px;
+					"
+				/>
+			</symbol>
+			<symbol
+				id="arrow-right"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 512 512"
+			>
+				<polyline
+					points="184 112 328 256 184 400"
+					style="
+						fill: none;
+						stroke: #fff;
+						stroke-linecap: round;
+						stroke-linejoin: round;
+						stroke-width: 48px;
+					"
+				/>
+			</symbol>
+		</svg>
 
 		<button id="backToTopButton" onclick="scrollToTop()">
 			<div class="backToTopButton"></div>
@@ -1364,12 +1827,9 @@ Login
 			type="text/javascript"
 			src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
 		></script>
-		<script
-			type="text/javascript"
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"
-		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<script src="script.js"></script>
-		<script src="bikes.js"></script>
+		<script src="login.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

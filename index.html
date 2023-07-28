@@ -30,7 +30,7 @@
 	</head>
 
 	<body>
-		<div id="fullscreen-modal">
+		<!-- <div id="fullscreen-modal">
 			<center>
 				<div class="herosection">
 					<div class="heropath">
@@ -63,7 +63,7 @@
 					<img src="./images/bmw2.png" alt="modelbike" />
 				</div>
 			</center>
-		</div>
+		</div> -->
 
 		<!-- Messenger Chat Plugin Code -->
 		<div id="fb-root"></div>
@@ -121,6 +121,7 @@
 							</center>
 						</div>
 					</button>
+
 					<div class="collapse navbar-collapse" id="navbarToggler">
 						<ul class="navbar-nav mb-2 mb-lg-0">
 							<li class="nav-item">
@@ -144,7 +145,13 @@
 								<a class="nav-link" href="contact.html">Contact</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="login.html">Login</a>
+								<a
+									class="nav-link"
+									data-bs-toggle="modal"
+									data-bs-target="#loginFormWrapper"
+									href=""
+									>Login</a
+								>
 							</li>
 						</ul>
 					</div>
@@ -152,7 +159,18 @@
 			</nav>
 		</div>
 
+
+
 		<div class="herosection formobile">
+
+			<div id="avatar" class="avatar"></div>
+
+			<div id="dashboard" style="display: none">
+				<h3>Welcome to the Dashboard!</h3>
+				<p>This is some content that should be visible upon login.</p>
+				<button id="logoutBtn">Logout</button>
+			</div>
+			
 			<div class="heropath">
 				<video src="./images/hero.mp4" muted loop autoplay></video><br />
 				<div class="visorbox">
@@ -169,7 +187,7 @@
 		<div class="modelbike formobile">
 			<img src="./images/bmw2.png" alt="modelbike" />
 		</div>
-		
+
 		<!-- social icons -->
 
 		<div class="icons">
@@ -191,7 +209,6 @@
 				</li>
 			</ul>
 		</div>
-
 
 		<div class="section2 scrollmargin">
 			<!-- Carousel -->
@@ -893,8 +910,8 @@
 			</center>
 		</div>
 
-		<div class="section4 scrollmargin fromleft">
-			<div class="newsletter">
+		<div class="section4 scrollmargin">
+			<div class="newsletter fromleft">
 				<img class="newsletter-image" src="./images/news.png" alt="" />
 
 				<div class="newsletter-info1">
@@ -906,7 +923,7 @@
 						cruising machine, you'll be the first to know!
 					</p>
 				</div>
-				<div class="newsletter-info2">
+				<div class="newsletter-info2 form-floating-sm">
 					<input
 						class="form-control mt-1"
 						type="text"
@@ -917,133 +934,301 @@
 			</div>
 		</div>
 
+		<div class="footersection snap-end" style="position: relative">
+			<div class="map">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.0488310106475!2d121.1019352752299!3d14.65316957578717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9bfb77545e1%3A0xe99470e932f8b745!2sConcepcion%20Uno%20Barangay%20Hall%2C%20Molave%20St%2C%20Marikina%2C%201800%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1690204590351!5m2!1sen!2sph"
+					style="border: 1"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				></iframe>
+			</div>
 
-		<br />
-
-		<footer>
-			<div class="row">
-				<div class="quicklinks col-3">
-					<h4>QUICK LINKS</h4>
-					<ul>
-						<li>
-							<a href="" data-bs-toggle="modal" data-bs-target="#careerModal"
-								><i class="bi bi-caret-right"></i> Careers</a
-							>
-						</li>
-						<li>
-							<a href=""><i class="bi bi-caret-right"></i> Gallery</a>
-						</li>
-						<li>
-							<a href=""><i class="bi bi-caret-right"></i> Testimonials</a>
-						</li>
-					</ul>
-				</div>
-				<div
-					class="modal fade"
-					data-bs-theme="dark"
-					id="careerModal"
-					data-bs-backdrop="static"
-					data-bs-keyboard="false"
-					aria-hidden="true"
-					aria-labelledby="careerModalLabel"
-					tabindex="-1"
-				>
-					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="careerModalLabel">
-									Job Hiring
-								</h1>
-								<button
-									type="button"
-									class="btn-close"
-									data-bs-dismiss="modal"
-									aria-label="Close"
-								></button>
-							</div>
-
-							<div class="modal-body">
-								<div class="needs-validation" novalidate>
-									<h6>Select a position to inquire:</h6>
-									<br />
-									<input
-										class="form-check-input"
-										type="radio"
-										name="position"
-										id="rider"
-										required
-									/>
-									<label class="form-label" for="rider">Delivery Rider</label
-									><br /><br />
-									<input
-										class="form-check-input"
-										type="radio"
-										name="position"
-										id="agent"
-										required
-									/>
-									<label class="form-label" for="agent">Sales Agent</label>
-									<div class="invalid-feedback">Please choose one.</div>
-								</div>
-							</div>
-
-							<div class="modal-footer">
-								<button
-									class="submit"
-									style="
-										border-radius: 10px;
-										padding: 5px;
-										border: solid thin black;
-										background-color: #9eca2e;
-									"
+			<footer>
+				<div class="row">
+					<div class="quicklinks col-3">
+						<h4>QUICK LINKS</h4>
+						<ul>
+							<li>
+								<a href="" data-bs-toggle="modal" data-bs-target="#careerModal"
+									><i class="bi bi-caret-right"></i> Careers</a
 								>
-									<a href="applicantsform.html" target="_self">Continue</a>
-								</button>
-							</div>
+							</li>
+							<li>
+								<a href=""><i class="bi bi-caret-right"></i> Gallery</a>
+							</li>
+							<li>
+								<a href=""><i class="bi bi-caret-right"></i> Testimonials</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="allrightreserve col">
+						<center>
+							<img
+								class="image-with-shadow"
+								src="./images/MSlogo.png"
+								alt="logo"
+							/>
+							<br /><br />
+							<h6>
+								<i class="bi bi-c-circle"></i> 2023 <b>MotoSavant Corp.</b> All
+								Rights Reserved
+							</h6>
+						</center>
+					</div>
+
+					<div class="getintouch col-3">
+						<h4>GET IN TOUCH</h4>
+						<ul>
+							<li>
+								<a href=""
+									><i class="bi bi-buildings"></i>Main Branch Marikina City</a
+								>
+							</li>
+							<li>
+								<a href=""><i class="bi bi-phone"></i>09481433185</a>
+							</li>
+							<li>
+								<a href=""
+									><i class="bi bi-envelope"></i>info.customer@motosavant.ph</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		
+		<div class="login-modal">
+			<div class="modal fade" id="loginFormWrapper">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-image">
+						<img
+							class="modal-helmet"
+							src="./images/faviconhelmet2.png"
+							alt="helmet"
+						/>
+					</div>
+					<div class="modal-content">
+						<div class="modal-body">
+							<center>
+								<h3>Login</h3>
+								<form id="loginForm">
+									<div class="form-group">
+										<input
+											type="text"
+											name="username"
+											id="username"
+											class="form-control"
+											placeholder="Username"
+											required
+										/>
+									</div>
+
+									<div class="form-group">
+										<input
+											type="password"
+											name="Password"
+											id="password"
+											placeholder="Password"
+											class="form-control"
+											required
+										/>
+										<button type="button" id="seeLoginPasswordBtn">
+											See Password
+										</button>
+									</div>
+
+									<input
+									class="form-check-input"
+										type="checkbox"
+										id="rememberMe"
+									/>
+									<label
+										class="form-check-label fw-light"
+										for="checkbox"
+										>Remember me</label
+									><br /><br />
+									<p class="fw-light">
+										Forget password? Click here to
+										<a id="reset" href="#">Reset..</a>
+									</p>
+
+									<div class="form-group form-btn">
+										<button
+											type="button"
+											data-bs-dismiss="modal"
+											class="btn btn-block btn-dark"
+										>
+											Close
+										</button>
+										<button
+										type="submit"
+											class="btn btn-block btn-dark"
+											value="Login"
+										>
+											Login
+										</button>
+										<button
+											type="button"
+											data-bs-toggle="modal"
+											data-bs-target="#registerFormWrapper"
+											class="btn btn-block btn-dark"
+										>
+											Register
+										</button>
+									</div>
+								</form>
+							</center>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="allrightreserve col">
-					<center>
+			<div class="modal fade" id="registerFormWrapper">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-image">
 						<img
-							class="image-with-shadow"
-							src="./images/MSlogo.png"
-							alt="logo"
+						class="modal-helmet"
+						src="./images/faviconhelmet2.png"
+							alt="helmet"
 						/>
-						<br /><br />
-						<h6>
-							<i class="bi bi-c-circle"></i> 2023 <b>MotoSavant Corp.</b> All
-							Rights Reserved
-						</h6>
-					</center>
-				</div>
+					</div>
+					<div class="modal-content">
+						<div class="modal-body">
+							<center>
+								<h3>Register</h3>
+								<form id="registerForm">
+									<div class="form-group">
+										<input
+											type="text"
+											name="firstname"
+											id="firstname"
+											class="form-control"
+											placeholder="Firstname"
+											required
+											/>
+									</div>
+									<div class="form-group">
+										<input
+											type="text"
+											name="lastname"
+											id="lastname"
+											class="form-control"
+											placeholder="Lastname"
+											required
+											/>
+										</div>
+									<div class="form-group">
+										<input
+											type="number"
+											name="mobile"
+											id="mobile"
+											class="form-control"
+											placeholder="Mobile Number"
+											required
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="text"
+											name="newusername"
+											id="newUsername"
+											class="form-control"
+											placeholder="Email Account"
+											required
+										/>
+									</div>
 
-				<div class="getintouch col-3">
-					<h4>GET IN TOUCH</h4>
-					<ul>
-						<li>
-							<a href=""><i class="bi bi-buildings"></i>Amaya 4 Tanza Cavite</a>
-						</li>
-						<li>
-							<a href=""><i class="bi bi-phone"></i>09481433185</a>
-						</li>
-						<li>
-							<a href=""
-								><i class="bi bi-envelope"></i>info.customer@motosavant.ph</a
-							>
-						</li>
-					</ul>
+									<div class="form-group">
+										<input
+											type="password"
+											name="regPassword"
+											id="newPassword"
+											placeholder="Password"
+											class="form-control"
+											required
+										/>
+										<button type="button" id="seeRegisterPasswordBtn">
+											See Password
+										</button>
+									</div>
+
+									<p class="fw-light">
+										By clicking Register, you agree to our
+										<a id="reset" href="#">Terms</a>,
+										<a id="reset" href="#">Privacy Policy</a> and
+										<a id="reset" href="#">Cookies Policyy</a>. You
+										may receive SMS Notifications from us and can opt
+										out any time.
+									</p>
+
+									<div class="form-group form-btn">
+										<button
+											type="button"
+											data-bs-dismiss="modal"
+											class="btn btn-block btn-dark"
+											>
+											Close
+										</button>
+										<button
+											type="button"
+											data-bs-toggle="modal"
+											data-bs-target="#loginFormWrapper"
+											class="btn btn-block btn-dark"
+											>
+											Back
+										</button>
+										<button
+										type="submit"
+										class="btn btn-block btn-dark"
+										>
+											Register
+										</button>
+									</div>
+								</form>
+							</center>
+						</div>
+					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
+		
 
-		<div class="loading__wrapper">
-<div class="loader--text">Loading...</div>
-<div class="loader">
-	<span></span>
+
+		<!-- Login Status Modal -->
+		<div class="modal" id="loginStatusModal" style="display: none">
+			<div class="modal-content">
+				<h3 id="loginStatusTitle" style="color: black"></h3>
+				<p id="loginStatusMessage" style="color: black"></p>
+				<button id="closeModalBtn">Close</button>
+			</div>
+		</div>
+
+		<!-- Logout Confirmation Modal -->
+		<div class="modal" id="logoutModal" style="display: none">
+			<div class="modal-content">
+				<h3>Logout Confirmation</h3>
+				<p>Are you sure you want to log out?</p>
+				<button id="logoutYesBtn">Yes</button>
+				<button id="logoutNoBtn">No</button>
+			</div>
+		</div>
+	</ul>
 </div>
 </div>
+</nav>
+</div>
+
+		<!-- <div class="loading__wrapper">
+			<div class="loader--text">Loading...</div>
+			<div class="loader">
+				<span></span>
+			</div>
+		</div> -->
 
 		<svg class="icons" style="display: none">
 			<symbol
@@ -1090,6 +1275,7 @@
 		></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 		<script src="script.js"></script>
+		<script src="login.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

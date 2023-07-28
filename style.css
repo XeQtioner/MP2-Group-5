@@ -7,7 +7,174 @@
 }
 
 html {
-	scroll-snap-type: y proximity;
+	scroll-snap-type: y mandatory;
+}
+
+.login-modal .modal-dialog {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: transparent;
+	/* color: white; */
+	font-weight: 300;
+	background-size: cover;
+	background-position: center;
+	-webkit-mask-image: url(./images/faviconhelmet2.png);
+	mask-image: url(./images/faviconhelmet2.png);
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	backdrop-filter: blur(5px);
+}
+
+.login-modal .modal-content {
+	padding: 40px;
+	background-color: transparent;
+	border: none;
+	-webkit-mask-image: url(./images/faviconhelmet2.png);
+	mask-image: url(./images/faviconhelmet2.png);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: 90% 90%;
+	mask-size: 90% 90%;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+.login-modal .modal-content input {
+	margin-bottom: 10px;
+}
+
+.login-modal .modal-body {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-direction: column;
+	margin: 20px;
+}
+
+.login-modal .modal-helmet {
+	background-color: whitesmoke;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.5;
+	filter: blur(10px);
+}
+
+.login-modal .modal-content p {
+	font-size: x-small;
+}
+
+.login-modal .modal-content h5 {
+	text-align: center;
+	font-weight: 300;
+	margin-top: 20px;
+}
+
+.login-modal .modal-title {
+	color: #333;
+	font-weight: 700;
+	border: none;
+}
+
+.login-modal .modal-body form {
+	width: 100%;
+}
+
+.login-modal .modal a {
+	text-decoration: none;
+	color: black;
+}
+
+.login-modal #reset {
+	font-weight: 400;
+	color: cornflowerblue;
+}
+
+.modal-status {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-status .modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 300px;
+}
+.avatar {
+	display: none;
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.form-group {
+	width: 80%;
+}
+
+.contactsection {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.contactus {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+	border-radius: 15px;
+	width: min(90%, 800px);
+	display: flex;
+	padding: 25px;
+}
+
+.letstalk {
+	width: 100%;
+}
+
+.geo-location {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.geo-location iframe {
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+}
+
+.about-us {
+	width: min(90%, 800px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: left;
 }
 
 body {
@@ -578,6 +745,10 @@ body .icons a:hover {
 	}
 }
 
+#bikeCardTemplate {
+	display: none;
+}
+
 .bikelist {
 	padding-top: 70px;
 }
@@ -1014,7 +1185,7 @@ body .icons a:hover {
 	opacity: 0;
 	display: none;
 }
-/* .loading__wrapper {
+.loading__wrapper {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -1048,7 +1219,7 @@ body .icons a:hover {
 	background: #9eca2e;
 	transform: scaleX(0);
 	transform-origin: left;
-} */
+}
 @media only screen and (min-width: 800px) {
 	.section3 {
 		--card-width: 250px;
@@ -1091,6 +1262,7 @@ body .icons a:hover {
 
 .newsletter {
 	position: relative;
+	color: #333;
 	width: min(90%, 800px);
 	height: 330px;
 	background-color: #9eca2e;
@@ -1100,7 +1272,7 @@ body .icons a:hover {
 	justify-content: end;
 	align-items: end;
 	flex-direction: column;
-	text-shadow: 1px 1px 1px #000;
+	scroll-snap-align: start;
 }
 
 .newsletter-image {
@@ -1116,7 +1288,7 @@ body .icons a:hover {
 }
 
 .newsletter-info2 {
-	width: 35%;
+	width: 40%;
 	float: right;
 }
 
@@ -1124,20 +1296,17 @@ body .icons a:hover {
 	float: right;
 }
 
-.section5 {
-	display: flex;
+.faqsection {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 100vh;
 	overflow-x: hidden;
-	padding-top: 20px;
+	padding-top: 70px;
 	display: flexbox;
 	align-items: center;
 	justify-content: center;
 	width: min(90%, 800px);
 	margin-inline: auto;
-	scroll-snap-align: start;
 	overflow: visible;
 }
 
@@ -1164,19 +1333,45 @@ body .icons a:hover {
 	border-right: none;
 }
 
+.footersection {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	padding-top: 75px;
+	scroll-snap-align: end;
+}
+
+.footersection .map iframe {
+	flex: none;
+	border-top: 3px solid #9eca2e;
+	border-bottom: 3px solid #9eca2e;
+	width: 100vw;
+	height: 300px;
+}
+
+.footersection footer {
+	scroll-snap-align: end;
+}
+
 footer {
+	flex: none;
 	background-color: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(15px);
 	width: 100vw;
-	height: 300px;
+	height: 200px;
 	text-align: left;
 	padding-top: 40px;
-	padding-bottom: 100px;
 	padding-left: 100px;
 	padding-right: 100px;
 	list-style-type: none;
 	position: relative;
 	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.snap-end {
+	scroll-snap-align: end;
 }
 
 footer a {
@@ -1314,6 +1509,10 @@ footer img {
 }
 
 @media screen and (max-width: 991px) {
+	.contactus {
+		flex-direction: column;
+	}
+
 	.formobile {
 		display: block;
 	}
@@ -1531,13 +1730,14 @@ footer img {
 		transform: translateY(0px);
 	}
 
-	.current--info	{
+	/* .current--info	{
 		transform: translateY(-20px);
 	}
 
 	.text-description	{
-		transform: translateY(120px);
-	}
+		position: absolute;
+		bottom: 1000px;
+	} */
 
 	footer {
 		display: grid;
@@ -1607,22 +1807,4 @@ footer img {
 		padding-right: 10px;
 		transform: translatey(-150px);
 	}
-}
-
-.form-group {
-	width: 75%;
-}
-
-.reach-us {
-	width: 80%;
-}
-.about-us {
-	text-align: left;
-	width: 80%;
-}
-iframe {
-	height: 300px;
-	width: 300px;
-	resize: both;
-	overflow: auto;
 }

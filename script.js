@@ -1,3 +1,12 @@
+// Function to reload the page
+function reloadPageOnResize() {
+	location.reload();
+}
+
+// Attach the event listener to the window's resize event
+window.addEventListener('resize', reloadPageOnResize);
+
+
 function myFunction(x) {
   x.classList.toggle("change");
 }
@@ -86,9 +95,7 @@ function addVisibilityListener(elementSelector) {
 }
 
 addVisibilityListener(".section1a");
-addVisibilityListener(".newsletter-image");
-addVisibilityListener(".section4");
-addVisibilityListener(".section5");
+addVisibilityListener(".newsletter");
 
 //animation-in scale or opacity
 
@@ -683,7 +690,7 @@ observerInView.observe(section2);
 observerOutOfView.observe(section2);
 
 function waitForImages() {
-  let images = [...container.querySelectorAll("img")];
+  let images = [document.querySelectorAll("img")];
   let totalImages = images.length;
   let loadedImages = 0;
   let loaderEl = container.querySelector(".loader span");
