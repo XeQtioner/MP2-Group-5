@@ -109,20 +109,24 @@
 							<li class="nav-item">
 								<a class="nav-link" href="contact.html">Contact</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" id="loginBtn">
 								<a
 									class="nav-link"
 									data-bs-toggle="modal"
 									data-bs-target="#loginFormWrapper"
-									href="login.html"
+									href=""
 									>Login</a
 								>
+							</li>
+							<li class="nav-item" id="userAvatar">
+								<button onclick="handleLogout()">Logout</button>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
+		
 
 		<div class="login-modal">
 			<div class="modal fade" id="loginFormWrapper">
@@ -428,7 +432,7 @@
 							<br />
 
 							<div class="bikecontainer">
-								<div id="bikeCardTemplate" class="bike-card-container">
+								<div id="bikeCardTemplate" class="bike-card-container bikeCardTemplate">
 									<div id="logoBox" class="bikelogobox" onclick="updateLogo()">
 										<img
 											id="bikeLogo"
@@ -1505,6 +1509,27 @@
 											alt="bikelogo"
 										/>
 									</div>
+									<script>
+										const isLoggedIn = localStorage.getItem('loggedIn')
+										console.log(isLoggedIn)
+										if(isLoggedIn){
+											document.getElementById('loginBtn').style.display = 'none'
+											document.querySelector('#userAvatar').style.display= 'block'
+											document.getElementById('bikeCardTemplate').style.display='inline'
+										}
+										else {
+											document.getElementById('loginBtn').style.display = 'block'
+											document.querySelector('#userAvatar').style.display= 'none'
+											document.getElementById('bikeCardTemplate').style.display='none'
+							
+										}
+										function handleLogout(){
+											localStorage.removeItem('loggedIn')
+											localStorage.removeItem('username')
+											// window.location.reload()
+											
+										}
+									</script>
 
 									<div id="addBikeCard" class="card bike-card">
 										<div

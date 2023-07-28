@@ -144,7 +144,7 @@
 							<li class="nav-item">
 								<a class="nav-link" href="contact.html">Contact</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" id="loginBtn">
 								<a
 									class="nav-link"
 									data-bs-toggle="modal"
@@ -153,12 +153,32 @@
 									>Login</a
 								>
 							</li>
+							<li class="nav-item" id="userAvatar">
+								<button onclick="handleLogout()">Logout</button>
+							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
-
+		<script>
+			const isLoggedIn = localStorage.getItem('loggedIn')
+			console.log(isLoggedIn)
+			if(isLoggedIn){
+				document.getElementById('loginBtn').style.display = 'none'
+				document.querySelector('#userAvatar').style.display= 'block'
+				document.getElementById('bikeCardTemplate').style.display='block'
+			}
+			else {
+				document.getElementById('loginBtn').style.display = 'block'
+				document.querySelector('#userAvatar').style.display= 'none'
+			}
+			function handleLogout(){
+				localStorage.clear()
+				// window.location.reload()
+				
+			}
+		</script>
 
 
 		<div class="herosection formobile">
@@ -1281,5 +1301,6 @@
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 			crossorigin="anonymous"
 		></script>
+		
 	</body>
 </html>
