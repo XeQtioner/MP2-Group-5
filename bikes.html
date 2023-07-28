@@ -398,7 +398,7 @@
 						<div class="accordion-item">
 							<div class="accordion-header">
 								<button
-									class="accordion-button collapsed"
+									class="accordion-button collapsed bg-transparent"
 									type="button"
 									data-bs-toggle="collapse"
 									data-bs-target="#flush-collapse"
@@ -542,7 +542,9 @@
 												₱12,000
 											</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -578,7 +580,69 @@
 												₱12,000
 											</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<!--<a href="#" class="btn btn-dark">Book Now</a>-->
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+													Book Now
+												</button>
+												
+												
+
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Modal -->
+								<div class="modal fade" id="bookNowModal" aria-labelledby="bookNowModalLabel">
+									<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+										<h1 class="modal-title fs-5 text-center" id="bookNowModalLabel">Booking Information</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form onsubmit="bookNow()" id="bookNowForm">
+												<input class="my-2" type="text" id="fname" name="fname" placeholder="Enter First Name" required><br>
+												<input class="my-2" type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+												<input class="my-2" type="text" id="address" name="address" placeholder="Enter Address" required><br>
+												<label for="rentalStart">Rental Start:</label><br>
+												<input class="my-2" type="date" id="rentalStart" name="rentalStart"><br>
+												<label for="rentalEnd">Rental End:</label><br>
+												<input class="my-2" type="date" id="rentalEnd" name="rentalEnd"><br>
+											</form>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<input type="submit" class="btn btn-dark" data-bs-target="bookNowForm">
+										</div>
+									</div>
+									</div>
+								</div>
+															
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -605,7 +669,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -632,34 +698,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
-												<a href="#" class="btn btn-dark">See Details</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="bike-card-container">
-									<div class="bikelogobox">
-										<img
-											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-											alt="bikelogo"
-										/>
-									</div>
-									<div class="card bike-card">
-										<div class="imageBox">
-											<img
-												class="bike-card-img-top"
-												src="./images/bmw2.png"
-												alt="bike-Card image"
-											/>
-										</div>
-										<div class="bike-card-body">
-											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-											<p class="bike-card-text">6-Speed Manual</p>
-											<p class="bike-card-price">₱12,000</p>
-											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -675,7 +716,7 @@
 						<div class="accordion-item">
 							<div class="accordion-header">
 								<button
-									class="accordion-button collapsed"
+									class="accordion-button collapsed bg-transparent"
 									type="button"
 									data-bs-toggle="collapse"
 									data-bs-target="#flush-collapse"
@@ -811,7 +852,67 @@
 											<p class="bike-card-text">4-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalOffRoad">
+													Book Now
+												</button>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Modal -->
+								<div class="modal fade" id="bookNowModalOffRoad" aria-labelledby="bookNowModalLabel">
+									<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+										<h1 class="modal-title fs-5 text-center" id="bookNowModalLabel">Booking Information</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form onsubmit="bookNow()" id="bookNowForm">
+												<input class="my-2" type="text" id="fname" name="fname" placeholder="Enter First Name" required><br>
+												<input class="my-2" type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+												<input class="my-2" type="text" id="address" name="address" placeholder="Enter Address" required><br>
+												<label for="rentalStart">Rental Start:</label><br>
+												<input class="my-2" type="date" id="rentalStart" name="rentalStart"><br>
+												<label for="rentalEnd">Rental End:</label><br>
+												<input class="my-2" type="date" id="rentalEnd" name="rentalEnd"><br>
+											</form>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<input type="submit" class="btn btn-dark" data-bs-target="bookNowForm">
+										</div>
+									</div>
+									</div>
+								</div>
+
+
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/ktm2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
+											<p class="bike-card-text">4-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalOffRoad">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -838,7 +939,9 @@
 											<p class="bike-card-text">4-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalOffRoad">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -865,34 +968,9 @@
 											<p class="bike-card-text">4-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
-												<a href="#" class="btn btn-dark">See Details</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="bike-card-container">
-									<div class="bikelogobox">
-										<img
-											src="https://logowik.com/content/uploads/images/ktm-racing9315.logowik.com.webp"
-											alt="bikelogo"
-										/>
-									</div>
-									<div class="card bike-card">
-										<div class="imageBox">
-											<img
-												class="bike-card-img-top"
-												src="./images/ktm2.png"
-												alt="bike-Card image"
-											/>
-										</div>
-										<div class="bike-card-body">
-											<h4 class="bike-card-title">KTM 450 SX-F 2023</h4>
-											<p class="bike-card-text">4-Speed Manual</p>
-											<p class="bike-card-price">₱12,000</p>
-											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalOffRoad">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -920,7 +998,9 @@
 											<p class="bike-card-price">₱12,000</p>
 
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalOffRoad">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -936,7 +1016,7 @@
 						<div class="accordion-item">
 							<div class="accordion-header">
 								<button
-									class="accordion-button collapsed"
+									class="accordion-button collapsed bg-transparent"
 									type="button"
 									data-bs-toggle="collapse"
 									data-bs-target="#flush-collapse"
@@ -1074,7 +1154,68 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalSports">
+													Book Now
+												</button>
+													
+
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="bookNowModalSports" aria-labelledby="bookNowModalLabel">
+									<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+										<h1 class="modal-title fs-5 text-center" id="bookNowModalLabel">Booking Information</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form onsubmit="bookNow()" id="bookNowForm">
+												<input class="my-2" type="text" id="fname" name="fname" placeholder="Enter First Name" required><br>
+												<input class="my-2" type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+												<input class="my-2" type="text" id="address" name="address" placeholder="Enter Address" required><br>
+												<label for="rentalStart">Rental Start:</label><br>
+												<input class="my-2" type="date" id="rentalStart" name="rentalStart"><br>
+												<label for="rentalEnd">Rental End:</label><br>
+												<input class="my-2" type="date" id="rentalEnd" name="rentalEnd"><br>
+											</form>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<input type="submit" class="btn btn-dark" data-bs-target="bookNowForm">
+										</div>
+									</div>
+									</div>
+								</div>
+
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalSports">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1102,7 +1243,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalSports">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1130,7 +1273,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalSports">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1158,35 +1303,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
-												<a href="#" class="btn btn-dark">See Details</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="bike-card-container">
-									<div class="bikelogobox">
-										<img
-											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-											alt="bikelogo"
-											alt="bikelogo"
-										/>
-									</div>
-									<div class="card bike-card">
-										<div class="imageBox">
-											<img
-												class="bike-card-img-top"
-												src="./images/bmw2.png"
-												alt="bike-Card image"
-											/>
-										</div>
-										<div class="bike-card-body">
-											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-											<p class="bike-card-text">6-Speed Manual</p>
-											<p class="bike-card-price">₱12,000</p>
-											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalSports">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1202,7 +1321,7 @@
 						<div class="accordion-item">
 							<div class="accordion-header">
 								<button
-									class="accordion-button collapsed"
+									class="accordion-button collapsed bg-transparent"
 									type="button"
 									data-bs-toggle="collapse"
 									data-bs-target="#flush-collapse"
@@ -1339,7 +1458,65 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalTouring">
+													Book Now
+												</button>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="bookNowModalTouring" aria-labelledby="bookNowModalLabel">
+									<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+										<h1 class="modal-title fs-5 text-center" id="bookNowModalLabel">Booking Information</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form onsubmit="bookNow()" id="bookNowForm">
+												<input class="my-2" type="text" id="fname" name="fname" placeholder="Enter First Name" required><br>
+												<input class="my-2" type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+												<input class="my-2" type="text" id="address" name="address" placeholder="Enter Address" required><br>
+												<label for="rentalStart">Rental Start:</label><br>
+												<input class="my-2" type="date" id="rentalStart" name="rentalStart"><br>
+												<label for="rentalEnd">Rental End:</label><br>
+												<input class="my-2" type="date" id="rentalEnd" name="rentalEnd"><br>
+											</form>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<input type="submit" class="btn btn-dark" data-bs-target="bookNowForm">
+										</div>
+									</div>
+									</div>
+								</div>
+
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalTouring">
+												
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1366,34 +1543,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
-												<a href="#" class="btn btn-dark">See Details</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="bike-card-container">
-									<div class="bikelogobox">
-										<img
-											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-											alt="bikelogo"
-										/>
-									</div>
-									<div class="card bike-card">
-										<div class="imageBox">
-											<img
-												class="bike-card-img-top"
-												src="./images/bmw2.png"
-												alt="bike-Card image"
-											/>
-										</div>
-										<div class="bike-card-body">
-											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-											<p class="bike-card-text">6-Speed Manual</p>
-											<p class="bike-card-price">₱12,000</p>
-											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalTouring">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1421,7 +1573,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalTouring">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1449,7 +1603,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1465,7 +1621,7 @@
 						<div class="accordion-item">
 							<div class="accordion-header">
 								<button
-									class="accordion-button collapsed"
+									class="accordion-button collapsed bg-transparent"
 									type="button"
 									data-bs-toggle="collapse"
 									data-bs-target="#flush-collapse"
@@ -1602,7 +1758,64 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalScooter">
+													Book Now
+												</button>
+												<a href="#" class="btn btn-dark">See Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="bookNowModalScooter" aria-labelledby="bookNowModalLabel">
+									<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+										<h1 class="modal-title fs-5 text-center" id="bookNowModalLabel">Booking Information</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form onsubmit="bookNow()" id="bookNowForm">
+												<input class="my-2" type="text" id="fname" name="fname" placeholder="Enter First Name" required><br>
+												<input class="my-2" type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+												<input class="my-2" type="text" id="address" name="address" placeholder="Enter Address" required><br>
+												<label for="rentalStart">Rental Start:</label><br>
+												<input class="my-2" type="date" id="rentalStart" name="rentalStart"><br>
+												<label for="rentalEnd">Rental End:</label><br>
+												<input class="my-2" type="date" id="rentalEnd" name="rentalEnd"><br>
+											</form>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<input type="submit" class="btn btn-dark" data-bs-target="bookNowForm">
+										</div>
+									</div>
+									</div>
+								</div>
+								
+								<div class="bike-card-container">
+									<div class="bikelogobox">
+										<img
+											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
+											alt="bikelogo"
+										/>
+									</div>
+									<div class="card bike-card">
+										<div class="imageBox">
+											<img
+												class="bike-card-img-top"
+												src="./images/bmw2.png"
+												alt="bike-Card image"
+											/>
+										</div>
+										<div class="bike-card-body">
+											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
+											<p class="bike-card-text">6-Speed Manual</p>
+											<p class="bike-card-price">₱12,000</p>
+											<div class="bike-card-link">
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalScooter">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1629,7 +1842,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalScooter">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1656,7 +1871,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalScooter">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>
@@ -1683,34 +1900,9 @@
 											<p class="bike-card-text">6-Speed Manual</p>
 											<p class="bike-card-price">₱12,000</p>
 											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
-												<a href="#" class="btn btn-dark">See Details</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="bike-card-container">
-									<div class="bikelogobox">
-										<img
-											src="https://logowik.com/content/uploads/images/398_bmw.jpg"
-											alt="bikelogo"
-										/>
-									</div>
-									<div class="card bike-card">
-										<div class="imageBox">
-											<img
-												class="bike-card-img-top"
-												src="./images/bmw2.png"
-												alt="bike-Card image"
-											/>
-										</div>
-										<div class="bike-card-body">
-											<h4 class="bike-card-title">BMW S1000 RR 2023</h4>
-											<p class="bike-card-text">6-Speed Manual</p>
-											<p class="bike-card-price">₱12,000</p>
-											<div class="bike-card-link">
-												<a href="#" class="btn btn-dark">Book Now</a>
+												<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bookNowModalScooter">
+													Book Now
+												</button>
 												<a href="#" class="btn btn-dark">See Details</a>
 											</div>
 										</div>

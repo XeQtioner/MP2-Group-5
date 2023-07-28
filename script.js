@@ -767,4 +767,20 @@ setupTabContent(Touring);
 let tabContent5 = document.getElementById("Scooter");
 setupTabContent(Scooter);
 
+function bookNow() {
+	var firstName = document.getElementById('fname').value;
+	var lastName = document.getElementById('lname').value;
+	var address = document.getElementById('address').value;
+	var rentalStart = document.getElementById('rentalStart').value;
+	var rentalEnd = document.getElementById('rentalEnd').value;
+
+	const booking = {
+		firstName: firstName,
+		lastName: lastName,
+		address: address,
+		rentalStart: rentalStart,
+		rentalEnd: rentalEnd
+	}
+	localStorage.setItem("bookingInformation", JSON.stringify(booking))
+}
 

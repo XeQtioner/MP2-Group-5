@@ -112,6 +112,7 @@ html {
 	border: 1px solid #888;
 	width: 300px;
 }
+
 .avatar {
 	display: none;
 	width: 100px;
@@ -672,7 +673,7 @@ body .icons a:hover {
 	font-size: 1px;
 }
 
-.tabcontent .accordion button {
+/* .tabcontent .accordion button {
 	position: relative;
 	display: flex;
 	font-size: small;
@@ -706,7 +707,7 @@ body .icons a:hover {
 	backdrop-filter: blur(15px);
 	padding-bottom: 50px;
 	border-radius: 50px;
-}
+} */
 
 .classinfo {
 	/* background-color: rgba(255, 255, 255, 0.05);
@@ -1315,10 +1316,10 @@ body .icons a:hover {
 	width: 100%;
 }
 
-.accordion button:not(.collapsed) {
+/* .accordion button:not(.collapsed) {
 	background-color: rgba(158, 202, 46, 0.5);
 	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.7);
-}
+} */
 
 .accordion button:focus {
 	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.7);
